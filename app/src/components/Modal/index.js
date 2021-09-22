@@ -1,4 +1,5 @@
 import Logo from "../Logo";
+import Titulo from "../Titulo";
 import { ModalContainer, Overlay } from "./style";
 
 function Modal() {
@@ -7,6 +8,7 @@ function Modal() {
     <Overlay>
       <ModalContainer>
           <Logo/>
+          <Titulo/>
       </ModalContainer>
     </Overlay>
     </>

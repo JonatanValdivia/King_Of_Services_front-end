@@ -9,8 +9,8 @@ import styled from "styled-components";
 
 export const Overlay = styled.div`
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 960px;
+  height: 450px;
   z-index: 0;
   top: 0;
 
@@ -20,12 +20,10 @@ export const Overlay = styled.div`
 `;
 
 export const ModalContainer = styled.section`
-  min-width: 600px;
-  min-height: 600px;
+  min-width: 300px;
+  min-height: 300px;
   max-height: calc(100vh - 20px);
   padding: 20px;
-
-  z-index: 19;
 
   overflow-y: auto;
 
