@@ -1,11 +1,14 @@
 import './App.css';
-import Modal from './components/Modal';
-import Cadastro from './pages/Cadastro';
+import Header from './components/Header';
+import { GlobalStyleComponent } from './GlobalStyles';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
-      <Modal/>
+      <GlobalStyleComponent/>
+      <Home/>
+      
     </>
   );
 }

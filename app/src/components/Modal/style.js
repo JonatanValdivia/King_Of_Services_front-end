@@ -1,36 +1,52 @@
 import styled from "styled-components";
 
-// export const Teste = styled.div`
-//     width: 100px;
-//     height: 100px;
-//     background-color: red;
-
-// `;
-
 export const Overlay = styled.div`
-  position: absolute;
-  width: 960px;
-  height: 450px;
-  z-index: 0;
-  top: 0;
+    width: 800px;
+    height: 250px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
 `;
+
+export const Title = styled.div`
+    width: 600px;
+    height: 110px;
+    margin-top: -50px;
+    padding: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    >h1{
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #FFFFFF;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    >p{
+        font-family: sans-serif;
+        font-size: 1.1em;
+        color: #FFFFFF;
+
+        margin-top: 10px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+` 
 
 export const ModalContainer = styled.section`
-  min-width: 300px;
-  min-height: 300px;
-  max-height: calc(100vh - 20px);
-  padding: 20px;
+    width: inherit;
+    height: inherit;
+    padding: 20px;
 
-  overflow-y: auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
 
-  background-color: white;
-  box-shadow: 5px 5px 15px #b3b3b3;
-  border-radius: 4px;
-
-  position: relative;
-
-`;
+`
