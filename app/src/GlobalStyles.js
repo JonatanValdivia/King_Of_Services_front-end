@@ -5,6 +5,7 @@ export const GlobalStyleComponent = createGlobalStyle`
         --primary: #ff7a00;
         --secundary: #313131;
         --textPrimary: #000000;
+        --textSecundary: #a3a0a0;
     }
 
     *{

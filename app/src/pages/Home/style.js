@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-    height: 2000px;
+    height: 2000;
     margin-top: 70px;
     display: grid;
     grid-template-rows: 40% 40% 20%;
 
-    background-color: violet;
+    background-color: red;
 `
 export const Banner = styled.article`
     width: inherit;
     height: 500px;
 
-    background-color: #FF7A00;
+    background-color: gray;
+    /* background: url("../../assets/servicosgerais.jpg"); */
 
     display: flex;
     flex-direction: row;
