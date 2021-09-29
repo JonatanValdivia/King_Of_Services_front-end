@@ -1,16 +1,15 @@
+import Banner from "../../components/Banners";
 import Cards from "../../components/Cards";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
-import { Banner, Main } from "./style";
+import {Main } from "./style";
 
 function Home(){
     return(
         <>
             <Header/>
             <Main>
-                <Banner>
-                    <Modal/>
-                </Banner>
+                <Banner/>
                 <Cards/>
             </Main>
         </>

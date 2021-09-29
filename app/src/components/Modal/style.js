@@ -74,14 +74,14 @@ export const ContainerUl = styled.nav`
             justify-content: center;
             cursor: pointer;
 
-            :hover{
-                color: #FF7A00;
-            }
-
             >img{
                 width: 20px;
                 height: 20px;
                 float: left;
+            }
+
+            :hover{
+                color: #FF7A00;
             }
         }
     }

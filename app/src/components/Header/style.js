@@ -14,7 +14,7 @@ export const Container = styled.header`
 
     > img{
         width: 120px;
-        margin-left: 30px;
+        margin-left: 50px;
     }
     
 `;
@@ -23,7 +23,7 @@ export const Menu = styled.nav`
     width: 35%;
     height: 70px;
     /* margin: 0 auto; */
-    margin-left: 690px;
+    margin-left: 850px;
 
     >ul {
         width: 100%;
