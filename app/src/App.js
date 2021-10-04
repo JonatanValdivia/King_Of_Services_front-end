@@ -11,7 +11,7 @@ function App() {
       <GlobalStyleComponent/>
       {/* <Home/> */}
       {/* <Login /> */}
-      <Cadastro/>
+      <Router/>
       
     </>
   );
