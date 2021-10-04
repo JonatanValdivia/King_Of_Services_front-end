@@ -1,7 +1,8 @@
 import { Container, Menu, TextRegister } from "./style";
 import { Link, Redirect } from "react-router-dom";
 
-import imgLogo from "../../assets/Logo.png"
+import imgLogo from "../../assets/Logo.png";
+
 
 function Header(){
     return (

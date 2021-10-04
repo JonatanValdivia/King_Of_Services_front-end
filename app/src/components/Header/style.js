@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: 100vw;
-    height: 70px;
+    height: auto;
     position: fixed;
+    padding: 20px 0 10px 0;
     top: 0;
 
     background-color: var(--secundary);
@@ -16,39 +17,69 @@ export const Container = styled.header`
         width: 120px;
         margin-left: 50px;
     }
+
+    @media only screen and (max-width: 900px){
+        flex-direction: column;
+        margin: auto;
+        position: static;
+        
+        img{
+            display: none;
+        }
+    }
     
 `;
 
 export const Menu = styled.nav`
     width: 35%;
-    height: 70px;
+    height: auto;
+    margin: auto;
     /* margin: 0 auto; */
-    margin-left: 850px;
+    //margin-left: 850px;
 
-    >ul {
-        width: 100%;
-        height: inherit;
-
-        display: flex;
-        justify-content: center;    
-
-        >li{
-            width: 150px;
+        > ul {
+            width: 100%;
             height: inherit;
-            float: left;
-            list-style: none;
-            color: #FFFFFF;
 
             display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            justify-content: center;    
 
-            :hover{
-                color: #FF7A00;
+            >li{
+                width: 150px;
+                height: inherit;
+                float: left;
+                list-style: none;
+                color: #FFFFFF;
+                margin-bottom: 1rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                :hover{
+                    color: #FF7A00;
+                }
             }
         }
-    }
+
+        @media only screen and (max-width: 900px){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > ul {
+                flex-direction: column;
+                align-items: center;
+
+                > li{
+                    text-align: center;
+                    margin-top: 1rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
 `;
 
 export const TextRegister = styled.div`
@@ -68,4 +99,12 @@ export const TextRegister = styled.div`
     :hover{
         color: #FF7A00;
     }
+
+    @media only screen and (max-width: 900px){
+        border: 0px;
+        margin-right: 0px;
+        font-size: 1.5rem;
+        
+    }
+
 `
