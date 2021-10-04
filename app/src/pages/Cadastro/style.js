@@ -21,24 +21,11 @@ export const Container = styled.form`
     > h1 {
         text-align: center;
     }
-
-    #hr{
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-
-        >hr{
-            border-width: 0; 
-            height: 1px;
-            border-top-width: 1px;
-        }
-    }
 `;
 
 export const Tittle = styled.div`
     width: 400px;
     height: 50px;
-    background-color: violet;
 
     margin-left: auto;
     margin-right: auto;
@@ -56,10 +43,61 @@ export const Tittle = styled.div`
 
 export const Logo = styled.div`
     width: 70px;
-    height: 70px;
-    background-color: turquoise;
+    height: 90px;
 
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+
+    >img{
+        width: 70px;
+        height: 90px;
+    }
+`
+
+export const ContainerRegister = styled.div`
+    width: 450px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+    >p{
+        font-size: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        
+        display: flex;
+        justify-content: center;
+
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    
+`
+
+export const ContainerButton = styled.div`
+    width: 150px;
+    height: 40px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    >button{
+        width: inherit;
+        height: inherit;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+    }
 `

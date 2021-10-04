@@ -1,4 +1,7 @@
-import { Container, Logo, Overlay, Tittle } from "./style";
+import { Container, ContainerButton, ContainerRegister, Logo, Overlay, Tittle } from "./style";
+import imgLogo from "../../assets/Leão.png"
+import { Link } from "react-router-dom";
+
 
 function Cadastro(){
     return(
@@ -7,13 +10,28 @@ function Cadastro(){
             <Overlay>
                 
                 <Container>
-                    <Logo></Logo>
+                    <Logo>
+                        <img src={imgLogo}/>
+                    </Logo>
                     <Tittle>
                         <h1>King of Sevices</h1>
                     </Tittle>
-                    <div id="hr">
+                    
+                    <ContainerRegister>
+                        <p>Você é um prestador de serviços?</p>
+                        <ContainerButton>
+                            <button>Cadastrar-se</button>
+                        </ContainerButton>
+
+                        <p>Você quer contratar um prestador de serviços?</p>
+                        <ContainerButton>
+                            <button>Cadastrar-se</button>
+                        </ContainerButton>
+
                         <hr/>
-                    </div>
+                        <p>Você já é cadastrado? Entrar</p>
+
+                    </ContainerRegister>
                 </Container>
             </Overlay>
         </>
