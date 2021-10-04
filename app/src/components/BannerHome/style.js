@@ -12,16 +12,3 @@ export const BannerStyle = styled.article`
     align-items: center;
     
 `
-
-export const ContainerApp = styled.div`
-    width: inherit;
-    height: 570px;
-    background-color: #FF7A00;
-    margin-top: 70px;
-`
-
-export const App = styled.div`
-    width: 70%;
-    height: 500px;
-    background-color: lavender;
-`

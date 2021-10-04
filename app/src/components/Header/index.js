@@ -1,4 +1,5 @@
 import { Container, Menu, TextRegister } from "./style";
+import { Link, Redirect } from "react-router-dom";
 
 import imgLogo from "../../assets/Logo.png"
 
@@ -16,7 +17,9 @@ function Header(){
                 </ul>
                 
             </Menu>
-            <TextRegister>Cadastre-se</TextRegister>
+            <TextRegister>
+                Cadastre-se
+            </TextRegister>
         </Container>
     );
 }

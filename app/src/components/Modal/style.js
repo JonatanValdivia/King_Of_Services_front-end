@@ -12,7 +12,6 @@ export const Overlay = styled.div`
 export const Title = styled.div`
     width: 600px;
     height: 110px;
-    margin-top: -50px;
     padding: 20px;
 
     margin-left: auto;

@@ -1,7 +1,7 @@
-import Banner from "../../components/Banners";
+import BannerHome from "../../components/BannerHome";
+import Banner from "../../components/BannerApp";
 import Cards from "../../components/Cards";
 import Header from "../../components/Header";
-import Modal from "../../components/Modal";
 import {Main } from "./style";
 
 function Home(){
@@ -9,8 +9,9 @@ function Home(){
         <>
             <Header/>
             <Main>
-                <Banner/>
+                <BannerHome/>
                 <Cards/>
+                <Banner/>
             </Main>
         </>
     );

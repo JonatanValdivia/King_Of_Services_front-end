@@ -1,13 +1,17 @@
 import './App.css';
-import Header from './components/Header';
 import { GlobalStyleComponent } from './GlobalStyles';
+import Cadastro from './pages/Cadastro';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Router from './Router.js';
 
 function App() {
   return (
     <>
       <GlobalStyleComponent/>
-      <Home/>
+      {/* <Home/> */}
+      {/* <Login /> */}
+      <Cadastro/>
       
     </>
   );
