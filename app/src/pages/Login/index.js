@@ -1,30 +1,26 @@
-import Input from "../../components/Input";
-import { Container, FormContainer } from "./styles";
+import { ContainerButton, ContainerInputs, ContainerLogin, Logo, Overlay, Tittle } from "./style";
 import imgLogo from "../../assets/Leão.png"
 
 function Login(){
-
     return(
-        <Container>
-        <FormContainer>
-            <img src={imgLogo}/>
-            <h1>King of Services</h1>
-
-            <button id="facebook">Facebook</button>
-            <button id="Google">Google</button>
-            <hr/>
-           <input placeholder="Email" />
-           <input placeholder="Senha" />
-           <button>Entrar</button>
-           <hr/>
-
-            <p>Você já é cadastrado? Entrar</p>
-
-        </FormContainer>
-    </Container>
-
+        <Overlay>
+            <ContainerLogin>
+                <Logo>
+                    <img src={imgLogo}/>
+                </Logo>
+                <Tittle>
+                    <h1>King of Sevices</h1>
+                </Tittle>
+                <ContainerInputs>
+                    <input placeholder="Email"/>
+                    <input placeholder="Senha"/>
+                </ContainerInputs>
+                <ContainerButton>
+                    <button>Entrar</button>
+                </ContainerButton>
+            </ContainerLogin>
+        </Overlay>
     );
-
 }
 
 export default Login;

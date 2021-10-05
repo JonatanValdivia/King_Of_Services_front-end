@@ -90,7 +90,12 @@ export const FormContainer = styled.form`
     }
 
     >p{
+        font-size: 1em;
+        font-family: Arial, Helvetica, sans-serif;
         
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
     }
 
 `;
