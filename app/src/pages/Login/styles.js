@@ -6,16 +6,16 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: violet;
 `;
 
 export const FormContainer = styled.form`
-    width: 600px;
-    height: 500px;
+    width: 500px;
+    height: 700px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 50px;
 
     box-shadow: 0px 0px 20px #00000055;
 
@@ -31,5 +31,66 @@ export const FormContainer = styled.form`
         border: 0px;
         font-weight: bold;
         font-size: 1em;
+        border-radius: 40px;
+
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-bottom: 20px; */
+        margin-top: 10px;
     }
+
+    #facebook{
+        background-color: #2c6bd1;
+        margin-top: 30px;
+    }
+
+    #Google{
+        border: solid 1px black;
+        background-color: transparent;
+        margin-top: 10px;
+        color: black;
+    }
+
+    >hr{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    >input{
+        width: 400px;
+        height: 50px;
+
+        border: none;
+        border-radius: 40px;
+        box-shadow: 0px 0px 5px 0px;
+
+        margin-top: 10px;
+        padding-left: 30px;
+
+        font-family: sans-serif;
+        font-size: 15px;
+    }
+
+    >img{
+        width: 50px;
+        height: 70px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    >h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2em;
+        color: var(--primary);
+
+        display: flex;
+        justify-content: center;
+        
+        margin-top: -10px;
+    }
+
+    >p{
+        
+    }
+
 `;

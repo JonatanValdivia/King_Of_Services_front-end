@@ -12,6 +12,7 @@ function App() {
       {/* <Home/> */}
       {/* <Login /> */}
       <Router/>
+      {/* <Cadastro/> */}
       
     </>
   );
