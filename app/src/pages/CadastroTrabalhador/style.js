@@ -51,7 +51,7 @@ export const ContainerButton = styled.div`
 
 export const Inputs = styled.div`
     width: 500px;
-    height: 650px;
+    height: auto;
     background-color: lavender;
     margin-right: auto;
     margin-left: auto;
@@ -72,6 +72,7 @@ export const Inputs = styled.div`
         border: solid 1px var(--primary);
         
         padding: 10px;
+        margin-bottom: 30px;
         font-family: sans-serif;
     }
 `

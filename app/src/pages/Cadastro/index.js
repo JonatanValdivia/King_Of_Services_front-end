@@ -20,7 +20,11 @@ function Cadastro(){
                     <ContainerRegister>
                         <p>Você é um prestador de serviços?</p>
                         <ContainerButton>
-                            <button>Cadastrar-se</button>
+                            <button>
+                                <a href="cadastrotrabalhador">
+                                    Cadastrar-se
+                                </a>
+                            </button>   
                         </ContainerButton>
 
                         <p>Você quer contratar um prestador de serviços?</p>
