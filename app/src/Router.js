@@ -9,7 +9,7 @@ function Router(){
         return(
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/cadastrotrabalhador">
+                    <Route exact path="/">
                         <CadastroTrabalhador/>
                     </Route>
                     <Route exact path="/login">

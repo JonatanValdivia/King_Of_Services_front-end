@@ -1,6 +1,6 @@
 import BannerCadastro from "../../components/BannerCadastro";
 import Header from "../../components/Header";
-import { ArticleCadastro, ContainerButton, ImgProfileStyle, Inputs } from "./style";
+import { Acao, ArticleCadastro, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
 import ImgProfile from "../../assets/Profile.png";
 
 function CadastroTrabalhador(){
@@ -50,6 +50,7 @@ function CadastroTrabalhador(){
                     <input placeholder="Complemento (opcional)"/>
                     
                     <input placeholder="Senha"/>
+                    <p>Descrição</p>
                     <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)"></textarea>
                     <input placeholder="Telefone"/>
                     <input placeholder="dataNascimento"/>
@@ -57,6 +58,28 @@ function CadastroTrabalhador(){
                     {/* <input placeholder="Preço por serviço"/> */}
                     <input placeholder="Número de telefone"/>
                 </Inputs>
+                <ContainerHabilidades>
+                    <p>Habilidades</p>
+                    <input placeholder="Habilidade"/>
+                    <input placeholder="Experiência" id="experience"/>
+                    <button>Salvar</button>
+
+                    <Crud>
+                        <ul>
+                            <li>Habilidade</li>
+                            <Separador/>
+                            <li>Experiência</li>
+                            <Separador/>
+                            <li>Ação</li>
+                        </ul>
+                        <CrudInformation>
+                            <Habilidades/>
+                            <Separador id="habilidades"/>
+                            <Habilidades/>
+                            <Separador id="habilidades"/>
+                        </CrudInformation>
+                    </Crud>
+                </ContainerHabilidades>
             </ArticleCadastro>
         </>
     );
