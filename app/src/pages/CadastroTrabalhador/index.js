@@ -1,7 +1,9 @@
 import BannerCadastro from "../../components/BannerCadastro";
 import Header from "../../components/Header";
-import { Acao, ArticleCadastro, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
+import { ArticleCadastro, ContainerAction, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
 import ImgProfile from "../../assets/Profile.png";
+import Footer from "../../components/Rodape";
+// import { BsTrashFill } from "react-icons";
 
 function CadastroTrabalhador(){
 
@@ -67,20 +69,27 @@ function CadastroTrabalhador(){
                     <Crud>
                         <ul>
                             <li>Habilidade</li>
-                            <Separador/>
                             <li>Experiência</li>
-                            <Separador/>
                             <li>Ação</li>
                         </ul>
                         <CrudInformation>
-                            <Habilidades/>
+                            <Habilidades>
+                                <button>PHP</button>
+                            </Habilidades>
                             <Separador id="habilidades"/>
-                            <Habilidades/>
+                            <Habilidades>
+                                <p>1 Ano</p>
+                            </Habilidades>
                             <Separador id="habilidades"/>
+                            <ContainerAction>
+                                {/* <BsTrashFill/> */}
+                            </ContainerAction>
                         </CrudInformation>
                     </Crud>
                 </ContainerHabilidades>
+                <Footer/>
             </ArticleCadastro>
+            
         </>
     );
 }

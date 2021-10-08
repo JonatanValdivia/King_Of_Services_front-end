@@ -79,8 +79,8 @@ export const Inputs = styled.div`
 
 export const ContainerHabilidades = styled.div`
     width: 700px;
-    height: 400px;
-    background-color: darkgreen;
+    height: 350px;
+
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
@@ -88,6 +88,8 @@ export const ContainerHabilidades = styled.div`
     >p{
         font-weight: bold;
         font-family: sans-serif;
+
+        margin-bottom: 10px;
     }
 
     >input{
@@ -125,13 +127,15 @@ export const ContainerHabilidades = styled.div`
 
 export const Crud = styled.div`
     width: 640px;
-    height: 200px;
-    background-color: darkkhaki;
+    height: 150px;
+
+    box-shadow: 0px 0px 5px 0px #adadad;
     
     >ul{
         width: 100%;
         height: 35px;
-        background-color: darkmagenta;
+
+        margin-bottom: 10px;
 
         display: flex;
         align-items: center;
@@ -139,18 +143,18 @@ export const Crud = styled.div`
 
         >li{
             width: 150px;
-                height: inherit;
-                float: left;
-                list-style: none;
-                color: #FFFFFF;
-                margin-left: auto;
-                margin-right: auto;
+            height: inherit;
 
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            float: left;
+            list-style: none;
+            color: black;
 
-                background-color: darkorange;
+            margin-left: auto;
+            margin-right: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 `
@@ -164,17 +168,44 @@ export const CrudInformation = styled.div`
         float: left;
         margin-left: 30px;
         margin-top: 20px;
-        height: 70px;
+        height: 50px;
+
+        margin-top: 10px;
     }
 `
 
 export const Habilidades = styled.div`
     width: 150px;
-    height: 100px;
-    background-color: antiquewhite;
+    height: 70px;
     float: left;
 
     margin-left: 30px;
+
+    
+    display: flex;
+        align-items: center;
+        justify-content: center;
+
+    >button{
+        width: 70px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+    }
+
+    >p{
+        font-weight: bold;
+
+    }
 `
 
 export const Separador = styled.div`
@@ -183,4 +214,10 @@ export const Separador = styled.div`
     background-color: gray;
 `
 
-ex
+export const ContainerAction = styled.div`
+    width: 70px;
+    height: 70px;
+    float: left;
+
+    margin-left: 50px;
+`
