@@ -57,7 +57,7 @@ export const Inputs = styled.div`
     margin-left: auto;
     padding: 50px;
 
-    >input{
+    > form > input{
         width: 400px;
         height: 50px;
         border: solid 1px var(--primary);
@@ -66,7 +66,7 @@ export const Inputs = styled.div`
         padding-left: 20px;
     }
 
-    >textarea{
+    > form > textarea{
         width: 400px;
         height: 150px;
         border: solid 1px var(--primary);
