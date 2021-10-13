@@ -1,6 +1,10 @@
 import { Container } from "./style";
+import api from '../../services/api';
+import {useEffect, useState} from 'react';
 
 function Input(){
+    const [prestadores, setPrestadores] = useState([])
+    const [loading, setLoading] = useState(true)
     const getAllProviders = async() =>{
         fetch('http://kingofservices.com.br/Prestadores')
         .then((response) => response.json())
@@ -9,18 +13,12 @@ function Input(){
             //setData(responseJson.records)
         ));
       };
-      //getCLient();
 
       const getAllProvidersOfSearch = async(profession) =>{
-        fetch(`http://kingofservices.com.br/PesquisarPrestador/${profession}`)
-        .then((response) => response.json())
-        .then((responseJson) => (
-            console.log(responseJson)
-            //setData(responseJson.records)
-        ));
+        api.get(`http://kingofservices.com.br/PesquisarPrestador/${profession}`).then(({data}) =>{
+            console.log(data)
+        });
       };
-
-      getAllProvidersOfSearch('pintor')
 
       const search = async () =>{
           const input = document.getElementById('search').value

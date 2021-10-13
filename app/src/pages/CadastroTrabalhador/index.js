@@ -5,6 +5,7 @@ import ImgProfile from "../../assets/Profile.png";
 import Footer from "../../components/Rodape";
 // import { BsTrashFill } from "react-icons";
 import api from '../../services/api';
+import apiCep from '../../services/apiCep';
 import {useEffect, useState} from 'react';
 
 function CadastroTrabalhador(){
@@ -95,14 +96,28 @@ function CadastroTrabalhador(){
     const idProfissao = 12;
     const foto = 0;
 
-    const handleSubmit = (event) =>{
-        const ordem = [
-            api.post("http://kingofservices.com.br/Enderecos", {uf, cidade, bairro, rua, numero, complemento, cep}),
-            api.post("http://kingofservices.com.br/Profissoes", {nomeProfissao}),
-            api.post("http://kingofservices.com.br/Prestadores", {idSexo, idProfissao, nome, email, senha, telefone, dataNascimento, foto})
-        ]
+    const handleSubmit = () =>{
+        api.post("http://kingofservices.com.br/Enderecos", {uf, cidade, bairro, rua, numero, complemento, cep});
+        api.post("http://kingofservices.com.br/Profissoes", {nomeProfissao});
+        setTimeout(
+            function() {
+                api.post("http://kingofservices.com.br/Prestadores", {idSexo, idProfissao, nome, email, senha, telefone, dataNascimento, foto})
+            }
+            .bind(this),
+            3000
+        );
+        
 
-        console.log(ordem);
+    }
+
+    const buscarCep = cep =>{
+        apiCep.get(`${cep}/json/`).then(({data}) => {
+            console.log(data);
+            setUf(data.uf);
+            setCidade(data.localidade);
+            setBairro(data.bairro);
+            setRua(data.logradouro);
+        });
     }
 
     return(
@@ -117,7 +132,7 @@ function CadastroTrabalhador(){
                     <button>Editar Foto</button>
                 </ContainerButton>
                 <Inputs>
-                    <form onSubmit={handleSubmit}>
+                    <form /*onSubmit={handleSubmit}*/>
                 {/* {
                     "idSexo": "1",
                     "idEndereco": {
@@ -141,7 +156,7 @@ function CadastroTrabalhador(){
                         <input placeholder="Nome completo" value={nome} onChange={nomeHandler}/>
                         <input placeholder="Profissão" value={nomeProfissao} onChange={nomeProfissaoHandler}/>
                         <p>Endereço</p>
-                        <input placeholder="cep" value={cep} onChange={cepHandler}/>
+                        <input placeholder="cep" value={cep} onChange={cepHandler} onBlur={() => {buscarCep(cep)}}/>
                         <input placeholder="Uf" value={uf} onChange={ufHandler}/>
                         <input placeholder="Cidade" value={cidade} onChange={cidadeHandler}/>
                         <input placeholder="Bairro" value={bairro} onChange={bairroHandler}/>
@@ -161,8 +176,7 @@ function CadastroTrabalhador(){
                     <p>Habilidades</p>
                     <input placeholder="Habilidade"/>
                     <input placeholder="Experiência" id="experience"/>
-                    <button type="submit" onClick={handleSubmit}>Salvar</button>
-
+                    <button /*type="submit"*/ onClick={() => handleSubmit()}>Salvar</button>
                     <Crud>
                         <ul>
                             <li>Habilidade</li>
@@ -186,7 +200,6 @@ function CadastroTrabalhador(){
                 </ContainerHabilidades>
                 <Footer/>
             </ArticleCadastro>
-            
         </>
     );
     }
