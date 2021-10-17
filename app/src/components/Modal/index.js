@@ -4,14 +4,10 @@ import imgLocal from "../../assets/local.png"
 import Input from "../Input";
 
 
-function Modal(props){
+function Modal(){
     return(
         <Overlay>
-            <Title>
-                <h1>Seja um lider no seu serviço!</h1>
-                <p>Encontre os melhores prestadores de serviços próximo a você.</p>
-            </Title>
-            <ModalContainer props>
+            <ModalContainer>
                 <ContainerUl>
                     
                     <ul>

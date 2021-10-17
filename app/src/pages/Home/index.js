@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 function Home(){
     const [prestadores, setPrestadores] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         api.get(`Prestadores`).then(({data}) => {
             setPrestadores(data)

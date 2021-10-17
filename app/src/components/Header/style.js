@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: 100vw;
-    height: auto;
+    height: 75px;
     position: fixed;
-    padding: 20px 0 10px 0;
+    padding: 0px 0 10px 0;
     top: 0;
 
     background-color: var(--secundary);
@@ -31,18 +31,13 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.nav`
-    width: 35%;
+    width: 40%;
     height: auto;
-    margin: auto;
-    /* margin: 0 auto; */
-    //margin-left: 850px;
+    margin-left: auto;
 
         > ul {
             width: 100%;
             height: inherit;
-
-            display: flex;
-            justify-content: center;    
 
             >li{
                 width: 150px;
@@ -56,6 +51,7 @@ export const Menu = styled.nav`
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                margin-top: 20px;
 
                 :hover{
                     color: #FF7A00;

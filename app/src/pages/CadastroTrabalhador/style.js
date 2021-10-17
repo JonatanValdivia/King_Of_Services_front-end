@@ -52,7 +52,6 @@ export const ContainerButton = styled.div`
 export const Inputs = styled.div`
     width: 500px;
     height: auto;
-    background-color: lavender;
     margin-right: auto;
     margin-left: auto;
     padding: 50px;

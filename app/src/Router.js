@@ -4,12 +4,16 @@ import Home from "./pages/Home";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import CadastroCliente from "./pages/CadastroCliente";
+import Listagem from "./pages/Listagem dos profissionais";
 
 function Router(){
         return(
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
+                        <Listagem/>
+                    </Route>
+                    <Route exact path="/CadastroTrabalhador">
                         <CadastroTrabalhador/>
                     </Route>
                     <Route exact path="/login">

@@ -6,7 +6,6 @@ export const Overlay = styled.div`
 
     margin-left: auto;
     margin-right: auto;
-
 `;
 
 export const Title = styled.div`
@@ -84,4 +83,4 @@ export const ContainerUl = styled.nav`
             }
         }
     }
-`
+` 
