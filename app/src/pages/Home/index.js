@@ -2,7 +2,7 @@ import BannerHome from "../../components/BannerHome";
 import Banner from "../../components/BannerApp";
 import Cards from "../../components/Cards";
 import Header from "../../components/Header";
-import { Main, Loading } from "./style";
+import { Main, Loading, Title } from "./style";
 import Footer from "../../components/Rodape";
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
@@ -46,7 +46,10 @@ function Home(){
         <>
             <Header/>
             <Main>
-                <BannerHome/>
+                
+                <BannerHome>
+                    
+                </BannerHome>
                 <Cards/>
                 <Banner/>
             </Main>

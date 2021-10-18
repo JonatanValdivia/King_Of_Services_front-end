@@ -8,37 +8,38 @@ export const BannerStyle = styled.article`
     background-size: cover;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    
+    padding: 100px;
 `
 
-// export const Title = styled.div`
-//     width: 600px;
-//     height: 110px;
-//     padding: 20px;
+export const Title = styled.div`
+    width: 600px;
+    height: 110px;
+    padding: 20px;
 
-//     margin-left: auto;
-//     margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 
-//     >h1{
-//         font-family: sans-serif;
-//         font-size: 2em;
-//         color: #FFFFFF;
 
-//         display: flex;
-//         justify-content: center;
-//     }
+    >h1{
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #FFFFFF;
 
-//     >p{
-//         font-family: sans-serif;
-//         font-size: 1.1em;
-//         color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+    }
 
-//         margin-top: 10px;
+    >p{
+        font-family: sans-serif;
+        font-size: 1.1em;
+        color: #FFFFFF;
 
-//         display: flex;
-//         justify-content: center;
-//     }
+        margin-top: 10px;
 
-// ` 
+        display: flex;
+        justify-content: center;
+    }
+
+` 

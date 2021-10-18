@@ -11,7 +11,7 @@ export const CardList = styled.div`
 
     border-radius: 20px;
 
-    box-shadow: 0px 0px 5px 0px #e6e6e6;
+    box-shadow: 0px 0px 10px 5px #e6e6e6;
 
     >p{
         margin-left: 190px;
