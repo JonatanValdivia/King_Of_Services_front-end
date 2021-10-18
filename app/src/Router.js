@@ -11,7 +11,7 @@ function Router(){
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
-                        <Listagem/>
+                        <Home/>
                     </Route>
                     <Route exact path="/CadastroTrabalhador">
                         <CadastroTrabalhador/>
@@ -25,8 +25,8 @@ function Router(){
                     <Route exact path="/cadastro">
                         <Cadastro/>
                     </Route>
-                    <Route exact path="/home">
-                        <Home/>
+                    <Route exact path="/listagem">
+                        <Listagem/>
                     </Route>
                 </Switch>
             </BrowserRouter>

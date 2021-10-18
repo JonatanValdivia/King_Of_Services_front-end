@@ -1,8 +1,11 @@
 import { Container } from "./style";
 import api from '../../services/api';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import Listagem from '../../pages/Listagem dos profissionais';
+import { Link } from 'react-router-dom';
 
 function Input(){
+
     const [prestadores, setPrestadores] = useState([])
     const [loading, setLoading] = useState(true)
     const getAllProviders = async() =>{
@@ -15,9 +18,18 @@ function Input(){
       };
 
       const getAllProvidersOfSearch = async(profession) =>{
+        
         api.get(`http://kingofservices.com.br/PesquisarPrestador/${profession}`).then(({data}) =>{
-            console.log(data)
+            setPrestadores(data)
+            //console.log(prestadores.map(element => element))
         });
+        
+
+        return(
+            <>
+                {Listagem(prestadores)}
+            </>
+        )
       };
 
       const search = async () =>{
@@ -28,7 +40,11 @@ function Input(){
     return(
         <Container>
             <input placeholder="Informe o que precisa..." id="search"/>
-            <button onClick={search}>Buscar</button>
+            
+                <button onClick={search}>
+                    Buscar
+                </button>
+           
         </Container>
     );
 }

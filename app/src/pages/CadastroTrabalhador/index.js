@@ -9,18 +9,7 @@ import apiCep from '../../services/apiCep';
 import {useEffect, useState} from 'react';
 
 function CadastroTrabalhador(){
-    /*{
-	"idSexo": "1",
-	"idEndereco": "10",
-	"idProfissao": "4",
-	"nome": "Gilberto Henrique Bosques",
-	"email": "gilbertoHenriqueBosques@outlook.com",
-	"senha": "123",
-	"descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim veniam, quis nostrud exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse \ncillum",
-	"telefone": "(11)99999-5555",
-	"dataNascimento": "1974-05-24",
-	"foto": ""
-} */
+
     const [nomeProfissao, setnomeProfissao] = useState("");
     const [uf, setUf] = useState("");
     const [cidade, setCidade] = useState("");
@@ -133,26 +122,6 @@ function CadastroTrabalhador(){
                 </ContainerButton>
                 <Inputs>
                     <form /*onSubmit={handleSubmit}*/>
-                {/* {
-                    "idSexo": "1",
-                    "idEndereco": {
-                        "uf":"SP",
-                        "cidade":"Cidade3",
-                        "bairro":"Bairro3",
-                        "rua":"Rua3",
-                        "numero":"133",
-                        "complemento":"33",
-                        "cep":"53333-222"
-                    },
-                    "idProfissao": "4",
-                    "nome": "Gilberto Henrique Bosques",
-                    "email": "gilbertoHenriqueBosques@outlook.com",
-                    "senha": "123",
-                    "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim veniam, quis nostrud exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse \ncillum",
-                    "telefone": "(11)99999-5555",
-                    "dataNascimento": "1974-05-24",
-                    "foto": ""
-                } */}
                         <input placeholder="Nome completo" value={nome} onChange={nomeHandler}/>
                         <input placeholder="Profissão" value={nomeProfissao} onChange={nomeProfissaoHandler}/>
                         <p>Endereço</p>

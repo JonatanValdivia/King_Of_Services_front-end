@@ -1,10 +1,12 @@
-import CardWorker from "../../components/Card List Worker";
+import CardWorker from "../../components/Card List";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
 import Footer from "../../components/Rodape";
 import { BannerStyle, Overlay } from "./style";
+import {useEffect, useState} from 'react';
 
-function Listagem(){
+function Listagem(prestadores){
+    console.log(prestadores);
     return(
         <>
             <Header/>
@@ -12,15 +14,12 @@ function Listagem(){
                 <Modal/>
             </BannerStyle>
             <Overlay>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
-                <CardWorker/>
+            {/* {prestadores.map(element => {
+                return(
+                    <p>Nomes: {element.nome}</p>
+                );
+            })} */}
+                 
             </Overlay>
             <Footer/>
         </>
