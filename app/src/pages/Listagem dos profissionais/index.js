@@ -13,11 +13,10 @@ function Listagem(props){
     useEffect(() => {
         
         const formatacao = profissao.replace(':', '');
-        // console.log(formatacao.lenght)
-		api.get(`http://kingofservices.com.br/PesquisarPrestador/${formatacao}`).then(({data}) =>{
-        setPrestadores(data)    
-        // console.log(data);
-        //console.log(prestadores.map(element => element))
+		api.get(`http://kingofservices.com.br/PesquisarPrestador/${formatacao}`).
+        then(({data}) =>{
+            setPrestadores(data)    
+            console.log(data);
         });
 	}, [profissao])
     return(
@@ -32,7 +31,6 @@ function Listagem(props){
                     <CardWorker props={element}/>
                 );
             })}
-                
             </Overlay>
             <Footer/>
         </>
