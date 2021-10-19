@@ -1,13 +1,14 @@
 import { Container } from "./style";
-import api from '../../services/api';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useParams } from 'react';
 import Listagem from '../../pages/Listagem dos profissionais';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Input(){
 
     const [prestadores, setPrestadores] = useState([])
     const [loading, setLoading] = useState(true)
+    let history = useHistory();
+
     const getAllProviders = async() =>{
         fetch('http://kingofservices.com.br/Prestadores')
         .then((response) => response.json())
@@ -23,6 +24,7 @@ function Input(){
         //     setPrestadores(data)
             //console.log(prestadores.map(element => element))
         //});
+        history.push(`/Listagem/:${profession}`);
       };
 
       const search = async () =>{
@@ -37,7 +39,6 @@ function Input(){
                 <button onClick={search}>
                     Buscar
                 </button>
-            {/* <Listagem prestadores={prestadores} /> */}
         </Container>
     );
 }

@@ -13,6 +13,7 @@ function Router(){
                     <Route exact path="/">
                         <Home/>
                     </Route>
+                    <Route path="/Listagem/:profissao" component={Listagem} />
                     <Route exact path="/CadastroTrabalhador">
                         <CadastroTrabalhador/>
                     </Route>
