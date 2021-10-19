@@ -82,21 +82,13 @@ function CadastroTrabalhador(){
     }
 
     const idSexo = 2;
-    const idProfissao = 12;
     const foto = 0;
+    const idProfissao = 2;
 
     const handleSubmit = () =>{
-        api.post("http://kingofservices.com.br/Enderecos", {uf, cidade, bairro, rua, numero, complemento, cep});
-        api.post("http://kingofservices.com.br/Profissoes", {nomeProfissao});
-        setTimeout(
-            function() {
-                api.post("http://kingofservices.com.br/Prestadores", {idSexo, idProfissao, nome, email, senha, telefone, dataNascimento, foto})
-            }
-            .bind(this),
-            3000
-        );
-        
-
+        api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+        // api.post("http://kingofservices.com.br/EnderecosPrestadores", {idPrestador, uf, cidade, bairro, rua, numero, complemento, cep});
+        // api.post("http://kingofservices.com.br/Profissoes", {idPrestador, nomeProfissao});
     }
 
     const buscarCep = cep =>{
@@ -171,6 +163,6 @@ function CadastroTrabalhador(){
             </ArticleCadastro>
         </>
     );
-    }
+}
 
 export default CadastroTrabalhador;

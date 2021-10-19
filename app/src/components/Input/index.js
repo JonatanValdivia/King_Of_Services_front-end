@@ -19,17 +19,10 @@ function Input(){
 
       const getAllProvidersOfSearch = async(profession) =>{
         
-        api.get(`http://kingofservices.com.br/PesquisarPrestador/${profession}`).then(({data}) =>{
-            setPrestadores(data)
+        // api.get(`http://kingofservices.com.br/PesquisarPrestador/${profession}`).then(({data}) =>{
+        //     setPrestadores(data)
             //console.log(prestadores.map(element => element))
-        });
-        
-
-        return(
-            <>
-                {Listagem(prestadores)}
-            </>
-        )
+        //});
       };
 
       const search = async () =>{
@@ -44,7 +37,7 @@ function Input(){
                 <button onClick={search}>
                     Buscar
                 </button>
-           
+            {/* <Listagem prestadores={prestadores} /> */}
         </Container>
     );
 }
