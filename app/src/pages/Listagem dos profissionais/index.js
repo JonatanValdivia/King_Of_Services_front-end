@@ -5,8 +5,8 @@ import Footer from "../../components/Rodape";
 import { BannerStyle, Overlay } from "./style";
 import {useEffect, useState} from 'react';
 
-function Listagem(prestadores){
-    console.log(prestadores);
+function Listagem(props){
+    console.log(props);
     return(
         <>
             <Header/>
@@ -14,7 +14,7 @@ function Listagem(prestadores){
                 <Modal/>
             </BannerStyle>
             <Overlay>
-            {/* {prestadores.map(element => {
+            {/* {props.prestadores.map(element => {
                 return(
                     <p>Nomes: {element.nome}</p>
                 );
