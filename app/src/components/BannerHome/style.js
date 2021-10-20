@@ -11,6 +11,11 @@ export const BannerStyle = styled.article`
     flex-direction: column;
     align-items: center;
     padding: 100px;
+
+    @media only screen and (max-width: 400px){
+        width: 100%;
+        padding: 0px;
+    }
 `
 
 export const Title = styled.div`
@@ -40,6 +45,10 @@ export const Title = styled.div`
 
         display: flex;
         justify-content: center;
+    }
+
+    @media only screen and (max-width: 400px){
+        
     }
 
 ` 

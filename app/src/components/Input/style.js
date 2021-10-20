@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 700px;
     height: 50px;
-
     margin-top: 40px;
     margin-left: 20px;
 
@@ -38,6 +37,24 @@ export const Container = styled.div`
 
         :hover{
             box-shadow: 0px 0px 5px 0px #757575;
+        }
+    }
+
+    @media only screen and (max-width: 400px){
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+        margin-left: 0;
+
+        >input{
+            width: 100%;
+            height: 50px;
+        }
+
+        >button{
+            margin-top: 1rem;
+            width: 60%;
+            height: 40px;
         }
     }
 `

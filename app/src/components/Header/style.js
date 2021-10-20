@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: 100vw;
-    height: 75px;
+    height: auto;
     position: fixed;
     padding: 0px 0 10px 0;
     top: 0;
@@ -60,6 +60,7 @@ export const Menu = styled.nav`
         }
 
         @media only screen and (max-width: 900px){
+            margin-left: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
