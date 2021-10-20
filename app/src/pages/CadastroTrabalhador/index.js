@@ -5,11 +5,13 @@ import ImgProfile from "../../assets/Profile.png";
 import Footer from "../../components/Rodape";
 // import { BsTrashFill } from "react-icons";
 import api from '../../services/api';
+import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
 import {useEffect, useState} from 'react';
 
 function CadastroTrabalhador(){
 
+    const [foto, setFoto] = useState(""); 
     const [nomeProfissao, setnomeProfissao] = useState("");
     const [uf, setUf] = useState("");
     const [cidade, setCidade] = useState("");
@@ -81,8 +83,11 @@ function CadastroTrabalhador(){
         setnomeProfissao(event.target.value)
     }
 
+    const fotoHandler = (event) =>{
+        setFoto(event.target.value)
+    }
+
     const idSexo = 2;
-    const foto = 0;
     const idProfissao = 2;
 
     const handleSubmit = () =>{
@@ -110,7 +115,8 @@ function CadastroTrabalhador(){
                     <img src={ImgProfile}/>
                 </ImgProfileStyle>
                 <ContainerButton>
-                    <button>Editar Foto</button>
+                    <label for='foto'>Selecionar um arquivo &#187;</label>
+                    <input type="file" value={foto} id="foto" accept="image/*" onChange={fotoHandler}/>
                 </ContainerButton>
                 <Inputs>
                     <form /*onSubmit={handleSubmit}*/>
@@ -128,7 +134,7 @@ function CadastroTrabalhador(){
                         <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
-                        <input placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
+                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} pattern="\(?\d{2}\)?9?\d{4}-?\d{4}"/>
                         <input placeholder="dataNascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
                         {/* <input placeholder="Preço por serviço"/> */}
                     </form>

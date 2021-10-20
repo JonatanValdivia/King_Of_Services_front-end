@@ -8,6 +8,10 @@ export const BannerCadastroStyle = styled.div`
     background-size: cover;
     padding: 150px;
 
+    @media(max-width: 1300px){
+        background: #000000;
+    }
+
 `
 
 export const Overlay = styled.div`

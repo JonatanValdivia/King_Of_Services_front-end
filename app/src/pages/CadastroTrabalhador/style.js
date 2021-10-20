@@ -1,10 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ArticleCadastro = styled.article`
     width: 1000px;
     height: auto;
     border: solid 1px #b1b5b2;
-
     margin-right: auto;
     margin-left: auto;
 `
@@ -24,11 +23,10 @@ export const ImgProfileStyle = styled.div`
 `
 
 export const ContainerButton = styled.div`
-    width: 150px;
+    width: auto;
     height: 40px;
-
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
     margin-top: 30px;
     margin-bottom: 35px;
 
@@ -45,6 +43,24 @@ export const ContainerButton = styled.div`
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
 
+        border-radius: 20px;
+    }
+
+    >input[type='file'] {
+        display: none
+    }
+
+    > label{
+        width: auto;
+        height: inherit;
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;
     }
 `
