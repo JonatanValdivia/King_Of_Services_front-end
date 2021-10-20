@@ -89,7 +89,8 @@ export const Loading = styled.div`
 `
 
 export const Main = styled.main`
-    height: 2000px;
+    width: auto;
+    height: auto;
     margin-top: 70px;
 
     @media only screen and (max-width: 400px){

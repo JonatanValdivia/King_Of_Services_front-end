@@ -12,6 +12,8 @@ export const BannerStyle = styled.article`
     align-items: center;
     padding: 100px;
 
+    margin-top: -10px;
+
     @media only screen and (max-width: 400px){
         width: 100%;
         padding: 0px;

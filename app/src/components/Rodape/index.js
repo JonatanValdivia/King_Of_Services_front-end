@@ -1,8 +1,17 @@
-import { FooterStyle } from "./style";
+import { FooterStyle, LogoStyle } from "./style";
 
 function Footer(){
     return(
-        <FooterStyle/>
+        <>
+        <FooterStyle>
+            <LogoStyle>
+                
+                    {/* <h1> King Of Services</h1>  */}
+                    <p>Almost before</p>
+                
+            </LogoStyle>
+        </FooterStyle>
+        </>
     );
 }
 

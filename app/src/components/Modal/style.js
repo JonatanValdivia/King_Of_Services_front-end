@@ -45,7 +45,7 @@ export const Title = styled.div`
 
 export const ModalContainer = styled.section`
     width: inherit;
-    height: auto;
+    height: 22vh;
     padding: 20px;
     background-color: #FFFFFF;
     /* box-shadow: 0px 0px 10px black; */

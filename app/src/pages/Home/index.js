@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import { Main, Loading, Title } from "./style";
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
+import Footer from "../../components/Rodape";
 
 function Home(){
     const [prestadores, setPrestadores] = useState([])
@@ -50,6 +51,7 @@ function Home(){
                 </BannerHome>
                 <Cards/>
                 <Banner/>
+                <Footer/>
             </Main>
             
         </>

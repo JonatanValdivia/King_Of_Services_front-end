@@ -19,6 +19,5 @@ export const GlobalStyleComponent = createGlobalStyle`
     body{
         font-family: sans-serif;
         color: var(---textPrimary);
-        
     }
 `

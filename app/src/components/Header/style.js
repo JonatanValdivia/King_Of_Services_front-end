@@ -7,6 +7,8 @@ export const Container = styled.header`
     padding: 0px 0 10px 0;
     top: 0;
 
+    z-index: 99999;
+
     background-color: var(--secundary);
 
     display: flex;
