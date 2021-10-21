@@ -56,7 +56,7 @@ export const FormContainer = styled.form`
         margin-bottom: 10px;
     }
 
-    >input{
+    >form>input{
         width: 400px;
         height: 50px;
 
@@ -69,6 +69,21 @@ export const FormContainer = styled.form`
 
         font-family: sans-serif;
         font-size: 15px;
+    }
+
+    >form input:first-child {
+        margin-bottom: 2rem;
+    }
+
+    >form>div:not(:first-child label){
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+    }
+
+    >form>div>input[type='radio'] {
+        margin-left: 1rem;
     }
 
     >img{

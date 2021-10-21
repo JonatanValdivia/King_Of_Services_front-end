@@ -98,7 +98,6 @@ function CadastroTrabalhador(){
 
     const buscarCep = cep =>{
         apiCep.get(`${cep}/json/`).then(({data}) => {
-            console.log(data);
             setUf(data.uf);
             setCidade(data.localidade);
             setBairro(data.bairro);
@@ -134,7 +133,7 @@ function CadastroTrabalhador(){
                         <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
-                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} pattern="\(?\d{2}\)?9?\d{4}-?\d{4}"/>
+                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
                         <input placeholder="dataNascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
                         {/* <input placeholder="Preço por serviço"/> */}
                     </form>
