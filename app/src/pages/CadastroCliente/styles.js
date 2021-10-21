@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const FormContainer = styled.form`
     width: 500px;
-    height: 700px;
+    height: auto;
     padding: 30px;
     display: flex;
     flex-direction: column;
