@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-    width: 100vw;
+    width: 100%;
     height: auto;
     position: fixed;
     padding: 0px 0 10px 0;
@@ -67,12 +67,11 @@ export const Menu = styled.nav`
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            
 
             > ul {
-                flex-direction: column;
-                align-items: center;
-
                 > li{
+                    width: 100%;
                     text-align: center;
                     margin-top: 1rem;
                     font-size: 1.5rem;

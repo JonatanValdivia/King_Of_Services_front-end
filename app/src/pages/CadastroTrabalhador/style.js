@@ -6,6 +6,12 @@ export const ArticleCadastro = styled.article`
     border: solid 1px #b1b5b2;
     margin-right: auto;
     margin-left: auto;
+
+    @media(max-width: 1100px){
+        width: auto;
+        background-color: violet;
+        
+    }
 `
 
 export const ImgProfileStyle = styled.div`
@@ -115,14 +121,14 @@ export const ContainerHabilidades = styled.div`
     margin-right: auto;
     padding: 30px;
 
-    >p{
+    >div>p{
         font-weight: bold;
         font-family: sans-serif;
 
         margin-bottom: 10px;
     }
 
-    >input{
+    >div>input{
         width: 250px;
         height: 50px;
         border: solid 1px var(--primary);
@@ -136,7 +142,7 @@ export const ContainerHabilidades = styled.div`
         margin-left: 30px;
     }
 
-    >button{
+    >div>button{
         width: 120px;
         height: 40px;
 
@@ -151,6 +157,14 @@ export const ContainerHabilidades = styled.div`
 
         border-radius: 20px;
         margin-left: 50px;
+    }
+
+    @media(max-width: 1100px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        background-color: orange;
     }
 
 `
@@ -185,6 +199,11 @@ export const Crud = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        @media(max-width: 1100px){
+            width: auto;
+            
         }
     }
 `

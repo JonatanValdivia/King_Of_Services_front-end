@@ -2,14 +2,15 @@ import styled from "styled-components";
 import ImgBanner from "../../assets/image.jpg"
 
 export const BannerCadastroStyle = styled.div`
-    width: inherit;
+    width: 100%;
     height: 700px;
     background: url( ${ImgBanner} ) center no-repeat;
     background-size: cover;
     padding: 150px;
 
-    @media(max-width: 1300px){
-        background: #000000;
+    @media(max-width: 1600px){
+        width: 100%;
+        padding: 8rem;
     }
 
 `
@@ -17,7 +18,12 @@ export const BannerCadastroStyle = styled.div`
 export const Overlay = styled.div`
     width: 720px;
     height: 400px;
-    margin-left: 770px;
+    float: right;
+
+    @media(max-width: 1600px){
+        width: 70vw;
+        float: right;
+    }
 
 `
 
