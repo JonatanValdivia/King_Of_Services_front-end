@@ -11,7 +11,7 @@ import {useEffect, useState} from 'react';
 
 function CadastroTrabalhador(){
 
-    const [foto, setFoto] = useState(""); 
+    const [foto, setFoto] = useState(); 
     const [nomeProfissao, setnomeProfissao] = useState("");
     const [uf, setUf] = useState("");
     const [cidade, setCidade] = useState("");
@@ -92,10 +92,11 @@ function CadastroTrabalhador(){
         setIdSexo(event.target.value)
     }
 
-    const idProfissao = 2;
+    const idProfissao = 3;
 
     const handleSubmit = () =>{
         api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+        console.log({idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
         // api.post("http://kingofservices.com.br/EnderecosPrestadores", {idPrestador, uf, cidade, bairro, rua, numero, complemento, cep});
         // api.post("http://kingofservices.com.br/Profissoes", {idPrestador, nomeProfissao});
     }
