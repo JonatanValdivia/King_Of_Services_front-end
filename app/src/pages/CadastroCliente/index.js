@@ -7,19 +7,19 @@ import InputMask from "react-input-mask";
 import {useEffect, useState} from 'react';
 
 function CadastroCliente(){
-    const [nome, setNome] = useState();
-    const [idSexo, setIdSexo] = useState();
-    const [email, setEmail] = useState();
-    const [senha, setSenha] = useState();
-    const [telefone, setTelefone] = useState();
-    const [dataNascimento, setDataNascimento] = useState();
-    const [cep, setCep] = useState();
-    const [uf, setUf] = useState();
-    const [cidade, setCidade] = useState();
-    const [bairro, setBairro] = useState();
-    const [rua, setRua] = useState();
-    const [numero, setNumero] = useState();
-    const [complemento, setComplemento] = useState();
+    const [nome, setNome] = useState("");
+    const [idSexo, setIdSexo] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [telefone, setTelefone] = useState("");
+    const [dataNascimento, setDataNascimento] = useState("");
+    const [cep, setCep] = useState("");
+    const [uf, setUf] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [bairro, setBairro] = useState("");
+    const [rua, setRua] = useState("");
+    const [numero, setNumero] = useState("");
+    const [complemento, setComplemento] = useState("");
     
     const complementoHandler = (event) =>{
         setComplemento(event.target.value);
@@ -85,7 +85,6 @@ function CadastroCliente(){
     const foto = 1010100;
 
     const handleSubmit = () =>{
-        console.log({idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
         api.post("http://kingofservices.com.br/Clientes", {idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
     }
 

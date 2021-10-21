@@ -21,6 +21,7 @@ function CadastroTrabalhador(){
     const [complemento, setComplemento] = useState("");
     const [cep, setCep] = useState("");
     const [nome, setNome] = useState("");
+    const [idSexo, setIdSexo] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [descricao, setDescricao] = useState("");
@@ -87,7 +88,10 @@ function CadastroTrabalhador(){
         setFoto(event.target.value)
     }
 
-    const idSexo = 2;
+    const valorGenero = (event) =>{
+        setIdSexo(event.target.value)
+    }
+
     const idProfissao = 2;
 
     const handleSubmit = () =>{
@@ -120,6 +124,12 @@ function CadastroTrabalhador(){
                 <Inputs>
                     <form /*onSubmit={handleSubmit}*/>
                         <input placeholder="Nome completo" value={nome} onChange={nomeHandler}/>
+                        <label>Selecione o seu gênero:</label>
+                        <div onChange={valorGenero}>
+                            <input type="radio" value="1" name="gender" /> Masculino
+                            <input type="radio" value="2" name="gender" /> Feminino
+                            <input type="radio" value="3" name="gender" /> Outro
+                        </div>
                         <input placeholder="Profissão" value={nomeProfissao} onChange={nomeProfissaoHandler}/>
                         <p>Endereço</p>
                         <input placeholder="cep" value={cep} onChange={cepHandler} onBlur={() => {buscarCep(cep)}}/>

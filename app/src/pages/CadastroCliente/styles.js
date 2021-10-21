@@ -75,7 +75,7 @@ export const FormContainer = styled.form`
         margin-bottom: 2rem;
     }
 
-    >form>div:not(:first-child label){
+    >form>div{
         width: 70%;
         display: flex;
         justify-content: space-evenly;

@@ -81,6 +81,21 @@ export const Inputs = styled.div`
         padding-left: 20px;
     }
 
+    >form input:first-child {
+        margin-bottom: 2rem;
+    }
+
+    >form>div{
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+    }
+
+    >form>div>input[type='radio'] {
+        margin-left: 1rem;
+    }
+
     > form > textarea{
         width: 400px;
         height: 150px;
