@@ -52,6 +52,12 @@ export const Tittle = styled.div`
     #textAperence{
         color: black;
     }
+
+    @media(max-width: 1600px){
+        #textAperence{
+            color: var(--primary);
+        }
+    }
 `
 
 export const ModalApp = styled.div`
