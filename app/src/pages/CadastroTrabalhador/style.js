@@ -9,8 +9,6 @@ export const ArticleCadastro = styled.article`
 
     @media(max-width: 1100px){
         width: auto;
-        background-color: violet;
-        
     }
 `
 
@@ -160,11 +158,11 @@ export const ContainerHabilidades = styled.div`
     }
 
     @media(max-width: 1100px){
+        width: auto;
         display: flex;
         align-items: center;
         justify-content: center;
         width: auto;
-        background-color: orange;
     }
 
 `
@@ -200,10 +198,16 @@ export const Crud = styled.div`
             align-items: center;
             justify-content: center;
         }
+    }
 
-        @media(max-width: 1100px){
-            width: auto;
-            
+    @media(max-width: 1100px){
+        
+        >ul{
+            width: 100%;
+
+            >li{
+                width: auto;
+            }
         }
     }
 `

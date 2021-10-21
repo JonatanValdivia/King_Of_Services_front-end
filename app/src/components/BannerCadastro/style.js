@@ -23,6 +23,8 @@ export const Overlay = styled.div`
     @media(max-width: 1600px){
         width: 70vw;
         float: right;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 2rem;
     }
 
 `
@@ -79,6 +81,8 @@ export const ModalApp = styled.div`
     .textAperenceApp{
         color: var(--primary);
     }
+
+   
 `
 
 export const PlayStore = styled.div`
