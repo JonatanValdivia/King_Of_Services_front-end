@@ -85,7 +85,8 @@ function CadastroCliente(){
     const foto = 1010100;
 
     const handleSubmit = () =>{
-        console.log({idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep})
+        console.log({idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+        api.post("http://kingofservices.com.br/Clientes", {idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
     }
 
 
