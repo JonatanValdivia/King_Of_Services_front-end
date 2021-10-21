@@ -2,6 +2,7 @@ import Input from "../../components/Input";
 import { Container, FormContainer } from "./styles";
 import imgLogo from "../../assets/Leão.png";
 import api from "../../services/api";
+import apiCep from "../../services/apiCep";
 import InputMask from "react-input-mask";
 import {useEffect, useState} from 'react';
 
@@ -66,6 +67,16 @@ function CadastroCliente(){
         setNome(event.target.value);
     }
 
+    const buscarCep = cep =>{
+        apiCep.get(`${cep}/json/`).then(({data}) => {
+            console.log(data);
+            setUf(data.uf);
+            setCidade(data.localidade);
+            setBairro(data.bairro);
+            setRua(data.logradouro);
+        });
+    }
+
 
     return(
         <Container>
@@ -85,9 +96,9 @@ function CadastroCliente(){
             <input placeholder="Nome" value={nome} onChange={nomeHandler}/>
             <input placeholder="Email" value={email} onChange={emailHandler}/>
             <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
-            <InputMask mask="(99)99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
+            <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
             <input placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
-            <input placeholder="Cep" value={cep} onChange={cepHandler}/>
+            <input placeholder="Cep" value={cep} onChange={cepHandler} onBlur={() => buscarCep(cep)}/>
             <input placeholder="Uf" value={uf} onChange={ufHandler}/>
             <input placeholder="Cidade" value={cidade} onChange={cidadeHandler}/>
             <input placeholder="Bairro" value={bairro} onChange={bairroHandler}/>
