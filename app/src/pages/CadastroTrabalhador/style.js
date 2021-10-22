@@ -252,7 +252,8 @@ export const Crud = styled.div`
 
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
-
+        margin-top: 1rem;
+        
         >li{
             width: 100%;
             height: inherit;
@@ -282,7 +283,6 @@ export const CrudInformation = styled.div`
 
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
-        background-color: gray;
 
         #habilidades{
             float: left;
