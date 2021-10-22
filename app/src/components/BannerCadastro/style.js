@@ -23,12 +23,12 @@ export const Overlay = styled.div`
     float: right;
 
     @media(min-width: 320px) and (max-width: 700px){
-        width: 100vw;
+        width: 90vw;
         height: auto;
         float: right;
         background-color: rgba(0, 0, 0, 0.3);
         border-radius: 2rem;
-        padding: 1rem;
+        
         
     }
 
