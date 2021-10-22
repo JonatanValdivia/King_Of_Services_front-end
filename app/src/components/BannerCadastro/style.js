@@ -8,9 +8,11 @@ export const BannerCadastroStyle = styled.div`
     background-size: cover;
     padding: 150px;
 
-    @media(max-width: 1600px){
-        width: 100%;
-        padding: 8rem;
+    @media(min-width: 320px) and (max-width: 890px){
+        /* padding: 8rem; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 `
@@ -20,11 +22,14 @@ export const Overlay = styled.div`
     height: 400px;
     float: right;
 
-    @media(max-width: 1600px){
-        width: 70vw;
+    @media(min-width: 320px) and (max-width: 700px){
+        width: 100vw;
+        height: auto;
         float: right;
         background-color: rgba(0, 0, 0, 0.3);
         border-radius: 2rem;
+        padding: 1rem;
+        
     }
 
 `
@@ -53,9 +58,13 @@ export const Tittle = styled.div`
         color: black;
     }
 
-    @media(max-width: 1600px){
-        #textAperence{
-            color: var(--primary);
+    @media(max-width: 740px){
+        h1{
+            font-size: 20px;
+        }
+
+        >p{
+            font-size: 18px;
         }
     }
 `
@@ -65,14 +74,12 @@ export const ModalApp = styled.div`
     height: 170px;
     background-color: white;
     margin-left: 50px;
-
     border-radius: 50px;
     padding: 20px;
     
     >h3{
         font-family: sans-serif;
         color: black;
-
         margin-left: auto;
         margin-right: auto;
     }
@@ -88,7 +95,13 @@ export const ModalApp = styled.div`
         color: var(--primary);
     }
 
-   
+    @media(max-width: 450px){
+        width: 90%;
+        height: auto;
+        background-color: white;
+        margin-left: 0px;
+        margin-top: 0rem;
+    }
 `
 
 export const PlayStore = styled.div`

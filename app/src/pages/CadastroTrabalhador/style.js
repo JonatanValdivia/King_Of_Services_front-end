@@ -7,7 +7,7 @@ export const ArticleCadastro = styled.article`
     margin-right: auto;
     margin-left: auto;
 
-    @media(max-width: 1100px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: auto;
     }
 `
@@ -67,6 +67,7 @@ export const ContainerButton = styled.div`
         font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;
     }
+
 `
 
 export const Inputs = styled.div`
@@ -109,12 +110,35 @@ export const Inputs = styled.div`
         margin-bottom: 30px;
         font-family: sans-serif;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        padding: 0px;
+        width: 90%;
+
+        >form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        > form > input{
+            width: 100%;
+        }
+
+        >form>div{
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        > form > textarea{
+            width: 100%;
+        }
+    }
 `
 
 export const ContainerHabilidades = styled.div`
     width: 700px;
     height: 350px;
-
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
@@ -122,7 +146,6 @@ export const ContainerHabilidades = styled.div`
     >div>p{
         font-weight: bold;
         font-family: sans-serif;
-
         margin-bottom: 10px;
     }
 
@@ -157,14 +180,41 @@ export const ContainerHabilidades = styled.div`
         margin-left: 50px;
     }
 
-    @media(max-width: 1100px){
-        width: auto;
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
         display: flex;
         align-items: center;
+        flex-direction: column;
         justify-content: center;
-        width: auto;
-    }
+        padding: 0px;
 
+        >div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        >div>input{
+            width: 80%;
+            height: 50px;
+            border: solid 1px var(--primary);
+            
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        #experience{
+            width: 80%;
+            margin-left: 0px;
+        }
+
+        >div>button{
+            width: 80%;
+            margin-left: 0px;
+        }
+    }
 `
 
 export const Crud = styled.div`
@@ -200,14 +250,16 @@ export const Crud = styled.div`
         }
     }
 
-    @media(max-width: 1100px){
-        
-        >ul{
-            width: 100%;
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
 
-            >li{
-                width: auto;
-            }
+        >li{
+            width: 100%;
+            height: inherit;
+            float: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 `
@@ -216,14 +268,29 @@ export const CrudInformation = styled.div`
     width: inherit;
     height: 100px;
     background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     #habilidades{
         float: left;
         margin-left: 30px;
         margin-top: 20px;
         height: 50px;
-
         margin-top: 10px;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        background-color: gray;
+
+        #habilidades{
+            float: left;
+            margin-left: 30px;
+            margin-top: 20px;
+            height: 50px;
+            margin-top: 10px;
+        }
     }
 `
 
@@ -259,12 +326,21 @@ export const Habilidades = styled.div`
         font-weight: bold;
 
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        margin-left: 0px;
+    }
 `
 
 export const Separador = styled.div`
     width: 1px;
     height: 30px;
     background-color: gray;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
+    }
+    
 `
 
 export const ContainerAction = styled.div`
