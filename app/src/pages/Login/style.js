@@ -6,6 +6,10 @@ export const Overlay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+    }
 `;
 
 export const ContainerLogin = styled.div`
@@ -14,6 +18,10 @@ export const ContainerLogin = styled.div`
 
     box-shadow: 0px 0px 10px 0px #a19e9d;
     
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100vw;
+       
+    }
 `;
 
 export const ContainerInputs = styled.div`
@@ -39,6 +47,17 @@ export const ContainerInputs = styled.div`
         font-size: 15px;
         
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        >input{
+            width: 95%;
+        }
+    }
 `
 
 export const Tittle = styled.div`
@@ -55,6 +74,15 @@ export const Tittle = styled.div`
 
         display: flex;
         justify-content: center;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        >h1{
+            width: 100%;
+            font-size: 2em;
+            text-align: center;
+        }
     }
     
 `
