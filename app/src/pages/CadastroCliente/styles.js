@@ -6,12 +6,15 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+    }
 `;
 
 export const FormContainer = styled.form`
     width: 500px;
     height: auto;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -113,4 +116,51 @@ export const FormContainer = styled.form`
         margin-top: 0px;
     }
 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        gap: 0px;
+        padding: 0px;
+        align-items: center;
+
+        >button{
+            width: 35%;
+        }
+
+        >form{
+            width: 90%;
+        }
+
+        >form>div{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 1rem;
+        }
+
+        >form>input{
+            width: 100%;
+            height: 50px;
+
+            border: none;
+            border-radius: 40px;
+            box-shadow: 0px 0px 5px 0px;
+
+            margin-top: 10px;
+            padding-left: 30px;
+
+            font-family: sans-serif;
+            font-size: 15px;
+        }
+
+        >form>div>input[type='radio'] {
+            margin-left: 0rem;
+        }
+
+        >img{
+            width: 50px;
+            height: 70px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 `;

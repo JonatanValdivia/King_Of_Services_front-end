@@ -51,6 +51,10 @@ export const ModalContainer = styled.section`
     /* box-shadow: 0px 0px 10px black; */
     border-radius: 10px;
 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%; 
+        height: auto;
+    }
 `
 
 export const ContainerUl = styled.nav`
