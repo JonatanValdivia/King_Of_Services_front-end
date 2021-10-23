@@ -6,7 +6,7 @@ export const BannerApp = styled.div`
     background-color: #ff9900;
     margin-top: 100px;
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
         height: auto;
     }
@@ -19,13 +19,18 @@ export const ContainerApp = styled.div`
     margin-right: auto;
     display: flex;
     align-items: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
 `
 
 export const ComponentsApp = styled.div`
     width: 35vw;
     height: 500px;
     float: left;
-
     padding: 60px;
 
     >h1{
@@ -44,6 +49,11 @@ export const ComponentsApp = styled.div`
         margin-top: 30px;
         color: white;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        height: auto;
+    }
 `
 
 export const ContainerMobile = styled.div`
@@ -51,6 +61,16 @@ export const ContainerMobile = styled.div`
     height: inherit;
     position: relative;
     top: -70px;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        height: auto;
+        top: 0px;
+
+        >img{
+            width: 100%;
+        }
+    }
 `
 
 export const PlayStore = styled.div`
@@ -74,6 +94,15 @@ export const PlayStore = styled.div`
         font-size: 1em;
         margin-left: 40px;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        height: auto;
+
+        >p{
+            margin-left: 10px;
+        }
+    }
 `
 
 export const PlayStoreImg = styled.div`
@@ -86,4 +115,10 @@ export const PlayStoreImg = styled.div`
         width: inherit;
         height: inherit;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+    }    
 `

@@ -14,8 +14,7 @@ export const ContainerCards = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    @media only screen and (max-width: 400px){
-
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -139,12 +138,16 @@ export const TittleServices = styled.div`
         justify-content: center;
     }
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: auto;
         height: auto;
 
-        >span{
-            display: none;
+        >h1{
+            font-size: 1.5em;
+            
+            >span{
+                display: none;
+            }
         }
     }
 `
