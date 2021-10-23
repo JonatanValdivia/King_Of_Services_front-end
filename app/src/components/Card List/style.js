@@ -8,7 +8,6 @@ export const CardList = styled.div`
     margin-top: 20px;
     padding: 20px;
 
-
     border-radius: 20px;
 
     box-shadow: 0px 0px 10px 5px #e6e6e6;
@@ -45,7 +44,41 @@ export const CardList = styled.div`
         margin-top: -20px;
     }
 
-    
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: min-content;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding: 0px;
+        padding-top: 10px;
+
+        >p{
+            margin-left: 0px;
+            font-size: 1em;
+            letter-spacing: 0px;
+            order: 1;
+            margin-top: 10px;
+        }
+
+        >button{
+            width: 35%;
+            height: 40px;
+
+            margin-left: 0px;
+            margin-top: 10px;
+            margin-bottom: 1rem;
+            order: 2;
+        }
+
+        #description{
+            padding: 10px;
+            padding-left: 10px;
+        }
+    }
 `
 
 export const Profile = styled.div`
@@ -54,6 +87,12 @@ export const Profile = styled.div`
     border-radius: 100%;
     background-color: orange;
     float: left;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        float: none;
+    }
+
+    
 `
 
 export const EstrelaStyle = styled.div`
@@ -66,6 +105,14 @@ export const EstrelaStyle = styled.div`
         width: 20px;
         height: inherit;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+        height: auto;
+        float: none;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
 `
 
 export const ContainerButton = styled.div`
@@ -77,5 +124,13 @@ export const ContainerButton = styled.div`
     margin-top: 30px;
     margin-bottom: 35px;
 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+        height: auto;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
     
 `

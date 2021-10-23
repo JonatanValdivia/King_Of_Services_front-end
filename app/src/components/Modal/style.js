@@ -8,7 +8,7 @@ export const Overlay = styled.div`
     margin-left: auto;
     margin-right: auto;
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%; 
     }
 `;
@@ -37,7 +37,7 @@ export const Title = styled.div`
         justify-content: center;
     }
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%;    
     }
 
@@ -85,7 +85,7 @@ export const ContainerUl = styled.nav`
         }
     }
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: auto;
         height: auto;
         display: flex;

@@ -6,21 +6,27 @@ export const Overlay = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+    }
 `;
 
 export const Container = styled.form`
     width: 600px;
     height: 500px;
-    /* padding: 300px; */
-    /* display: flex;
-    flex-direction: column;
-    gap: 15px; */
 
     box-shadow: 0px 0px 20px #00000055;
 
     > h1 {
         text-align: center;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+
+    }
+    
 `;
 
 export const Tittle = styled.div`
@@ -37,6 +43,15 @@ export const Tittle = styled.div`
 
         display: flex;
         justify-content: center;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+
+        > h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
     }
     
 `
@@ -71,6 +86,19 @@ export const ContainerRegister = styled.div`
 
         margin-top: 30px;
         margin-bottom: 20px;
+    }
+
+    >hr{
+        margin-bottom: 20px;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+
+        >p{
+            width: 90%;
+            margin: auto;
+        }
     }
 
     

@@ -303,8 +303,8 @@ export const Habilidades = styled.div`
 
     
     display: flex;
-        align-items: center;
-        justify-content: center;
+    align-items: center;
+    justify-content: center;
 
     >button{
         width: 70px;

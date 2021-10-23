@@ -40,11 +40,12 @@ export const Container = styled.div`
         }
     }
 
-    @media only screen and (max-width: 400px){
-        width: 100%;
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 80%;
         height: auto;
         margin-top: 40px;
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
 
         >input{
             width: 100%;
