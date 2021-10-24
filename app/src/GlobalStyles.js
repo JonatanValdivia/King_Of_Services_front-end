@@ -14,6 +14,23 @@ export const GlobalStyleComponent = createGlobalStyle`
         outline: 0;
 
         box-sizing: border-box;
+        text-decoration: none;
+    }
+
+    a:link {
+        color: white;
+    }
+
+    a:visited {
+        color: white;
+    }
+
+    a:hover {
+        color: var(--primary);
+    }
+
+    a:active {
+        color: white;
     }
 
     body{

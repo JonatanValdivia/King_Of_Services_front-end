@@ -14,12 +14,14 @@ function Header(){
                     <li>Serviços</li>
                     <li>Trabalhe conosco</li>
                     <li>Sobre nós</li>
-                    <li>Entrar</li>
+                    <li>
+                        <a href="/login">Entrar</a>
+                    </li>
                 </ul>
                 
             </Menu>
             <TextRegister>
-                Cadastre-se
+                <a href="/cadastro">Cadastre-se</a>
             </TextRegister>
         </Container>
     );
