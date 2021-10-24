@@ -1,10 +1,16 @@
 import Estrela from "../../assets/estrela.png"
 import { CardList, EstrelaStyle, Profile } from "./style";
+import api from "../../services/api";
+import { Link, useHistory } from 'react-router-dom';
 
 function CardWorker(props) {
+    let history = useHistory();
 
     const verPerfil = () =>{
-        console.log(props.props.idPrestador);
+        const id = props.props.idPrestador
+        console.log(id);
+        // api.get(`http://kingofservices.com.br/Prestadores/${id}`);
+        history.push(`/PerfilPrestador/:${id}`);
     }
     
     return(

@@ -5,6 +5,7 @@ import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import CadastroCliente from "./pages/CadastroCliente";
 import Listagem from "./pages/Listagem dos profissionais";
+import PerfilPrestador from "./pages/PerfilPrestador";
 
 function Router(){
         return(
@@ -26,9 +27,7 @@ function Router(){
                     <Route exact path="/cadastro">
                         <Cadastro/>
                     </Route>
-                    <Route exact path="/listagem">
-                        <Listagem/>
-                    </Route>
+                    <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
                 </Switch>
             </BrowserRouter>
         );
