@@ -5,7 +5,7 @@ import ImgProfile from "../../assets/Profile.png";
 import Footer from "../../components/Rodape";
 // import { BsTrashFill } from "react-icons";
 import api from '../../services/api';
-import InputMask from "react-input-mask";
+// import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
 import {useEffect, useState} from 'react';
 
@@ -144,7 +144,7 @@ function CadastroTrabalhador(){
                         <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
-                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
+                        {/* <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/> */}
                         <input placeholder="dataNascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
                         {/* <input placeholder="Preço por serviço"/> */}
                     </form>

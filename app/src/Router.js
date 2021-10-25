@@ -3,9 +3,10 @@ import CadastroTrabalhador from "./pages/CadastroTrabalhador";
 import Home from "./pages/Home";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
-import CadastroCliente from "./pages/CadastroCliente";
+import CadastroFacebookGoogle from "./pages/CadastroGoogleFacebook";
 import Listagem from "./pages/Listagem dos profissionais";
 import PerfilPrestador from "./pages/PerfilPrestador";
+import CadastroCliente from "./pages/CadastroCliente";
 
 function Router(){
         return(
@@ -18,11 +19,14 @@ function Router(){
                     <Route exact path="/CadastroTrabalhador">
                         <CadastroTrabalhador/>
                     </Route>
+                    <Route exact path="/cadastrocliente">
+                        <CadastroCliente/>
+                    </Route>
                     <Route exact path="/login">
                         <Login/>
                     </Route>
-                    <Route exact path="/cadastrocliente">
-                        <CadastroCliente/>
+                    <Route exact path="/cadastroFacebookGoogle">
+                        <CadastroFacebookGoogle/>
                     </Route>
                     <Route exact path="/cadastro">
                         <Cadastro/>
