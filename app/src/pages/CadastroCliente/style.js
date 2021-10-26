@@ -11,23 +11,60 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "esquerda direita";
 
+
 `;
 
 export const GridEsquerda = styled.div`
     width: inherit;
-    height: 137vh;
+    height: 100vh;
     background-color: var(--primary);
     grid-area: esquerda;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 `
 
 export const ContainerLogo = styled.div`
+    width: 25vw;
+    height: auto;
+
+    img{
+        width: 25vw;
+        height: auto;
+    }
+`
+
+export const ContainerLogoLeao = styled.div`
+    width: 7vw;
+    height: auto;
     
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+        width: 7vw;
+        height: 17vh;
+    }
 `
 
 export const GridDireita = styled.div`
     width: inherit;
     height: inherit;
     grid-area: direita;
+
+    >h1{
+        font-size: 100rem;
+    }
+
+    .endereco{
+        display: none;
+    }
+
+ 
+    
 `
 
 export const ContainerFG = styled.div`
@@ -54,11 +91,22 @@ export const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 50px;
+    padding: 30px;
+
+    @keyframes go-back {
+        0%{transform: translateX(1000px);}
+        100%{transform: translateX(0);}
+    }  
 
     h1 {
-        margin-bottom: 10px;
         text-align: center;
+        margin-bottom: -20px;
+    }
+
+    p{
+        font-size: 0.8em;
+        color: var(--primary);
+        cursor: pointer;
     }
 
     button{
@@ -74,16 +122,22 @@ export const FormContainer = styled.form`
         border-radius: 40px;
         cursor: pointer;
 
-        margin-left: auto;
-        margin-right: auto;
-        /* margin-bottom: 20px; */
+        margin-left: 50px;
         margin-top: 10px;
+        margin-top: 30px;
+
+        box-shadow: 0px 0px 0px 0px;
+
+        :hover{
+            box-shadow: 0px 0px 10px 0px #7a7878;
+        }
     }
 
     hr{
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
 
     form>input{
         width: 400px;
@@ -99,6 +153,8 @@ export const FormContainer = styled.form`
 
         font-family: sans-serif;
         font-size: 15px;
+
+        
     }
 
     form>div {
