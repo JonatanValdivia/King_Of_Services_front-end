@@ -12,7 +12,7 @@ export const CardList = styled.div`
 
     box-shadow: 0px 0px 10px 5px #e6e6e6;
 
-    >p{
+    p{
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;

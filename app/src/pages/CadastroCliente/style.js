@@ -93,11 +93,6 @@ export const FormContainer = styled.form`
     gap: 15px;
     padding: 30px;
 
-    @keyframes go-back {
-        0%{transform: translateX(1000px);}
-        100%{transform: translateX(0);}
-    }  
-
     h1 {
         text-align: center;
         margin-bottom: -20px;

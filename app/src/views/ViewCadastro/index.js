@@ -88,8 +88,6 @@ function ViewCadastro1() {
         const formDadosPessoais = document.getElementsByClassName('dadosPessoais')[0].style.display = "none";
         const formEndereco = document.getElementsByClassName('endereco')[0].style.display = "block";
 
-        formEndereco.style.animation = "go-back 1s";
-
     }
 
     const handleSubmit = () => {

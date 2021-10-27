@@ -7,6 +7,7 @@ import CadastroFacebookGoogle from "./pages/CadastroGoogleFacebook";
 import Listagem from "./pages/Listagem dos profissionais";
 import PerfilPrestador from "./pages/PerfilPrestador";
 import CadastroCliente from "./pages/CadastroCliente";
+import ProgressPage from "./pages/AndamentoDoServico";
 
 function Router(){
         return(
@@ -24,6 +25,9 @@ function Router(){
                     </Route>
                     <Route exact path="/login">
                         <Login/>
+                    </Route>
+                    <Route exact path="/meusservicos">
+                        <ProgressPage/>
                     </Route>
                     <Route exact path="/cadastroFacebookGoogle">
                         <CadastroFacebookGoogle/>
