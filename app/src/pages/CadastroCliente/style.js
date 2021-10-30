@@ -171,8 +171,7 @@ export const FormContainer = styled.div`
 
         font-family: sans-serif;
         font-size: 15px;
-
-        
+   
     }
 
     form>div {
@@ -188,6 +187,11 @@ export const FormContainer = styled.div`
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
         padding: 0px;
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
         >form{
             width: 100%;
