@@ -15,7 +15,7 @@ function CardWorker(props) {
     
     return(
         <CardList>
-            <Profile/>
+            <Profile src={`http://kingofservices.com.br/${props.props.foto}`}/>
             <p>
                 {props.props.nome}, {props.props.idade}
             </p>

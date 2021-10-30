@@ -11,7 +11,7 @@ import {useEffect, useState} from 'react';
 
 function CadastroTrabalhador(){
 
-    const [foto, setFoto] = useState(); 
+    const [foto, setFoto] = useState(""); 
     const [nomeProfissao, setnomeProfissao] = useState("");
     const [uf, setUf] = useState("");
     const [cidade, setCidade] = useState("");
@@ -84,19 +84,40 @@ function CadastroTrabalhador(){
         setnomeProfissao(event.target.value)
     }
 
-    const fotoHandler = (event) =>{
-        setFoto(event.target.value)
+    const fotoHandler = (e) =>{
+        // setFoto(e.target.files[0])
+        let fileReader = new FileReader();
+        fileReader.readAsDataURL(e.target.files[0]);
+        fileReader.onload = (event) => {
+            setFoto(event.target.result)   
+        }
+        
     }
 
     const valorGenero = (event) =>{
         setIdSexo(event.target.value)
     }
 
-    const idProfissao = 3;
+    const idProfissao = 1;
 
     const handleSubmit = () =>{
-        api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
-        console.log({idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+        // event.preventDefault();
+        
+        console.log(foto)
+        api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep}).then(({data}) =>{   
+            console.log(data);
+        });
+        // console.log({idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+        // console.log(foto);
+        // const nome = foto.name
+        // console.log(nome.substr(nome.length -4, 4));
+        
+
+        // api.post("http://kingofservices.com.br/Prestadores", {foto}).
+        // then(({data}) =>{   
+        //     console.log(data);
+        // });
+        
         // api.post("http://kingofservices.com.br/EnderecosPrestadores", {idPrestador, uf, cidade, bairro, rua, numero, complemento, cep});
         // api.post("http://kingofservices.com.br/Profissoes", {idPrestador, nomeProfissao});
     }
@@ -119,8 +140,10 @@ function CadastroTrabalhador(){
                     <img src={ImgProfile}/>
                 </ImgProfileStyle>
                 <ContainerButton>
+                    
                     <label for='foto'>Selecionar um arquivo &#187;</label>
-                    <input type="file" value={foto} id="foto" accept="image/*" onChange={fotoHandler}/>
+                    <input type="file" id="foto" accept="image/*" onChange={e => fotoHandler(e)}/>
+                    
                 </ContainerButton>
                 <Inputs>
                     <form /*onSubmit={handleSubmit}*/>
