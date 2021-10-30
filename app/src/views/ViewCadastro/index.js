@@ -112,6 +112,7 @@ function ViewCadastro1() {
 
                 <label>Selecione o seu gênero:</label>
                 <div onChange={valorGenero}>
+                    
                     <input type="radio" value="1" name="gender" /> Masculino
                     <input type="radio" value="2" name="gender" /> Feminino
                     <input type="radio" value="3" name="gender" /> Outro

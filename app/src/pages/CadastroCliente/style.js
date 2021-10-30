@@ -11,6 +11,13 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "esquerda direita";
 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
 
 `;
 
@@ -25,6 +32,11 @@ export const GridEsquerda = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
+    }
+
 `
 
 export const ContainerLogo = styled.div`
@@ -34,6 +46,10 @@ export const ContainerLogo = styled.div`
     img{
         width: 25vw;
         height: auto;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
     }
 `
 
@@ -47,6 +63,10 @@ export const ContainerLogoLeao = styled.div`
     img{
         width: 7vw;
         height: 17vh;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
     }
 `
 
@@ -63,7 +83,11 @@ export const GridDireita = styled.div`
         display: none;
     }
 
- 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
     
 `
 
@@ -79,15 +103,16 @@ export const ContainerFG = styled.div`
             color: blue;
         }
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
+    }
+    
 `
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.div`
     width: 500px;
     height: auto;
-
-    margin-left: auto;
-    margin-right: auto;
-
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -133,11 +158,9 @@ export const FormContainer = styled.form`
         margin-bottom: 10px;
     }
 
-
     form>input{
         width: 400px;
         height: 40px;
-
         border: none;
         border-radius: 40px;
         box-shadow: 0px 0px 5px 0px;
@@ -162,5 +185,45 @@ export const FormContainer = styled.form`
         vertical-align: middle;
     }
 
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        padding: 0px;
 
+        >form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            >p{
+                margin-top: 20px;
+                font-size: 2rem;
+                font-style: italic;
+            }
+        }
+
+        form>input{
+            width: 100%;
+        }
+
+        form>label{
+            width: 100%;
+        }
+
+        form>div{
+            width: auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form>button{
+            width: 70%;
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+    }
 `;
