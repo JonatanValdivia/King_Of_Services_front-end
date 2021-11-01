@@ -10,7 +10,6 @@ export const ContainerCards = styled.div`
     align-items: center;
     display: flex;
     /* flex-direction: row; */
-    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
 
@@ -22,6 +21,7 @@ export const ContainerCards = styled.div`
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
+        justify-content: center;
     }
 `
 
@@ -31,8 +31,13 @@ export const SectionCards = styled.div`
     padding-top: 15px;
     padding-left: 20px;
 
-    @media only screen and (max-width: 400px){
-        padding-top: 0px;
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: nowrap; */
+        align-items: center;
+        justify-content: center;
         padding-left: 0px;
     }
 `
@@ -53,11 +58,13 @@ export const CardServices = styled.div`
         box-shadow: 10px 10px 10px 0px #adadad;
     }
 
-    @media only screen and (max-width: 400px){
-        width: 100%;
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 320px;
         height: 330px;
         margin-left: 0px;
         margin-bottom: 30px;
+        float: none;
+        margin-left: 0px;
     }
 `
 
@@ -71,7 +78,7 @@ export const ContainerImg = styled.div`
         height: 100%;
     }
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
     }
 `
@@ -97,7 +104,7 @@ export const Services = styled.div`
         font-weight: bold;
     }
 
-    @media only screen and (max-width: 400px){
+    @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
 
         >p{
@@ -112,6 +119,7 @@ export const TittleServices = styled.div`
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 
     >h1{
         font-family: sans-serif;
