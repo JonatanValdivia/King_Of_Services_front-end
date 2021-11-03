@@ -22,7 +22,7 @@ function PerfilPrestadorDados(props) {
     <>
       <StyleComponent1>
         <Foto>
-          <img src={Profile} alt="" />
+          <img src={`http://kingofservices.com.br/${prestador.foto}`} alt="" />
         </Foto>
         <div>
           <p>{prestador.telefone}</p>

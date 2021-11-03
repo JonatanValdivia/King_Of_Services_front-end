@@ -81,7 +81,7 @@ export const CardList = styled.div`
     }
 `
 
-export const Profile = styled.div`
+export const Profile = styled.img`
     width: 150px;
     height: 150px;
     border-radius: 100%;
