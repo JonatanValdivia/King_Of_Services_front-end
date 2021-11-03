@@ -5,7 +5,7 @@ import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import CadastroFacebookGoogle from "./pages/CadastroGoogleFacebook";
 import Listagem from "./pages/Listagem dos profissionais";
-import PerfilPrestador from "./pages/PerfilPrestador";
+import PerfilPrestador from "./pages/Perfis/PerfilPrestador";
 import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
 
@@ -36,6 +36,9 @@ function Router(){
                         <Cadastro/>
                     </Route>
                     <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
+                    <Route exact path="/perfil">
+                        <PerfilPrestador/>
+                    </Route>
                 </Switch>
             </BrowserRouter>
         );

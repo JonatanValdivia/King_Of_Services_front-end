@@ -7,7 +7,7 @@ function CardProgress(){
                 {/* <Profile/> */}
                 <p>Fulano de Tal, 35</p>
                 <ButtonProgress>
-                    <button>Aceitar</button>
+                    <p>Em andamento</p>
                 </ButtonProgress>
                 <p id="description">Uma breve descrição sobre o serviço : "Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

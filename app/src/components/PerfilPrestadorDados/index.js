@@ -9,15 +9,15 @@ import api from '../../services/api';
 function PerfilPrestadorDados(props) {
   let { idPrestador } = useParams();
   const [prestador, setPrestador] = useState([]);
-  useEffect(() => {
+  // useEffect(() => {
 
-    const formatacao = idPrestador.replace(':', '');
-    api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
-      then(({ data }) => {
-        setPrestador(data)
-        console.log(data);
-      });
-  }, [idPrestador])
+  //   const formatacao = idPrestador.replace(':', '');
+  //   api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
+  //     then(({ data }) => {
+  //       setPrestador(data)
+  //       console.log(data);
+  //     });
+  // }, [idPrestador])
   return (
     <>
       <StyleComponent1>
