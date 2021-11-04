@@ -41,6 +41,9 @@ export const Menu = styled.nav`
             width: 100%;
             height: inherit;
 
+            display: flex;
+            justify-content: end;
+
             >li{
                 width: 150px;
                 height: inherit;

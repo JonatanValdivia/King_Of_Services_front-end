@@ -12,17 +12,9 @@ export const Container = styled.div`
         border: 0;
         padding-left: 10px;
         border-radius: 3px;
-        box-shadow: 5px 5px 10px 0px;
+        box-shadow: 0px 0px 10px 0px;
 
         font-family: sans-serif;
-    }
-
-    > input:not(:placeholder-shown),
-    > input:focus{
-        font-size: 15px;
-        color: var(--primary);
-        top: -25px;
-        left: 0;
     }
 
     >button{

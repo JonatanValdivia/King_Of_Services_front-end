@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import ImgBanner from "../../assets/servicosgerais.png"
+import ImgBanner from "../../assets/banner.png"
 
 export const BannerStyle = styled.article`
     width: inherit;
-    height: 570px;
+    height: 70vh;
     background: url( ${ImgBanner} ) center no-repeat;
     background-size: cover;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px;
+    padding: 120px;
 
     margin-top: -10px;
 
