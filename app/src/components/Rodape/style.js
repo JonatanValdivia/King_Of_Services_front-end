@@ -19,6 +19,7 @@ export const FooterStyle = styled.footer`
         >div:not(div:first-child){
             margin-top: 6rem;
             color: white;
+            
         }
     }
 
