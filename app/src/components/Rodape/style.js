@@ -14,6 +14,7 @@ export const FooterStyle = styled.footer`
     >div:first-child{
         display: grid;
         grid-template-columns: 40% 15% 25% 20%;
+        margin-bottom: 100px;
 
         >div:not(div:first-child){
             margin-top: 6rem;
@@ -76,7 +77,7 @@ export const Inicio = styled.div`
 
     >p{
         font-size: 1.2rem;
-        
+        line-height: 2.5rem;
     }
 
     @media(min-width: 320px) and (max-width: 770px){
@@ -88,6 +89,7 @@ export const Inicio = styled.div`
 
         >p{
             font-size: 1.6rem;
+            line-height: 1.5rem;
             margin-top: 1rem;
         }
     }
@@ -172,7 +174,6 @@ export const Copyright = styled.div`
     left: 0;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
     justify-content: center;
     align-items: center;
     color: white;
