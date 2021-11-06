@@ -2,17 +2,23 @@ import styled from "styled-components"
 
 export const CardList = styled.div`
     width: 700px;
-    height: 200px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     padding: 20px;
+    padding-bottom: 70px;
 
     border-radius: 20px;
 
     box-shadow: 0px 0px 10px 5px #e6e6e6;
 
+    img{
+        margin-bottom: 20px;
+    }
+
     p{
+        margin-top: 20px;
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;

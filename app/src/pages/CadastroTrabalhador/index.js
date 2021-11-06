@@ -163,8 +163,8 @@ function CadastroTrabalhador(){
                         <input placeholder="Rua" value={rua} onChange={ruaHandler}/>
                         <input placeholder="Número" value={numero} onChange={numeroHandler}/>
                         <input placeholder="Complemento (opcional)" value={complemento} onChange={complementoHandler}/>
-                        <input placeholder="E-mail" value={email} onChange={emailHandler}/>
-                        <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
+                        <input type="email" placeholder="E-mail" value={email} onChange={emailHandler}/>
+                        <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler}/>
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
                         <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
