@@ -7,11 +7,7 @@ export const ContainerCards = styled.div`
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
-    display: flex;
     /* flex-direction: row; */
-    flex-wrap: wrap;
-    justify-content: center;
 
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
@@ -26,10 +22,12 @@ export const ContainerCards = styled.div`
 `
 
 export const SectionCards = styled.div`
-    width: 100%;
+    width: auto;
     height: 80%;
     padding-top: 15px;
-    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
@@ -47,8 +45,8 @@ export const CardServices = styled.div`
     height: 330px;
     background-color: white;
     float: left;
-    margin-left: 50px;
-
+    margin: 10px;
+    /* margin-right: 50px; */
     border-radius: 5%;
     box-shadow: 5px 5px 10px 0px #adadad;
 
