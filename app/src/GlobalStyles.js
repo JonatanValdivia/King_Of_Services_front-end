@@ -12,7 +12,6 @@ export const GlobalStyleComponent = createGlobalStyle`
         margin: 0;
         padding: 0;
         outline: 0;
-
         box-sizing: border-box;
         text-decoration: none;
     }
@@ -26,13 +25,15 @@ export const GlobalStyleComponent = createGlobalStyle`
     }
 
     a:hover {
-        color: var(--primary);
+        color: white;
+        font-weight: bold;
+        transition: 0.3s
     }
 
     a:active {
         color: white;
     }
-
+    
     body{
         font-family: sans-serif;
         color: var(---textPrimary);

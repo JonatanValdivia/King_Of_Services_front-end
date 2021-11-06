@@ -127,5 +127,11 @@ export const ContainerButton = styled.div`
         font-family: Arial, Helvetica, sans-serif;
 
         border-radius: 20px;
+        transition: 0.6s;
+    }
+
+    > button:hover{
+        transform: scale(1.2);
+        transition: 0.5s;
     }
 `

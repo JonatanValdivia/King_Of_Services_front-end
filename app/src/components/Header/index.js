@@ -11,18 +11,34 @@ function Header(){
 
             <Menu>
                 <ul>
-                    <li>Serviços</li>
-                    <li>Trabalhe conosco</li>
-                    <li>Sobre nós</li>
                     <li>
-                        <a href="/login">Entrar</a>
+                        <a>
+                            Serviços
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Trabalhe conosco
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Sobre nós
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login">
+                            Entrar
+                        </a>
                     </li>
                 </ul>
                 
             </Menu>
-            <TextRegister>
-                <a href="/cadastro">Cadastre-se</a>
-            </TextRegister>
+            <a href="/cadastro">
+                <TextRegister>
+                    Cadastre-se
+                </TextRegister>
+            </a>
         </Container>
     );
 }
