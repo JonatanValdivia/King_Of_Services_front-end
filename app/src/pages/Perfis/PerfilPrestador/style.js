@@ -8,6 +8,11 @@ export const Content = styled.div`
     margin-right: auto;
 
     border: solid 1px black;
+
+    @media(min-width: 320px) and (max-width: 890px){
+      width: 100%;
+      border: none;
+    }
 `
 
 
