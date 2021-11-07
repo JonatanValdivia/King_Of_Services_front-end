@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import CadastroFacebookGoogle from "./pages/CadastroGoogleFacebook";
 import Listagem from "./pages/Listagem dos profissionais";
 import PerfilPrestador from "./pages/Perfis/PerfilPrestador";
+import PerfilCliente from "./pages/Perfis/PerfilCliente";
 import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
 
@@ -39,6 +40,10 @@ function Router(){
                     <Route exact path="/perfil">
                         <PerfilPrestador/>
                     </Route>
+                    <Route exact path="/perfilCliente">
+                        <PerfilCliente/>
+                    </Route>
+                        
                 </Switch>
             </BrowserRouter>
         );
