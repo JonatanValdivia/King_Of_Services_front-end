@@ -71,14 +71,26 @@ export const LogoStyle = styled.div`
 
 export const Inicio = styled.div`
 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     >p:first-child{
         font-size: 2rem;
         font-weight: bold;
     }
 
+    p:not(p:first-child){
+        :hover{
+            color: var(--primary);
+            cursor: pointer;
+        }
+    }
+
     >p{
-        font-size: 1.2rem;
-        line-height: 2.5rem;
+        margin-bottom: 1.2rem;
+        height: auto;
+        width: max-content;
     }
 
     @media(min-width: 320px) and (max-width: 770px){
@@ -97,15 +109,26 @@ export const Inicio = styled.div`
 `;
 
 export const SobreNos = styled.div`
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     >p:first-child{
         font-size: 2rem;
         font-weight: bold;
     }
 
+    p:not(p:first-child){
+        :hover{
+            color: var(--primary);
+            cursor: pointer;
+        }
+    }
+
     >p{
-        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+        height: auto;
+        width: max-content;
     }
 
     @media(min-width: 320px) and (max-width: 770px){
@@ -137,6 +160,11 @@ export const Contatos = styled.div`
 
     >div>i{
         font-size: 3rem;
+
+        :hover{
+            cursor: pointer;
+            color: var(--primary);
+        }
     }
 
     >div:last-child{
@@ -146,6 +174,16 @@ export const Contatos = styled.div`
         width: 60%;
         border-radius: 30px;
         background-color: var(--primary);
+        transition: 0.5s;
+        cursor: pointer;
+
+        :hover{
+            background-color: white;
+            color: var(--primary);
+            width: 65%;
+            transition: 0.5s;
+            font-weight: bold;
+        }
     }
 
     @media(min-width: 320px) and (max-width: 770px){
