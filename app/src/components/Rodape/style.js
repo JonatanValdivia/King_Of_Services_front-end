@@ -29,6 +29,7 @@ export const FooterStyle = styled.footer`
         >div:first-child{
             display: flex;
             flex-direction: column;
+            margin-bottom: 0px;
 
             >div:not(div:first-child){
                 margin-top: 0px;
@@ -94,6 +95,7 @@ export const Inicio = styled.div`
     }
 
     @media(min-width: 320px) and (max-width: 770px){
+        align-items: center;
 
         >p:first-child{
             font-size: 2.6rem;
