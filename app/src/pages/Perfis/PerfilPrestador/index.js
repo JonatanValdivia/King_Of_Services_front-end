@@ -3,6 +3,9 @@ import Footer from "../../../components/Rodape";
 import { Album, Content, Dados, Estrelas, Foto, Habilidades, Overlay, StyleComponent1, StyleComponent2 } from "./style";
 import Estrela from "../../../assets/estrela.png";
 import Imagem from "../../../assets/image.jpg";
+import IconLocal from "../../../assets/localizacao.png"
+import FacebookIcon from "../../../assets/facebook.png"
+import WppIcon from "../../../assets/whatsapp.png"
 
 function PerfilPrestador() {
     return (
@@ -15,10 +18,19 @@ function PerfilPrestador() {
                             {/* <img src={`http://kingofservices.com.br/${prestador.foto}`} alt="" /> */}
                         </Foto>
                         <div>
-                            <p>1199990000</p>
+                            <p>
+                                <img src={WppIcon} id="wpp"/>
+                                1199990000
+                            </p>
 
-                            <p>Rua Luiz Belli, 157 - Itapevi, SP</p>
-                            <p>Thaynara</p>
+                            <p>
+                                <img src={IconLocal}/>
+                                Rua Luiz Belli, 157 - Itapevi, SP
+                            </p>
+                            <p>
+                                <img src={FacebookIcon}/>
+                                Thaynara
+                            </p>
                         </div>
 
                         <button>Solicitar serviço</button>

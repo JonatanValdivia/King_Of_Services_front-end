@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  margin-top: 3rem;
-  width: 80%;
-  height: auto;
-  
-  margin-left: auto;
-  margin-right: auto;
+    width: 65%;
+    height: 90vh;
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
 
-  /* border: solid 1px black; */
+    border: solid 1px #CCC;
 
-  @media(min-width: 320px) and (max-width: 890px){
-    width: 100%;
-    border: none;
-  }
+    @media(min-width: 320px) and (max-width: 890px){
+      width: 100%;
+      border: none;
+    }
 `
 
 export const Overlay = styled.div`
@@ -78,24 +78,14 @@ export const StyleComponent2 = styled.div`
 
   #dados{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
     >p{
       display: flex;
       margin-top: 2rem;
       margin-bottom: 2rem;
       align-items: center;
 
-      i{
-        font-size: 3rem;
-        padding-right: 8px;
-      }
-    }
-
-    #whatsapp{
-      i{
-        color: #2fff00;
-      }
     }
 
     p:last-child{
@@ -104,15 +94,33 @@ export const StyleComponent2 = styled.div`
       }
     }
 
+    img{
+        width: 25px;
+        height: 25px;
+        float: left;
+      }
+
+      #wpp{
+        width: 20px;
+        height: 20px;
+        margin-left: 30px;
+        margin-right: 10px;
+      }
+
+      #facebook{
+        margin-left: 30px;
+      }
+
   }
 
   #datas{
-    display: flex;
-    justify-content: space-between;
     >p{
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-right: 30px;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: var(--textSecundary);
     }
+
   }
 
   #descricao{
@@ -165,5 +173,6 @@ export const StyleComponent2 = styled.div`
     }
   }
 `;
+
 
 

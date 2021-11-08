@@ -174,10 +174,15 @@ export const Contatos = styled.div`
         text-align: center;
         padding: 5px;
         width: 60%;
+        height: 5vh;
         border-radius: 30px;
         background-color: var(--primary);
         transition: 0.5s;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
 
         :hover{
             background-color: white;
