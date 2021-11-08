@@ -98,3 +98,133 @@ export const Main = styled.main`
     }
 `
 
+export const Content = styled.div`
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+`
+
+export const Overlay = styled.div`
+  width: 50%;
+  height: auto;
+  justify-content: center;
+
+  >h1{
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #000000;
+
+        display: flex;
+        justify-content: center;
+        
+        >span{
+            color: #FF7A00;
+            margin-left: 10px;
+        }
+  }
+`
+
+export const Introduction = styled.div`
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+`
+
+export const Abstract = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+
+  grid-template-columns: 20% 20% 20%;
+  grid-template-areas: "esquerda center direita";
+`
+
+export const GridLeft = styled.div`
+  width: auto;
+  height: inherit;
+  padding: 20px;
+  grid-area: esquerda;
+`
+
+export const GridCenter = styled.div`
+  width: auto;
+  height: inherit;
+  padding: 20px;
+  grid-area: center;
+` 
+
+export const GridRight = styled.div`
+  width: 100%;
+  height: inherit;
+  padding: 20px;
+  grid-area: direita;
+` 
+
+export const CircleAbstract = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: orange;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ContentServicos = styled.div`
+  width: 100%;
+  height: auto;
+  background-color: lightyellow;
+`
+
+export const OverlayServicos = styled.div`
+  width: 15%;
+  height: inherit;
+  padding: 20px;
+
+  margin-left: 10px;
+
+  background-color: lime;
+
+  float: left;
+
+  p{
+    text-align: center;
+    margin-top: 10px;
+  }
+`
+
+export const Circle = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: mediumpurple;
+`
+
+export const Button = styled.div`
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  
+
+  button{
+    width: 150px;
+    height: 40px;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+`

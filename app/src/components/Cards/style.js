@@ -71,7 +71,7 @@ export const ContainerImg = styled.div`
     height: 55%;
     border-radius: 5%;
 
-    >img{
+    img{
         width: inherit;
         height: 100%;
     }
@@ -91,11 +91,11 @@ export const Services = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    >h5{
+    h5{
         font-family: sans-serif;
     }
 
-    >p{
+    p{
         color: #FF7A00;
         font-size: 0.9em;
         margin-top: 30px;
@@ -105,7 +105,7 @@ export const Services = styled.div`
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
 
-        >p{
+        p{
             font-size: 1.4em;
         }
     }
@@ -119,7 +119,7 @@ export const TittleServices = styled.div`
     margin-right: auto;
     text-align: center;
 
-    >h1{
+    h1{
         font-family: sans-serif;
         font-size: 2em;
         color: #000000;
@@ -133,7 +133,7 @@ export const TittleServices = styled.div`
         }
     }
 
-    >p{
+    p{
         font-family: sans-serif;
         font-size: 1.1em;
         color: #FFFFFF;
@@ -148,7 +148,7 @@ export const TittleServices = styled.div`
         width: auto;
         height: auto;
 
-        >h1{
+        h1{
             font-size: 1.5em;
             
             >span{

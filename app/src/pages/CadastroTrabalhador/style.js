@@ -136,6 +136,30 @@ export const Inputs = styled.div`
     }
 `
 
+export const Button = styled.div`
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    button{
+        width: 200px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+    }
+`
+
 export const ContainerHabilidades = styled.div`
     width: 700px;
     height: 350px;
