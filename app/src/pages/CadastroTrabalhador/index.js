@@ -1,6 +1,6 @@
 import BannerCadastro from "../../components/BannerCadastro";
 import Header from "../../components/Header";
-import { ArticleCadastro, ContainerAction, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
+import { ArticleCadastro, Button, ContainerAction, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
 import ImgProfile from "../../assets/Profile.png";
 import Footer from "../../components/Rodape";
 // import { BsTrashFill } from "react-icons";
@@ -171,6 +171,10 @@ function CadastroTrabalhador(){
                         <input placeholder="dataNascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
                         {/* <input placeholder="Preço por serviço"/> */}
                     </form>
+
+                    <Button>
+                        <button>Cadastrar-se</button>
+                    </Button>
                 </Inputs>
                 <ContainerHabilidades>
                     <div>
@@ -200,6 +204,7 @@ function CadastroTrabalhador(){
                         </Crud>
                     </div>
                 </ContainerHabilidades>
+                
                 <Footer/>
             </ArticleCadastro>
         </>
