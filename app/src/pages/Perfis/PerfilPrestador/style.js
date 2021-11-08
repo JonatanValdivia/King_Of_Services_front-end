@@ -41,8 +41,23 @@ export const StyleComponent1 = styled.div`
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      >p{
+      
+      p{
         margin-top: 3rem;
+        display: flex;
+        align-items: center;
+      }
+
+      img{
+        width: 25px;
+        height: 25px;
+        float: left;
+      }
+
+      #wpp{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
       }
     }
   
@@ -58,6 +73,23 @@ export const StyleComponent1 = styled.div`
       }
     }
   }
+
+  button{
+        width: 200px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+        margin-top: 50px;
+    }
 
 `;
 
@@ -132,7 +164,6 @@ export const Estrelas =  styled.div`
 
 export const Habilidades = styled.div`
   padding: 1rem;
-
   >h3{
     margin-left: 2rem;
     margin-bottom: 1.5rem;
@@ -152,6 +183,7 @@ export const Habilidades = styled.div`
       padding: 0.4rem;
       margin-bottom: 1rem;
       border-radius: 2vw;
+      margin-left: 20px;
     }
   }
 
