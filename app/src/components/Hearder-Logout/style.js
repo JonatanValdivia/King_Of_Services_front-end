@@ -17,6 +17,10 @@ export const Container = styled.header`
         margin-left: 50px;
         margin-top: 10px;
     }
+
+    :not(:last-child){
+
+    }
     @media only screen and (max-width: 900px){
         flex-direction: column;
         margin: auto;
@@ -75,25 +79,68 @@ export const Menu = styled.nav`
 `;
 
 export const TextRegister = styled.div`
-    width: 150px;
-    height: 40px;
+    width: 170px;
+    height: 50px;
+
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     cursor: pointer;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
     margin-right: 30px;
+    margin-top: 10px;
+    padding-left: 10px;
+    
     transition: 0.3s;
+
     @media only screen and (max-width: 900px){
         border: 0px;
         margin-right: 0px;
         font-size: 1.5rem;
         
     }
-    
-    :hover{
-        transform: scale(0.9);
-        transition: 0.3s;
+
+    p{
+        margin-left: 10px;
+    }
+`
+
+export const Profile = styled.div`
+    width: 40px;
+    height: 40px;
+    background-color: blueviolet;
+    border-radius: 100%;
+`
+
+export const ContentIcon = styled.div`
+    width: auto;
+    height: auto;
+
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+`
+
+export const Submenu = styled.div`
+    width: 170px;
+    height: 100px;
+    background-color: var(--secundary);
+    position: absolute;
+    visibility: hidden;
+
+    ul>li{
+        width: 100%;
+        height: 50px;
+
+        list-style: none;
+        color: #FFFFFF;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `

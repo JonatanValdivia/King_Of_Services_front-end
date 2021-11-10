@@ -1,14 +1,12 @@
 import { Container, Menu, TextRegister } from "./style";
-import { Link, Redirect } from "react-router-dom";
-
 import imgLogo from "../../assets/Logo.png";
 
-
-function Header(){
+function Header() {
     return (
         <Container>
-            <img src={imgLogo}/>
-
+            <a href="/">
+                <img src={imgLogo} />
+            </a>
             <Menu>
                 <ul>
                     <li>
@@ -32,7 +30,6 @@ function Header(){
                         </a>
                     </li>
                 </ul>
-                
             </Menu>
             <a href="/cadastro">
                 <TextRegister>
