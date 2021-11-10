@@ -101,7 +101,7 @@ export const Main = styled.main`
 export const Content = styled.div`
   width: 100%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 `
@@ -183,7 +183,6 @@ export const CircleAbstract = styled.div`
 export const ContentServicos = styled.div`
   width: 100%;
   height: auto;
-  background-color: lightyellow;
 `
 
 export const OverlayServicos = styled.div`
@@ -192,8 +191,6 @@ export const OverlayServicos = styled.div`
   padding: 20px;
 
   margin-left: 10px;
-
-  background-color: lime;
 
   float: left;
 
@@ -207,11 +204,26 @@ export const Circle = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-color: mediumpurple;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+`
+
+export const ContainerButton = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
 `
 
 export const Button = styled.div`
-  width: 100%;
+  width: auto;
   height: auto;
   margin-top: 50px;
   
