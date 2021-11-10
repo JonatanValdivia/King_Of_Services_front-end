@@ -2,13 +2,19 @@ import BannerHome from "../../components/BannerHome";
 import Banner from "../../components/BannerApp";
 import Cards from "../../components/Cards";
 import Header from "../../components/Header";
-import { Main, Loading, Content, Overlay, Introduction, CircleAbstract, Abstract, GridRight, GridCenter, GridLeft, ContentServicos, OverlayServicos, Circle, Button } from "./style";
+import { Main, Loading, Content, Overlay, Introduction, CircleAbstract, Abstract, GridRight, GridCenter, GridLeft, ContentServicos, OverlayServicos, Circle, Button, ContainerButton } from "./style";
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
 import Footer from "../../components/Rodape";
 import FirstDesign from "../../assets/celulardesenho.png"
 import SecondDesign from "../../assets/like.png"
 import ThirdDesign from "../../assets/apertomãos.png"
+import ImgDiarista from "../../assets/diaristas.png"
+import ImgCantor from "../../assets/cantor.png"
+import ImgEletricista from "../../assets/eletricista2.png"
+import ImgEncanador from "../../assets/encanador2.png"
+import ImgMecanico from "../../assets/mecanico.png"
+import ImgProfessor from "../../assets/professor.png"
 
 function Home() {
     const [prestadores, setPrestadores] = useState([])
@@ -104,50 +110,64 @@ function Home() {
                         <h1>Serviços</h1>
                         <ContentServicos>
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgDiarista} />
+                                </Circle>
                                 <p>
                                     Diarista
                                 </p>
                             </OverlayServicos>
 
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgEncanador} />
+                                </Circle>
                                 <p>
                                     Encanador
                                 </p>
                             </OverlayServicos>
 
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgEletricista} />
+                                </Circle>
                                 <p>
                                     Eletricista
                                 </p>
                             </OverlayServicos>
 
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgProfessor} />
+                                </Circle>
                                 <p>
                                     Professor
                                 </p>
                             </OverlayServicos>
 
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgCantor} />
+                                </Circle>
                                 <p>
                                     Cantor
                                 </p>
                             </OverlayServicos>
 
                             <OverlayServicos>
-                                <Circle></Circle>
+                                <Circle>
+                                    <img src={ImgMecanico} />
+                                </Circle>
                                 <p>
                                     Mecânico
                                 </p>
                             </OverlayServicos>
                         </ContentServicos>
-                        <Button>
-                            <button>Ver mais</button>
-                        </Button>
+                        <ContainerButton>
+                            <Button>
+                                <button>Ver mais</button>
+                            </Button>
+                        </ContainerButton>
                     </Overlay>
                 </Content>
                 <Footer />
