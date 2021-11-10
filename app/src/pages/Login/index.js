@@ -1,39 +1,47 @@
-import { ContainerButton, ContainerInputs, ContainerLogin, Logo, Overlay, Tittle } from "./style";
+import { ContainerButton, ContainerInputs, ContainerLogin, ContentIcon, Logo, Overlay, Tittle } from "./style";
 import imgLogo from "../../assets/Leão.png";
 import api from '../../services/api';
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 
-function Login(){
+function Login() {
     const [email, setemail] = useState("");
     const [senha, setSenha] = useState("");
 
-    const emailHandler = (event) =>{
+    const emailHandler = (event) => {
         setemail(event.target.value);
     }
 
-    const senhaHandler = (event) =>{
+    const senhaHandler = (event) => {
         setSenha(event.target.value);
     }
 
-    const handleSubmit = () =>{
-        api.post('http://kingofservices.com.br/Logins', {email, senha}).then(({data}) =>{
+    const handleSubmit = () => {
+        api.post('http://kingofservices.com.br/Logins', { email, senha }).then(({ data }) => {
             console.log(data);
         });
     }
 
-    return(
+    return (
         <Overlay>
             <ContainerLogin>
+
+                <ContentIcon>
+                    <a href="/">
+                    <BsFillArrowLeftCircleFill color="#ff7a00" size="25px" cursor="pointer"/>
+                    </a>
+                </ContentIcon>
+
                 <Logo>
-                    <img src={imgLogo}/>
+                    <img src={imgLogo} />
                 </Logo>
                 <Tittle>
                     <h1>King of Sevices</h1>
                 </Tittle>
                 <ContainerInputs>
-                    <input placeholder="Email" value={email} onChange={emailHandler}/>
-                    <input placeholder="Senha" value={senha} onChange={senhaHandler}/>
+                    <input placeholder="Email" value={email} onChange={emailHandler} />
+                    <input placeholder="Senha" value={senha} onChange={senhaHandler} />
                 </ContainerInputs>
                 <ContainerButton>
                     <button onClick={handleSubmit}>Entrar</button>

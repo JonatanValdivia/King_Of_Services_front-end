@@ -7,7 +7,8 @@ import Footer from "../../components/Rodape";
 import api from '../../services/api';
 import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
+import HeaderLogout from "../../components/Hearder-Logout";
 
 function CadastroTrabalhador(){
 
@@ -133,7 +134,7 @@ function CadastroTrabalhador(){
 
     return(
         <>
-            <Header/>
+            <HeaderLogout />
             <BannerCadastro/>
             <ArticleCadastro>
                 <ImgProfileStyle>

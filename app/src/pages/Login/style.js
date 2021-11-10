@@ -110,7 +110,7 @@ export const ContainerButton = styled.div`
     margin-top: 20px;
     margin-bottom: 35px;
 
-    >button{
+    button{
         width: inherit;
         height: inherit;
 
@@ -125,4 +125,14 @@ export const ContainerButton = styled.div`
 
         border-radius: 20px;
     }
+`
+
+export const ContentIcon = styled.div`
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 `

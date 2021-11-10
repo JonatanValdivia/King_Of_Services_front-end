@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CadastroTrabalhador from "./pages/CadastroTrabalhador";
 import Home from "./pages/Home";
 import Cadastro from "./pages/Cadastro";
@@ -43,7 +43,6 @@ function Router(){
                     <Route exact path="/perfilCliente">
                         <PerfilCliente/>
                     </Route>
-                        
                 </Switch>
             </BrowserRouter>
         );

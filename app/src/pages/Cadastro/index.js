@@ -37,7 +37,7 @@ function Cadastro(){
                         </ContainerButton>
 
                         <hr/>
-                        <p>Você já é cadastrado? Entrar</p>
+                        <p>Você já é cadastrado? <a href="/login" id="login" >Entrar</a> </p>
 
                     </ContainerRegister>
                 </Container>
