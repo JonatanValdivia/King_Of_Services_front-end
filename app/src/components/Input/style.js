@@ -11,7 +11,8 @@ export const Container = styled.div`
         height: 50px;
         border: 0;
         padding-left: 10px;
-        border-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
         box-shadow: 0px 0px 10px 0px;
 
         font-family: sans-serif;
@@ -24,7 +25,8 @@ export const Container = styled.div`
 
         border: 0px;
         color: #FFFFFF;
-        border-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
         cursor: pointer;
 
         :hover{

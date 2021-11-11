@@ -98,7 +98,9 @@ export const ContainerFG = styled.div`
     p{
         margin-top: 10px;
         font-size: 0.8em;
+    }
 
+    a{
         span{
             color: blue;
         }

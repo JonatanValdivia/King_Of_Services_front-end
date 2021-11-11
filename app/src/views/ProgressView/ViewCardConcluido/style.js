@@ -38,25 +38,7 @@ export const ButtonProgress = styled.div`
     height: auto;
 
     display: flex;
+    justify-content: center;
     margin-left: auto;
 
-    p{
-        color: green;
-    }
-
-    button{
-        width: 100px;
-        height: 40px;
-
-        background-color: var(--primary);
-        color: white;
-        cursor: pointer;
-        border: none;
-
-        font-size: 1em;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-
-        border-radius: 20px;
-    }
 `

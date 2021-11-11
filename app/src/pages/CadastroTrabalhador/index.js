@@ -8,7 +8,7 @@ import api from '../../services/api';
 import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
 import { useState } from 'react';
-import HeaderLogout from "../../components/Hearder-Logout";
+import HeaderLogout from "../../components/Header-Logout";
 
 function CadastroTrabalhador(){
 
