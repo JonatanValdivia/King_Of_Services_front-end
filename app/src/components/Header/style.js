@@ -60,6 +60,9 @@ export const Menu = styled.nav`
             align-items: center;
             
             > ul {
+                flex-direction: column;
+                justify-content: center;
+                
                 > li{
                     width: 100%;
                     text-align: center;
