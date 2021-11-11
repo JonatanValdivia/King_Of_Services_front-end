@@ -235,6 +235,10 @@ export const ContentServicos = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    flex-direction: column;
+  }
 `
 
 export const OverlayServicos = styled.div`
