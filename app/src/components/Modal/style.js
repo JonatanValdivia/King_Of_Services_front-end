@@ -9,7 +9,7 @@ export const Overlay = styled.div`
     margin-right: auto;
 
     @media(min-width: 320px) and (max-width: 890px){
-        width: 100%; 
+        width: 90%; 
     }
 `;
 

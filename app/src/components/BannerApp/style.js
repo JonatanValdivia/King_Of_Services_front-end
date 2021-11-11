@@ -76,11 +76,11 @@ export const ContainerMobile = styled.div`
 
 export const PlayStore = styled.div`
     width: 200px;
-    height: 60px;
+    height: auto;
     
     margin-top: 50px;
 
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px;
 
@@ -97,12 +97,7 @@ export const PlayStore = styled.div`
     }
 
     @media(min-width: 320px) and (max-width: 890px){
-        width: 100%;
-        height: auto;
-
-        >p{
-            margin-left: 10px;
-        }
+       
     }
 `
 
@@ -118,8 +113,8 @@ export const PlayStoreImg = styled.div`
     }
 
     @media(min-width: 320px) and (max-width: 890px){
-        width: 100%;
-        height: auto;
-        margin-top: 0px;
+        width: 30px;
+        height: 30px;
+        
     }    
 `
