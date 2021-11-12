@@ -9,39 +9,58 @@ export const Container = styled.header`
     z-index: 99999;
     background-color: var(--secundary);
     display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
+    align-items: flex-end;
+
+    i{
+        display: none;
+    }
 
     a>img{
         width: 150px;
         margin-left: 50px;
         margin-top: 10px;
     }
-    @media only screen and (max-width: 900px){
+
+    @media only screen and (max-width: 800px){ 
+        .open{
+            display: flex;
+            height: 100vh;   
+        }
+
+        i{
+            display: flex;
+            padding-top: 10px;
+            padding-right: 15px;
+            color: white;
+            font-size: 40px;
+        }    
+
+        nav{
+            display: none;
+        }
+
+        width: 100%;
         flex-direction: column;
         margin: auto;
-        position: static;
         
         a>img{
             display: none;
         }
     }
-    
 `;
 
 export const Menu = styled.nav`
-    width: 40%;
-    height: auto;
+    width: 80%;
     margin-left: auto;
+    margin-right: auto;
         > ul {
             width: 100%;
             height: inherit;
             display: flex;
             justify-content: end;
             >li{
-                width: 150px;
+                width: 180px;
                 height: inherit;
-                float: left;
                 list-style: none;
                 color: #FFFFFF;
                 margin-bottom: 1rem;
@@ -52,7 +71,8 @@ export const Menu = styled.nav`
                 margin-top: 20px;
             }
         }
-        @media only screen and (max-width: 900px){
+        @media only screen and (max-width: 800px){
+            width: 100%;
             margin-left: 0;
             display: flex;
             flex-direction: column;
@@ -62,11 +82,12 @@ export const Menu = styled.nav`
             > ul {
                 flex-direction: column;
                 justify-content: center;
+                height: 100%;
                 
                 > li{
                     width: 100%;
+                    height: auto;
                     text-align: center;
-                    margin-top: 1rem;
                     font-size: 1.5rem;
 
                     > a{
@@ -88,10 +109,16 @@ export const TextRegister = styled.div`
     justify-content: center;
     margin-right: 30px;
     transition: 0.3s;
-    @media only screen and (max-width: 900px){
+    
+    @media only screen and (max-width: 800px){
+        width: 100vw;
         border: 0px;
         margin-right: 0px;
         font-size: 1.5rem;
+        
+        .closeRegister{
+            display: none;
+        }
         
     }
     

@@ -82,7 +82,7 @@ export const Inicio = styled.div`
     }
 
     p:not(p:first-child){
-        :hover{
+        a:hover{
             color: var(--primary);
             cursor: pointer;
         }
