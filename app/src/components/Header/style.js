@@ -53,12 +53,14 @@ export const Menu = styled.nav`
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+
         > ul {
             width: 100%;
             height: inherit;
             display: flex;
             justify-content: end;
             >li{
+                float: left;
                 width: 180px;
                 height: inherit;
                 list-style: none;
@@ -71,6 +73,7 @@ export const Menu = styled.nav`
                 margin-top: 20px;
             }
         }
+
         @media only screen and (max-width: 800px){
             width: 100%;
             margin-left: 0;
