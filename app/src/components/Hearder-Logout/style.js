@@ -93,6 +93,7 @@ export const Menu = styled.nav`
                 flex-direction: column;
                 justify-content: center;
                 height: 100%;
+                gap: 10px;
                 
                 > li{
                     width: 100%;
