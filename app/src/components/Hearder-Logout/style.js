@@ -10,7 +10,10 @@ export const Container = styled.header`
     background-color: var(--secundary);
     display: flex;
     align-items: flex-end;
-    /* justify-content: space-between; */
+
+    i{
+        display: none;
+    }
 
     a>img{
         width: 150px;
@@ -47,18 +50,22 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.nav`
-    width: 40%;
-    height: auto;
+    width: 90%;
     margin-left: auto;
+    margin-right: auto;
+
         > ul {
             width: 100%;
             height: inherit;
             display: flex;
             justify-content: end;
+            gap: 30px;
+
             >li{
-                width: 150px;
-                height: inherit;
                 float: left;
+                width: max-content;
+                height: inherit;
+                /* float: left; */
                 list-style: none;
                 color: #FFFFFF;
                 margin-bottom: 1rem;
@@ -67,6 +74,11 @@ export const Menu = styled.nav`
                 justify-content: center;
                 cursor: pointer;
                 margin-top: 20px;
+
+                a:hover {
+                    color: var(--primary);
+                    font-weight: normal;
+                }
             }
         }
         @media only screen and (max-width: 800px){
@@ -87,6 +99,7 @@ export const Menu = styled.nav`
                     height: auto;
                     text-align: center;
                     font-size: 1.5rem;
+                    margin-top: -5px;
 
                     > a{
                         transition: 0.9s
@@ -106,9 +119,7 @@ export const TextRegister = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-right: 30px;
-    margin-top: 10px;
     padding-left: 10px;
-    
     transition: 0.3s;
 
     @media only screen and (max-width: 800px){

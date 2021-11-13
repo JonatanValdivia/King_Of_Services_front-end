@@ -50,7 +50,7 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.nav`
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 
@@ -59,9 +59,11 @@ export const Menu = styled.nav`
             height: inherit;
             display: flex;
             justify-content: end;
+            gap: 30px;
+
             >li{
                 float: left;
-                width: 180px;
+                width: max-content;
                 height: inherit;
                 list-style: none;
                 color: #FFFFFF;
@@ -71,6 +73,11 @@ export const Menu = styled.nav`
                 justify-content: center;
                 cursor: pointer;
                 margin-top: 20px;
+
+                a:hover {
+                    color: var(--primary);
+                    font-weight: normal;
+                }
             }
         }
 
@@ -128,5 +135,6 @@ export const TextRegister = styled.div`
     :hover{
         transform: scale(0.9);
         transition: 0.3s;
+        color: var(--primary);
     }
 `

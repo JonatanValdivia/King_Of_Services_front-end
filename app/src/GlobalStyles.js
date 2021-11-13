@@ -27,7 +27,6 @@ export const GlobalStyleComponent = createGlobalStyle`
     a:hover {
         color: white;
         font-weight: bold;
-        transition: 0.3s
     }
 
     a:active {
