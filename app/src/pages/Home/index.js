@@ -60,6 +60,8 @@ function Home() {
                 </BannerHome>
                 <Cards />
                 <Banner />
+                <br id="sobre_nos"/>
+                <br/>
                 <Content>
                     <Overlay>
                         <h1>Sobre <span>nós</span> </h1>

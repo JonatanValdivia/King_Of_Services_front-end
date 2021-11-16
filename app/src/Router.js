@@ -10,6 +10,7 @@ import PerfilCliente from "./pages/Perfis/PerfilCliente";
 import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
 
+
 function Router(){
         return(
             <BrowserRouter>
