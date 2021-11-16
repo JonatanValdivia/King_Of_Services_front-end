@@ -137,11 +137,14 @@ export const Inputs = styled.div`
 `
 
 export const Button = styled.div`
-    width: 400px;
+    width: auto;
     height: auto;
+    margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 50px;
+    margin-bottom: 50px;
 
     button{
         width: 200px;
@@ -158,6 +161,11 @@ export const Button = styled.div`
 
         border-radius: 20px;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+    }
+
 `
 
 export const ContainerHabilidades = styled.div`
