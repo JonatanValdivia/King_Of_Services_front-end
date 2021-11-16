@@ -65,9 +65,9 @@ function Home() {
                         <h1>Sobre <span>nós</span> </h1>
                         <Introduction>
                             <p>
-                                A Services Liders é uma empresa de divulgação de prestadores de serviços.
+                                A King of Services é uma empresa de divulgação de prestadores de serviços.
                                 <br />
-                                Nossa intuição é divulgar pessoas que nescessita de contratação por divulgação.
+                                Nossa intenção é divulgar pessoas que nescessitam de contratação por divulgação.
                             </p>
                             <Abstract>
                                 <GridRight>
@@ -76,7 +76,7 @@ function Home() {
                                     </CircleAbstract>
                                     <p>
                                         Temos plataforma Mobile,
-                                        tendo versão somente para
+                                        versão somente para
                                         Android
                                     </p>
                                 </GridRight>
@@ -95,18 +95,19 @@ function Home() {
                                         <img src={ThirdDesign} />
                                     </CircleAbstract>
                                     <p>
-                                        Temos um compromisso e
-                                        o dever de ajudar os nossos
+                                        Temos compromisso e
+                                        dever de ajudar os nossos
                                         colaboradores dando o máximo
-                                        de suporte possivel.
+                                        de suporte.
                                     </p>
                                 </GridLeft>
                             </Abstract>
                         </Introduction>
                     </Overlay>
+                    <br id="servicos"/>
                 </Content>
                 <Content>
-                    <Overlay id="servicos">
+                    <Overlay>
                         <h1>Serviços</h1>
                         <ContentServicos>
                             <OverlayServicos>

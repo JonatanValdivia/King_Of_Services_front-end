@@ -7,7 +7,7 @@ function BannerCadastro(){
             <BannerCadastroStyle>
                 <Overlay>
                     <Tittle>
-                        <h1>Receba clientes atravé de um <span id="textAperence"> aplicativo </span> de serviços profissionais</h1>
+                        <h1>Receba clientes através de um <span id="textAperence"> aplicativo </span> de serviços profissionais</h1>
                         <p>Divulgue seus serviços para centenas de pessoas!</p>
                     </Tittle>
                     <ModalApp>
