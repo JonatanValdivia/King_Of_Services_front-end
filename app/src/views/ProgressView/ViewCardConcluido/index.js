@@ -1,10 +1,10 @@
-import { ButtonProgress, CardProgressStyle, ContentCard } from "./style";
+import { ButtonProgress, CardProgressStyle, ContentCard, Profile } from "./style";
 
 function CardConcluido(){
     return(
         <ContentCard>
             <CardProgressStyle>
-                {/* <Profile/> */}
+                <Profile/>
                 <p>Fulano de Tal, 35</p>
                 <ButtonProgress>
                     <p>Concluido</p>
