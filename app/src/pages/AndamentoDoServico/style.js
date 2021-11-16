@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
+    padding-top: 30px;
     width: 100%;
     height: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media only screen and (max-width: 800px){
-        
-    }
 
 `
 
