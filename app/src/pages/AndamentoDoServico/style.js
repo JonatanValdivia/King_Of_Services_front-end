@@ -15,7 +15,7 @@ export const Content = styled.div`
 `
 
 export const Overlay = styled.div`
-    width: 40%;
+    width: 50%;
     height: 50%;
     margin-top: 70px;
 
@@ -53,6 +53,10 @@ export const Overlay = styled.div`
 
         margin-left: auto;
         margin-right: auto;
+    }
+
+    @media (min-width: 801px) and (max-width: 1300px){
+        width: 70%;
     }
 
     @media only screen and (max-width: 800px){
