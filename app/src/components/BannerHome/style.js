@@ -3,7 +3,7 @@ import ImgBanner from "../../assets/banner.png"
 
 export const BannerStyle = styled.article`
     width: inherit;
-    height: 70vh;
+    height: auto;
     background: url( ${ImgBanner} ) center no-repeat;
     background-size: cover;
 
