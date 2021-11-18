@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import { ArticleCadastro, Button, ContainerAction, ContainerButton, ContainerHabilidades, Crud, CrudInformation, Habilidades, ImgProfileStyle, Inputs, Separador } from "./style";
 import ImgProfile from "../../assets/Profile.png";
 import Footer from "../../components/Rodape";
-// import { BsTrashFill } from "react-icons";
 import api from '../../services/api';
 import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
@@ -25,6 +24,7 @@ function CadastroTrabalhador(){
     const [idSexo, setIdSexo] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [senhaConfirm, setSenhaConfirm] = useState("");
     const [descricao, setDescricao] = useState("");
     const [telefone, setTelefone] = useState("");
     const [dataNascimento, setdataNascimento] = useState("");
@@ -43,6 +43,10 @@ function CadastroTrabalhador(){
 
     const senhaHandler = event =>{
         setSenha(event.target.value)
+    }
+
+    const senhaConfirmHandler = event =>{
+        setSenhaConfirm(event.target.value);
     }
 
     const emailHandler = event =>{
@@ -99,28 +103,38 @@ function CadastroTrabalhador(){
         setIdSexo(event.target.value)
     }
 
+    const resultadoPositivo = () =>{
+        const resultadoPositivo = document.getElementById('resultadoPositivo');
+        resultadoPositivo.style.display = 'flex';
+        const timer = setTimeout(() => {
+            resultadoPositivo.style.display = 'none';
+        }, 1500);
+    }
+
+    const resultadoNegativo = () =>{
+        const resultadoNegativo = document.getElementById('resultadoNegativo');
+        resultadoNegativo.style.display = 'flex';
+        const timer = setTimeout(() => {
+            resultadoNegativo.style.display = 'none';
+        }, 1500);
+    }
+
     const idProfissao = 1;
 
-    const handleSubmit = () =>{
-        // event.preventDefault();
-        
-        console.log(foto)
-        api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep}).then(({data}) =>{   
-            console.log(data);
-        });
-        // console.log({idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
-        // console.log(foto);
-        // const nome = foto.name
-        // console.log(nome.substr(nome.length -4, 4));
-        
+    const handleSubmit = (event) =>{
+        event.preventDefault();
 
-        // api.post("http://kingofservices.com.br/Prestadores", {foto}).
-        // then(({data}) =>{   
-        //     console.log(data);
-        // });
+        if(senha === senhaConfirm){
+            //     api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep}).then(({data}) =>{   
+            //         console.log(data);
+            //     });
+            setNome(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setDescricao(''); setTelefone(''); setdataNascimento('');
+            console.log("Senhas iguais");
+        }else{
+            console.log("As senhas não correspondem!");
+        }
         
-        // api.post("http://kingofservices.com.br/EnderecosPrestadores", {idPrestador, uf, cidade, bairro, rua, numero, complemento, cep});
-        // api.post("http://kingofservices.com.br/Profissoes", {idPrestador, nomeProfissao});
+    
     }
 
     const buscarCep = cep =>{
@@ -134,21 +148,19 @@ function CadastroTrabalhador(){
 
     return(
         <>
-            <HeaderLogout />
+            <Header/>
             <BannerCadastro/>
             <ArticleCadastro>
                 <ImgProfileStyle>
                     <img src={ImgProfile}/>
                 </ImgProfileStyle>
                 <ContainerButton>
-                    
                     <label for='foto'>Selecionar um arquivo &#187;</label>
                     <input type="file" id="foto" accept="image/*" onChange={e => fotoHandler(e)}/>
-                    
                 </ContainerButton>
                 <Inputs>
-                    <form /*onSubmit={handleSubmit}*/>
-                        <input placeholder="Nome completo" value={nome} onChange={nomeHandler}/>
+                    <form onSubmit={handleSubmit}>
+                        <input placeholder="Nome completo" value={nome} onChange={nomeHandler} />
                         <label>Selecione o seu gênero:</label>
                         <div onChange={valorGenero}>
                             <input type="radio" value="1" name="gender" /> Masculino
@@ -157,32 +169,41 @@ function CadastroTrabalhador(){
                         </div>
                         <input placeholder="Profissão" value={nomeProfissao} onChange={nomeProfissaoHandler}/>
                         <p>Endereço</p>
-                        <input placeholder="cep" value={cep} onChange={cepHandler} onBlur={() => {buscarCep(cep)}}/>
-                        <input placeholder="Uf" value={uf} onChange={ufHandler}/>
-                        <input placeholder="Cidade" value={cidade} onChange={cidadeHandler}/>
-                        <input placeholder="Bairro" value={bairro} onChange={bairroHandler}/>
-                        <input placeholder="Rua" value={rua} onChange={ruaHandler}/>
-                        <input placeholder="Número" value={numero} onChange={numeroHandler}/>
+                        <input placeholder="cep" value={cep} onChange={cepHandler} onBlur={() => {buscarCep(cep)}} />
+                        <input placeholder="Uf" value={uf} onChange={ufHandler} />
+                        <input placeholder="Cidade" value={cidade} onChange={cidadeHandler} />
+                        <input placeholder="Bairro" value={bairro} onChange={bairroHandler} />
+                        <input placeholder="Rua" value={rua} onChange={ruaHandler} />
+                        <input placeholder="Número" value={numero} onChange={numeroHandler} />
                         <input placeholder="Complemento (opcional)" value={complemento} onChange={complementoHandler}/>
-                        <input type="email" placeholder="E-mail" value={email} onChange={emailHandler}/>
-                        <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler}/>
+                        <input type="email" placeholder="E-mail" value={email} onChange={emailHandler} />
+                        <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler} />
+                        <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} />
                         <p>Descrição</p>
-                        <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
-                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
-                        <input placeholder="dataNascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
-                        {/* <input placeholder="Preço por serviço"/> */}
-                    </form>
-
-                    <Button>
-                        <button>Cadastrar-se</button>
-                    </Button>
+                        <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler} ></textarea>
+                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} />
+                        <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
+                        <Button>
+                            <button type="submit" onClick={(event) => handleSubmit(event)}>Cadastrar-se</button>
+                        </Button>     
+                        <div id="resultadoPositivo">
+                            <p>
+                                Cadastro executado com sucesso!   
+                            </p>    
+                        </div>
+                        <div id="resultadoNegativo">
+                            <p>
+                                Não foi possível realizar o cadastro. Verifique se todos os dados estão corretos
+                            </p>    
+                        </div>                   
+                    </form>                    
                 </Inputs>
                 <ContainerHabilidades>
                     <div>
                         <p>Habilidades</p>
                         <input placeholder="Habilidade"/>
                         <input placeholder="Experiência" id="experience"/>
-                        <button /*type="submit"*/ onClick={() => handleSubmit()}>Salvar</button>
+                        <button type="submit">Salvar</button>
                         <Crud>
                             <ul>
                                 <li>Habilidade</li>
@@ -198,14 +219,11 @@ function CadastroTrabalhador(){
                                     <p>1 Ano</p>
                                 </Habilidades>
                                 <Separador id="habilidades"/>
-                                <ContainerAction>
-                                    {/* <BsTrashFill/> */}
-                                </ContainerAction>
+                                <ContainerAction/>
                             </CrudInformation>
                         </Crud>
                     </div>
-                </ContainerHabilidades>
-                
+                </ContainerHabilidades>            
                 <Footer/>
             </ArticleCadastro>
         </>
