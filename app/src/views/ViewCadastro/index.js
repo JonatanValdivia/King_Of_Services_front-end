@@ -1,7 +1,7 @@
 import { FormContainer } from "../../pages/CadastroCliente/style";
 import api from "../../services/api";
 import apiCep from "../../services/apiCep";
-// import InputMask from "react-input-mask";
+import InputMask from "react-input-mask";
 import { Component, useEffect, useState } from 'react';
 
 function ViewCadastro1() {
@@ -90,8 +90,27 @@ function ViewCadastro1() {
 
     }
 
+    const resultadoPositivo = () =>{
+        const resultadoPositivo = document.getElementById('resultadoPositivo');
+        resultadoPositivo.style.display = 'flex';
+        const timer = setTimeout(() => {
+            resultadoPositivo.style.display = 'none';
+        }, 1500);
+    }
+
+    const resultadoNegativo = () =>{
+        const resultadoNegativo = document.getElementById('resultadoNegativo');
+        resultadoNegativo.style.display = 'flex';
+        const timer = setTimeout(() => {
+            resultadoNegativo.style.display = 'none';
+        }, 1500);
+    }
+
     const handleSubmit = () => {
-        api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep });
+        // api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep });
+        // resultadoNegativo();
+        // resultadoPositivo();
+        
     }
 
     const back = () => {
@@ -99,30 +118,24 @@ function ViewCadastro1() {
         const formEndereco = document.getElementsByClassName('endereco')[0].style.display = "none";
     }
 
-
     return (
         <FormContainer>
             <form onsubmit="return false" className="dadosPessoais">
                 <input placeholder="Nome" value={nome} onChange={nomeHandler} />
-
                 <input placeholder="Email" value={email} onChange={emailHandler} />
                 <input placeholder="Senha" value={senha} onChange={senhaHandler} />
-                {/* <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/> */}
+                <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
                 <input placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
 
                 <label>Selecione o seu gênero:</label>
                 <div onChange={valorGenero}>
-                    
                     <input type="radio" value="1" name="gender" /> Masculino
                     <input type="radio" value="2" name="gender" /> Feminino
                     <input type="radio" value="3" name="gender" /> Outro
                 </div>
-
                 <button type='button' onClick={() => ocultModal()}>Próximo</button>
             </form>
-
             <form onsubmit="return false" className="endereco">
-
                 <input placeholder="Cep" value={cep} onChange={cepHandler} onBlur={() => buscarCep(cep)} />
                 <input placeholder="UF" value={uf} onChange={ufHandler} />
                 <input placeholder="Cidade" value={cidade} onChange={cidadeHandler} />
@@ -132,10 +145,17 @@ function ViewCadastro1() {
                 <input placeholder="Complemento (opcional)" value={complemento} onChange={complementoHandler} />
                 <button type='button' onClick={() => handleSubmit()}>Cadastrar</button>
                 <p onClick={back}>voltar</p>
-
+                <div id="resultadoPositivo">
+                    <p>
+                        Cadastro executado com sucesso!   
+                    </p>    
+                </div>
+                <div id="resultadoNegativo">
+                    <p>
+                        Não foi possível realizar o cadastro. Verifique se todos os dados estão corretos
+                    </p>    
+                </div>  
             </form>
-
-
         </FormContainer>
     );
 }

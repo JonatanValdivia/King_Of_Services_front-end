@@ -184,6 +184,42 @@ export const FormContainer = styled.div`
         vertical-align: middle;
     }
 
+    >form >#resultadoPositivo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(7, 145, 0, 0.2);
+        border: solid 3px rgba(12, 255, 0, 0.3);
+
+        >p{
+            color: #044201;
+            width: 100%;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    >form >#resultadoNegativo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(130, 0, 0, 0.2);
+        border: solid 3px rgba(255, 0, 0, 0.3);
+
+        >p{
+            width: 100%;
+            color: #451313;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
         padding: 0px;
