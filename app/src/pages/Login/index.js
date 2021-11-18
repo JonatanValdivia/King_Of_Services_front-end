@@ -17,22 +17,43 @@ function Login() {
         setSenha(event.target.value);
     }
 
-    const handleSubmit = () => {
-        api.post('http://kingofservices.com.br/Logins', { email, senha }).then(({ data }) => {
-            console.log(data);
-        });
-    }
+    const handleSubmit = async () => {
+        try {
+          let data = {
+            email,
+            senha,
+          };
+    
+          let response = await api.post(
+            "http://kingofservices.com.br/Logins",
+            data
+          );
+    
+          if (response.status === 200 && response.data) {
+            let jwt = response.data;
+    
+            localStorage.setItem("token", jwt);
+            console.log(jwt);
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
+    // const handleSubmit = () => {
+    //     api.post('http://kingofservices.com.br/Logins', { email, senha }).then(({ data }) => {
+    //         console.log(data);
+    //     });
+    // }
 
     return (
         <Overlay>
             <ContainerLogin>
-
                 <ContentIcon>
                     <a href="/">
                     <BsFillArrowLeftCircleFill color="#ff7a00" size="25px" cursor="pointer"/>
                     </a>
                 </ContentIcon>
-
                 <Logo>
                     <img src={imgLogo} />
                 </Logo>

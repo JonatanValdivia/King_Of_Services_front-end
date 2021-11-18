@@ -28,6 +28,7 @@ function CadastroTrabalhador(){
     const [descricao, setDescricao] = useState("");
     const [telefone, setTelefone] = useState("");
     const [dataNascimento, setdataNascimento] = useState("");
+    const [validation, setValidation] = useState(false);
 
     const dataNascimentoHandler = event =>{
         setdataNascimento(event.target.value)
@@ -108,7 +109,7 @@ function CadastroTrabalhador(){
         resultadoPositivo.style.display = 'flex';
         const timer = setTimeout(() => {
             resultadoPositivo.style.display = 'none';
-        }, 1500);
+        }, 5000);
     }
 
     const resultadoNegativo = () =>{
@@ -116,27 +117,35 @@ function CadastroTrabalhador(){
         resultadoNegativo.style.display = 'flex';
         const timer = setTimeout(() => {
             resultadoNegativo.style.display = 'none';
-        }, 1500);
+        }, 5000);
     }
 
     const idProfissao = 1;
 
+    const clear = () =>{
+        setNome(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setDescricao(''); setTelefone(''); setdataNascimento('');
+    }
+
+    const validationFunction = () =>{
+        if(nome || email || senha || descricao || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento || foto  === null && senha != senhaConfirm){
+            setValidation(false);
+            return validation;
+        }else{
+            setValidation(true)
+            return validation;
+        }
+    }
+
     const handleSubmit = (event) =>{
         event.preventDefault();
-
-        if(senha === senhaConfirm){
-            //     api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep}).then(({data}) =>{   
-            //         console.log(data);
-            //     });
-            setNome(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setDescricao(''); setTelefone(''); setdataNascimento('');
-            console.log("Senhas iguais");
-            resultadoPositivo()
+        if(validation){
+            api.post("http://kingofservices.com.br/Prestadores", {idProfissao, idSexo, nome, email, senha, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep}).then(() =>{   
+                resultadoPositivo();
+                clear();
+            }).catch(() => resultadoNegativo())    
         }else{
-            console.log("As senhas não correspondem!");
-            resultadoNegativo();
+            resultadoNegativo() 
         }
-        
-    
     }
 
     const buscarCep = cep =>{
@@ -184,7 +193,7 @@ function CadastroTrabalhador(){
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler} ></textarea>
                         <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} />
-                        <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
+                        <InputMask mask="9999-99-99" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                         <Button>
                             <button type="submit" onClick={(event) => handleSubmit(event)}>Cadastrar-se</button>
                         </Button>     
@@ -195,7 +204,7 @@ function CadastroTrabalhador(){
                         </div>
                         <div id="resultadoNegativo">
                             <p>
-                                Não foi possível realizar o cadastro. Verifique se todos os dados estão corretos
+                                Não foi possível realizar o cadastro. Verifique se todos os dados estão corretos!
                             </p>    
                         </div>                   
                     </form>                    

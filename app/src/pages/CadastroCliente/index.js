@@ -3,7 +3,6 @@ import imgLeao from "../../assets/LeãoBranco.png";
 import ImgLogoKOF from "../../assets/KingofServices.png";
 import api from "../../services/api";
 import apiCep from "../../services/apiCep";
-// import InputMask from "react-input-mask";
 import {useEffect, useState} from 'react';
 import ViewCadastro from "../../views/ViewCadastro/index.js";
 

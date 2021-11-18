@@ -120,6 +120,7 @@ export const Inputs = styled.div`
         height: 100px;
         background-color: rgba(7, 145, 0, 0.2);
         border: solid 3px rgba(12, 255, 0, 0.3);
+        margin-bottom: 50px;
 
         >p{
             color: #044201;
@@ -138,6 +139,7 @@ export const Inputs = styled.div`
         height: 100px;
         background-color: rgba(130, 0, 0, 0.2);
         border: solid 3px rgba(255, 0, 0, 0.3);
+        margin-bottom: 50px;
 
         >p{
             color: #451313;
