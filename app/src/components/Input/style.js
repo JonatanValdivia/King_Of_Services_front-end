@@ -35,7 +35,7 @@ export const Container = styled.div`
     }
 
     @media(min-width: 320px) and (max-width: 890px){
-        width: 80%;
+        width: 90%;
         height: auto;
         margin-top: 40px;
         margin-left: auto;

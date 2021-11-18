@@ -10,27 +10,6 @@ import ViewCadastro from "../../views/ViewCadastro/index.js";
 
 function CadastroCliente(){
 
-    // const [primeiroCadastro, setPrimeiroCadastro] = useState("");
-    // const [form1, setForm1] = useState({
-    //     nome: "",
-    //     idSexo: "",
-    //     email: "",
-    //     senha: "",
-    //     telefone: "",
-    //     dataNascimento: "",
-    // });
-
-    // const [segundoCadastro, setSegundoCadastro] = useState("");
-    // const [form2, setForm2] = useState({
-    //     cep: "",
-    //     uf: "",
-    //     cidade: "",
-    //     bairro: "",
-    //     rua: "",
-    //     numero: "",
-    //     complemento: "",
-    // });
-
     return(
         <Container>
             <GridEsquerda>
@@ -46,10 +25,7 @@ function CadastroCliente(){
                     <h1>
                         Cadastro
                     </h1>
-                        
                         <ViewCadastro/>
-
-                    
                 </FormContainer>
                 <ContainerFG>
                     <p>
@@ -67,9 +43,7 @@ function CadastroCliente(){
                 </ContainerFG>
             </GridDireita>
         </Container>
-
     );
-
 }
 
 export default CadastroCliente;

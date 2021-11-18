@@ -9,7 +9,7 @@ function CardConcluido(){
     return(
         <ContentCard>
             <CardProgressStyle>
-                {/* <Profile/> */}
+                <Profile/>
                 <p>Fulano de Tal, 35</p>
                 <ButtonProgress>
                     <AiFillCheckCircle size="40px" color="green"/>

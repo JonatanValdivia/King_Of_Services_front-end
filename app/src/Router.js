@@ -12,6 +12,7 @@ import ProgressPage from "./pages/AndamentoDoServico";
 import EditarPerfilCliente from "./pages/EditarPerfil/Cliente";
 import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 
+
 function Router(){
         return(
             <BrowserRouter>

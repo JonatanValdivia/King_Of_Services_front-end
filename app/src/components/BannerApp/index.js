@@ -8,8 +8,8 @@ function Banner(){
             <BannerApp>
                 <ContainerApp>
                     <ComponentsApp>
-                        <h1>Tenha uma melhor experiência com aplicativo da <span>King Of Service</span></h1>
-                        <p>Faça o download do nosso aplicativo</p>
+                        <h1>Tenha uma melhor experiência com o aplicativo da <span>King Of Service</span></h1>
+                        <p>Faça o download do nosso aplicativo: </p>
 
                         <PlayStore>
                             <p>Disponível no</p>

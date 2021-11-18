@@ -14,13 +14,13 @@ function Footer(){
                 </LogoStyle>
                 <Inicio>
                     <p>Inicio</p>
-                    <p>Home</p>
-                    <p>Mais Pedidos</p>
-                    <p>Serviços</p>
+                    <p><a href="\">Home</a></p>
+                    <p><a href="#maisPedidos">Mais Pedidos</a></p>
+                    <p><a href="#servicos">Serviços</a></p>
                 </Inicio>
                 <SobreNos>
                     <p>Sobre nós</p>
-                    <p>Informações da empresa</p>
+                    <p><a href="#sobre_nos">Informações da empresa</a></p>
                     <p>Contatos</p>
                 </SobreNos>
                 <Contatos>

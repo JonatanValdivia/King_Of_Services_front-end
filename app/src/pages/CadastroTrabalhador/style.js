@@ -111,6 +111,42 @@ export const Inputs = styled.div`
         font-family: sans-serif;
     }
 
+    >form >#resultadoPositivo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(7, 145, 0, 0.2);
+        border: solid 3px rgba(12, 255, 0, 0.3);
+
+        >p{
+            color: #044201;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+
+    >form >#resultadoNegativo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(130, 0, 0, 0.2);
+        border: solid 3px rgba(255, 0, 0, 0.3);
+
+        >p{
+            color: #451313;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+
     @media(min-width: 320px) and (max-width: 890px){
         padding: 0px;
         width: 90%;
@@ -137,11 +173,14 @@ export const Inputs = styled.div`
 `
 
 export const Button = styled.div`
-    width: 400px;
+    width: auto;
     height: auto;
+    margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 50px;
+    margin-bottom: 50px;
 
     button{
         width: 200px;
@@ -158,4 +197,224 @@ export const Button = styled.div`
 
         border-radius: 20px;
     }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+    }
+
+`
+
+export const ContainerHabilidades = styled.div`
+    width: 700px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+
+    >div>p{
+        font-weight: bold;
+        font-family: sans-serif;
+        margin-bottom: 10px;
+    }
+
+    >div>input{
+        width: 250px;
+        height: 50px;
+        border: solid 1px var(--primary);
+        
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+
+    #experience{
+        width: 150px;
+        margin-left: 30px;
+    }
+
+    >div>button{
+        width: 120px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+        margin-left: 50px;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px;
+
+        >div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        >div>input{
+            width: 80%;
+            height: 50px;
+            border: solid 1px var(--primary);
+            
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        #experience{
+            width: 80%;
+            margin-left: 0px;
+        }
+
+        >div>button{
+            width: 80%;
+            margin-left: 0px;
+        }
+    }
+`
+
+export const Crud = styled.div`
+    width: 640px;
+    height: 150px;
+
+    box-shadow: 0px 0px 5px 0px #adadad;
+    
+    >ul{
+        width: 100%;
+        height: 35px;
+
+        margin-bottom: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        >li{
+            width: 150px;
+            height: inherit;
+
+            float: left;
+            list-style: none;
+            color: black;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+        margin-top: 1rem;
+        
+        >li{
+            width: 100%;
+            height: inherit;
+            float: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+`
+
+export const CrudInformation = styled.div`
+    width: inherit;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    #habilidades{
+        float: left;
+        margin-left: 30px;
+        margin-top: 20px;
+        height: 50px;
+        margin-top: 10px;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+
+        #habilidades{
+            float: left;
+            margin-left: 30px;
+            margin-top: 20px;
+            height: 50px;
+            margin-top: 10px;
+        }
+    }
+`
+
+export const Habilidades = styled.div`
+    width: 150px;
+    height: 70px;
+    float: left;
+
+    margin-left: 30px;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >button{
+        width: 70px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+    }
+
+    >p{
+        font-weight: bold;
+
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        margin-left: 0px;
+    }
+`
+
+export const Separador = styled.div`
+    width: 1px;
+    height: 30px;
+    background-color: gray;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        display: none;
+    }
+    
+`
+
+export const ContainerAction = styled.div`
+    width: 70px;
+    height: 70px;
+    float: left;
+
+    margin-left: 50px;
 `

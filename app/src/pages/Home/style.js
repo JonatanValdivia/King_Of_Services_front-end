@@ -89,12 +89,14 @@ export const Loading = styled.div`
 `
 
 export const Main = styled.main`
+    background-color: ivory;
     width: auto;
     height: auto;
     margin-top: 70px;
 
     @media only screen and (max-width: 400px){
       height: auto;
+      width: 100%;
     }
 `
 
@@ -104,6 +106,10 @@ export const Content = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: 100%;
+  }
 `
 
 export const Overlay = styled.div`
@@ -112,17 +118,27 @@ export const Overlay = styled.div`
   justify-content: center;
 
   >h1{
-        font-family: sans-serif;
-        font-size: 2em;
-        color: #000000;
+    font-family: sans-serif;
+    font-size: 2em;
+    color: #000000;
 
-        display: flex;
-        justify-content: center;
-        
-        >span{
-            color: #FF7A00;
-            margin-left: 10px;
-        }
+    display: flex;
+    justify-content: center;
+    
+    >span{
+        color: #FF7A00;
+        margin-left: 10px;
+    }
+  }
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: 100%;
+    >h1{
+      width: 100%;
+      >span{
+        margin-left: 0px;
+      }
+    }
   }
 `
 
@@ -131,17 +147,30 @@ export const Introduction = styled.div`
   height: auto;
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 `
 
 export const Abstract = styled.div`
-  width: 100%;
+  width: min-content;
   height: auto;
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
 
   grid-template-columns: 20% 20% 20%;
   grid-template-areas: "esquerda center direita";
+
+  @media(min-width: 320px) and (max-width: 890px){
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    
+  }
 `
 
 export const GridLeft = styled.div`
@@ -149,6 +178,11 @@ export const GridLeft = styled.div`
   height: inherit;
   padding: 20px;
   grid-area: esquerda;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    padding: 0;
+    margin-top: 20px;
+  }
 `
 
 export const GridCenter = styled.div`
@@ -156,6 +190,11 @@ export const GridCenter = styled.div`
   height: inherit;
   padding: 20px;
   grid-area: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    padding: 0;
+    margin-top: 20px;
+  }
 ` 
 
 export const GridRight = styled.div`
@@ -163,6 +202,11 @@ export const GridRight = styled.div`
   height: inherit;
   padding: 20px;
   grid-area: direita;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    padding: 0;
+    margin-top: 20px;
+  }
 ` 
 
 export const CircleAbstract = styled.div`
@@ -178,25 +222,50 @@ export const CircleAbstract = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 export const ContentServicos = styled.div`
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    flex-direction: column;
+  }
 `
 
 export const OverlayServicos = styled.div`
   width: 15%;
   height: inherit;
   padding: 20px;
-
   margin-left: 10px;
-
-  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   p{
     text-align: center;
     margin-top: 10px;
+    
+  }
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: none;
+    margin-left: 0px;
+    p{
+      font-size: larger;
+    }
   }
 `
 
@@ -204,7 +273,6 @@ export const Circle = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,6 +280,11 @@ export const Circle = styled.div`
   img{
     width: 100%;
     height: 100%;
+  }
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: 200px;
+    height: 200px;
   }
 `
 
@@ -226,7 +299,6 @@ export const Button = styled.div`
   width: auto;
   height: auto;
   margin-top: 50px;
-  
 
   button{
     width: 150px;

@@ -29,6 +29,35 @@ export const CardProgressStyle = styled.div`
         padding: 10px;
         padding-left: 0;
     }
+
+    @media only screen and (max-width: 600px){ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+        }
+
+        #description{
+            font-size: 1em;
+            font-family: sans-serif;
+            padding: 10px;
+            padding-left: 0;
+        }
+    }
+
+    @media (min-width: 601px){ 
+        >p{
+            margin-left: 190px;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+        }
+    }
 `
 
 export const ButtonProgress = styled.div`
@@ -54,3 +83,14 @@ export const ButtonProgress = styled.div`
         border-radius: 20px;
     }
 `
+
+export const Profile = styled.img`
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 100%;
+
+    @media only screen and (max-width: 500px){ 
+        margin: auto;
+    }
+`;
