@@ -42,7 +42,7 @@ function HeaderLogout() {
             <Menu id="menu">
                 <ul>
                     <li>
-                        <a>
+                        <a href="/meusservicos">
                             Meus Serviços
                         </a>
                     </li>
@@ -52,7 +52,7 @@ function HeaderLogout() {
                         </a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/cadastrotrabalhador">
                             Trabalhe conosco
                         </a>
                     </li>

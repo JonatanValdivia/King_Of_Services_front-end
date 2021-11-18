@@ -1,7 +1,7 @@
 import BannerHome from "../../components/BannerHome";
 import Banner from "../../components/BannerApp";
 import Cards from "../../components/Cards";
-import Header from "../../components/Header";
+import HeaderLogout from "../../components/Header-Logout";
 import { Main, Loading, Content, Overlay, Introduction, CircleAbstract, Abstract, GridRight, GridCenter, GridLeft, ContentServicos, OverlayServicos, Circle, Button, ContainerButton } from "./style";
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
@@ -53,7 +53,7 @@ function Home() {
 
     return (
         <>
-            <Header />
+            <HeaderLogout />
             <Main>
 
                 <BannerHome>

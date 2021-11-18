@@ -29,10 +29,16 @@ function CadastroCliente(){
                 </FormContainer>
                 <ContainerFG>
                     <p>
-                        Continuar com o <span>Google</span>
+                        Continuar com o 
+                        <a href="/cadastroFacebookGoogle"> 
+                            <span> Google </span>
+                        </a>
                     </p>
                     <p>
-                        Continuar com o <span>Facebook</span>
+                        Continuar com o 
+                        <a href="/cadastroFacebookGoogle"> 
+                            <span> Facebook</span>
+                        </a>
                     </p>
                 </ContainerFG>
             </GridDireita>

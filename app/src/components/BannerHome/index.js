@@ -2,19 +2,19 @@ import Modal from "../Modal";
 import { Title } from "../Modal/style";
 import { BannerStyle } from "./style";
 
-function BannerHome(){
-    return(
+function BannerHome() {
+    return (
         <>
             <BannerStyle>
                 <Title>
-                        <h1>
-                            Titulo do Modal
-                        </h1>
-                        <p>
-                            Titulo do Modal
-                        </p>
-                    </Title>
-                <Modal/>
+                    <h1>
+                        Seja um lider no seu serviço!
+                    </h1>
+                    <p>
+                        Encontre os melhores prestadores de serviço próximo a você
+                    </p>
+                </Title>
+                <Modal />
             </BannerStyle>
         </>
     )

@@ -9,6 +9,8 @@ import PerfilPrestador from "./pages/Perfis/PerfilPrestador";
 import PerfilCliente from "./pages/Perfis/PerfilCliente";
 import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
+import EditarPerfilCliente from "./pages/EditarPerfil/Cliente";
+import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 
 
 function Router(){
@@ -43,6 +45,14 @@ function Router(){
                     </Route>
                     <Route exact path="/perfilCliente">
                         <PerfilCliente/>
+                    </Route>
+                    <Route exact path="/editarperfilcliente">
+                        <EditarPerfilCliente/>
+                        {console.log("cliente")}
+                    </Route>
+                    <Route exact path="/editarperfiltrabalhador">
+                        <EditarPerfilPrestador/>
+                        {console.log("trabalhador")}
                     </Route>
                 </Switch>
             </BrowserRouter>

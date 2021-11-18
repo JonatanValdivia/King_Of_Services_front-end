@@ -67,6 +67,7 @@ export const ButtonProgress = styled.div`
     height: auto;
 
     display: flex;
+    justify-content: center;
     margin-left: auto;
 
     p{
