@@ -177,34 +177,6 @@ function CadastroTrabalhador(){
                         <button>Cadastrar-se</button>
                     </Button>
                 </Inputs>
-                <ContainerHabilidades>
-                    <div>
-                        <p>Habilidades</p>
-                        <input placeholder="Habilidade"/>
-                        <input placeholder="Experiência" id="experience"/>
-                        <button /*type="submit"*/ onClick={() => handleSubmit()}>Salvar</button>
-                        <Crud>
-                            <ul>
-                                <li>Habilidade</li>
-                                <li>Experiência</li>
-                                <li>Ação</li>
-                            </ul>
-                            <CrudInformation>
-                                <Habilidades>
-                                    <button>PHP</button>
-                                </Habilidades>
-                                <Separador id="habilidades"/>
-                                <Habilidades>
-                                    <p>1 Ano</p>
-                                </Habilidades>
-                                <Separador id="habilidades"/>
-                                <ContainerAction>
-                                    {/* <BsTrashFill/> */}
-                                </ContainerAction>
-                            </CrudInformation>
-                        </Crud>
-                    </div>
-                </ContainerHabilidades>
                 
                 <Footer/>
             </ArticleCadastro>

@@ -1,5 +1,6 @@
 import Header from "../../../components/Header-Logout"
-import { Container, Content, Foto, StyleComponent, StyleComponent1 } from "./style";
+import { Button } from "../../CadastroTrabalhador/style";
+import { Container, Content, Foto, Inputs, StyleComponent } from "./style";
 
 function EditarPerfilCliente() {
   return (
@@ -13,15 +14,23 @@ function EditarPerfilCliente() {
             </Foto>
 
             <button>Editar foto</button>
+
+            <Inputs>
+              <form>
+                <input placeholder="Nome completo" />
+                <input placeholder="Data de nascimento" /><input placeholder="Localização" />
+                <input placeholder="Redes Sociais" />
+                <input placeholder="Nº de celular" />
+                <p>Descrição</p>
+                <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" ></textarea>
+              </form>
+            </Inputs>
+
+            <Button>
+              <button>Salvar</button>
+            </Button>
+
           </StyleComponent>
-          <StyleComponent1>
-            <input/>
-            <input/>
-            <input/>
-            <input/>
-            <input/>
-            <input/>
-          </StyleComponent1>
         </Container>
       </Content>
     </>

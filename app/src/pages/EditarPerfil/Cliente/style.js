@@ -3,22 +3,20 @@ import styled from "styled-components";
 export const Content = styled.div`
   width: 100%;
   height: auto;
-  background-color: cadetblue;
   display: flex;
   justify-content: center;
 `
 
 export const Container = styled.div`
   width: 70%;
-  height: 85vh;
-  background-color: aliceblue;
+  height: auto;
   display: flex;
-
+  justify-content: center;
 `
 
 export const StyleComponent = styled.div`
   margin-top: 4rem;
-  width: 30%;
+  width: 65%;
   height: auto;
   padding: 2rem;
   display: flex;
@@ -26,21 +24,10 @@ export const StyleComponent = styled.div`
   align-items: center;
   /* border-right: solid 1px #CCC; */
   float: left;
+  margin-top: 76px;
 
-  background-color: blue;
+  border: solid 1px #CCC;
 
-  div:last-child{
-    padding: 10px;
-    border-radius: 90px;
-    width: 180px;
-    border: 3px var(--primary) solid;
-    text-align: center;
-    i{
-      color: #ad8c05;
-    }
-    font-size: 2rem;
-    margin-top: 3rem;
-  }
 
   button{
     width: 150px;
@@ -72,18 +59,72 @@ export const Foto = styled.div`
     border-radius: 100%;
   }
 
-`;
+`
 
-export const StyleComponent1 = styled.div`
-  width: 70%;
-  height: 85vh;
-  background-color: brown;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+export const Inputs = styled.div`
+    width: 400px;
+    height: auto;
+    padding-top: 50px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
 
-  input{
-    
-  }
+    > form > input{
+        width: 400px;
+        height: 50px;
+        border: solid 1px var(--primary);
+        
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+
+    >form input:first-child {
+        margin-bottom: 2rem;
+    }
+
+    >form>div{
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 1rem;
+    }
+
+    >form>div>input[type='radio'] {
+        margin-left: 1rem;
+    }
+
+    > form > textarea{
+        width: 400px;
+        height: 150px;
+        border: solid 1px var(--primary);
+        
+        padding: 10px;
+        margin-bottom: 30px;
+        font-family: sans-serif;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        padding: 0px;
+        width: 90%;
+
+        >form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        > form > input{
+            width: 100%;
+        }
+
+        >form>div{
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        > form > textarea{
+            width: 100%;
+        }
+    }
 `
