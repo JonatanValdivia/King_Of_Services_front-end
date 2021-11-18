@@ -11,8 +11,17 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "esquerda direita";
 
-    @media(min-width: 320px) and (max-width: 890px){
+    @media(min-width: 320px) and (max-width: 600px){
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    @media(min-width: 601px) and (max-width: 890px){
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
         display: flex;
         flex-direction: column;
         height: 100vh;
@@ -81,6 +90,47 @@ export const GridDireita = styled.div`
 
     .endereco{
         display: none;
+
+        p{
+            margin: 20px 0px 20px 0px;
+            font-size: 1.2rem;
+        }
+
+        >#resultadoPositivo{
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(7, 145, 0, 0.2);
+            border: solid 3px rgba(12, 255, 0, 0.3);
+
+            >p{
+                color: #044201;
+                width: 100%;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+
+        > #resultadoNegativo{
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(130, 0, 0, 0.2);
+            border: solid 3px rgba(255, 0, 0, 0.3);
+
+            >p{
+                width: 100%;
+                color: #451313;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
     }
 
     @media(min-width: 320px) and (max-width: 890px){
@@ -158,7 +208,7 @@ export const FormContainer = styled.div`
         margin-bottom: 10px;
     }
 
-    form>input{
+    section>input{
         width: 400px;
         height: 40px;
         border: none;
@@ -174,50 +224,14 @@ export const FormContainer = styled.div`
    
     }
 
-    form>div {
+    section>div {
         width: 109px;
     }
 
-    form>div>input[type='radio'] {
+    section>div>input[type='radio'] {
         margin-left: 1rem;
         display: table-cell;
         vertical-align: middle;
-    }
-
-    >form >#resultadoPositivo{
-        margin-left: auto;
-        margin-right: auto;
-        display: none;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        background-color: rgba(7, 145, 0, 0.2);
-        border: solid 3px rgba(12, 255, 0, 0.3);
-
-        >p{
-            color: #044201;
-            width: 100%;
-            font-weight: bold;
-            text-align: center;
-        }
-    }
-
-    >form >#resultadoNegativo{
-        margin-left: auto;
-        margin-right: auto;
-        display: none;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        background-color: rgba(130, 0, 0, 0.2);
-        border: solid 3px rgba(255, 0, 0, 0.3);
-
-        >p{
-            width: 100%;
-            color: #451313;
-            text-align: center;
-            font-weight: bold;
-        }
     }
 
     @media(min-width: 320px) and (max-width: 890px){
@@ -229,7 +243,7 @@ export const FormContainer = styled.div`
             margin-bottom: 20px;
         }
 
-        >form{
+        >section{
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -245,22 +259,22 @@ export const FormContainer = styled.div`
             }
         }
 
-        form>input{
+        section>input{
             width: 100%;
         }
 
-        form>label{
+        section>label{
             width: 100%;
         }
 
-        form>div{
+        section>div{
             width: auto;
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
         }
 
-        form>button{
+        section>button{
             width: 70%;
             margin-left: 0px;
             margin-top: 20px;

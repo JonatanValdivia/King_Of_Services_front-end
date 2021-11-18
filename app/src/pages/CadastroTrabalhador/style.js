@@ -125,6 +125,7 @@ export const Inputs = styled.div`
             color: #044201;
             font-weight: bold;
             text-align: center;
+            font-size: 1rem;
         }
     }
 
@@ -142,6 +143,7 @@ export const Inputs = styled.div`
             color: #451313;
             text-align: center;
             font-weight: bold;
+            font-size: 1rem;
         }
     }
 

@@ -130,8 +130,10 @@ function CadastroTrabalhador(){
             //     });
             setNome(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setDescricao(''); setTelefone(''); setdataNascimento('');
             console.log("Senhas iguais");
+            resultadoPositivo()
         }else{
             console.log("As senhas não correspondem!");
+            resultadoNegativo();
         }
         
     
