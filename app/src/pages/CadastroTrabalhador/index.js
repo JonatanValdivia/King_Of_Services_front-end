@@ -186,12 +186,6 @@ function CadastroTrabalhador(){
                                 );
                             })}
                             
-                            {/* {idProfissao.map(element => {
-                                <option>
-                                    {element.nomeProfissao}
-                                //  {console.log(element.nomeProfissao)}  
-                                </option>
-                            })} */}
                         </select>
 
                         <p>Endereço</p>

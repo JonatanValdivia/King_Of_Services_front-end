@@ -86,6 +86,12 @@ export const Inputs = styled.div`
         padding-left: 20px;
     }
 
+    >form>select{
+        width: 400px;
+        height: 50px;
+        margin-bottom: 30px;
+    }
+
     >form input:first-child {
         margin-bottom: 2rem;
     }
@@ -161,6 +167,10 @@ export const Inputs = styled.div`
 
         > form > input{
             width: 100%;
+        }
+
+        >form>select{
+            width: 80%;
         }
 
         >form>div{
