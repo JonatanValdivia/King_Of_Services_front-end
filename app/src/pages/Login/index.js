@@ -39,13 +39,7 @@ function Login() {
           console.log(e);
         }
       };
-
-    // const handleSubmit = () => {
-    //     api.post('http://kingofservices.com.br/Logins', { email, senha }).then(({ data }) => {
-    //         console.log(data);
-    //     });
-    // }
-
+      
     return (
         <Overlay>
             <ContainerLogin>
