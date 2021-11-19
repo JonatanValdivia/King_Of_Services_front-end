@@ -4,7 +4,6 @@ export const Container = styled.header`
     width: 100%;
     height: 70px;
     position: fixed;
-    padding: 0px 0 0 0;
     top: 0;
     z-index: 99999;
     background-color: var(--secundary);
@@ -23,6 +22,10 @@ export const Container = styled.header`
     }
 
     @media only screen and (max-width: 800px){
+        height: auto;
+        align-items: flex-end;
+        padding: 0px 0 10px 0;
+
         .open{
             display: flex;
             height: 100vh;   
