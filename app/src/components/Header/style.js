@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: 100%;
-    height: auto;
+    height: 70px;
     position: fixed;
-    padding: 0px 0 10px 0;
+    padding: 0px 0 0px 0;
     top: 0;
     z-index: 99999;
     background-color: var(--secundary);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 
     i{
         display: none;
