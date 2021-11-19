@@ -6,6 +6,9 @@ export const BannerStyle = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var(--secundary);
+    flex-direction: column;
+    padding-top: 50px;
+    
 
     @media(min-width: 320px) and (max-width: 890px){
         width: auto;
@@ -21,16 +24,9 @@ export const BannerStyle = styled.div`
     }
 `
 
-export const Overlay = styled.div`
-    width: 1000px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-
-    @media(min-width: 320px) and (max-width: 890px){
-        margin-top: 130px;
-        width: 90vw;
-    }
+export const ContainerFoto = styled.div`
+    width: 70%;
+    height: 70%;
+    background-color: lawngreen;
+    
 `
-
