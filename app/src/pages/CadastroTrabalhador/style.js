@@ -66,6 +66,8 @@ export const ContainerButton = styled.div`
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
 `

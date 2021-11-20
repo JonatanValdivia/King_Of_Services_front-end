@@ -100,7 +100,6 @@ function CadastroTrabalhador(){
         fileReader.onload = (event) => {
             setFoto(event.target.result)   
         }
-        
     }
 
     const valorGenero = (event) =>{
