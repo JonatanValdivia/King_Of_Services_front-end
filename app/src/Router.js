@@ -5,7 +5,9 @@ import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import CadastroFacebookGoogle from "./pages/CadastroGoogleFacebook";
 import Listagem from "./pages/Listagem dos profissionais";
-import PerfilPrestador from "./pages/Perfis/PerfilPrestador";
+import PerfilUserPrestadorLogado from "./pages/Perfis/PerfilPrestador";
+import PerfilUserClienteLogado from "./pages/Perfis/PerfilCliente";
+import PerfilPrestador from "./pages/PerfilPrestador";
 import PerfilCliente from "./pages/Perfis/PerfilCliente";
 import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
@@ -14,6 +16,18 @@ import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 
 
 function Router(){
+    const login = localStorage.getItem('login') ?? false;
+    const perfil = () =>{
+        if(login == '"prestador"'){
+            return(
+                <PerfilUserPrestadorLogado/>
+            );
+        }else{
+            return(
+                <PerfilUserClienteLogado/>
+            );
+        }
+    }
         return(
             <BrowserRouter>
                 <Switch>
@@ -41,7 +55,7 @@ function Router(){
                     </Route>
                     <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
                     <Route exact path="/perfil">
-                        <PerfilPrestador/>
+                        {perfil()}
                     </Route>
                     <Route exact path="/perfilCliente">
                         <PerfilCliente/>

@@ -2,6 +2,7 @@ import BannerHome from "../../components/BannerHome";
 import Banner from "../../components/BannerApp";
 import Cards from "../../components/Cards";
 import HeaderLogout from "../../components/Header-Logout";
+import Header from "../../components/Header";
 import { Main, Loading, Content, Overlay, Introduction, CircleAbstract, Abstract, GridRight, GridCenter, GridLeft, ContentServicos, OverlayServicos, Circle, Button, ContainerButton } from "./style";
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ import ImgProfessor from "../../assets/professor.png"
 function Home() {
     const [prestadores, setPrestadores] = useState([])
     const [loading, setLoading] = useState(false)
+    const login = localStorage.getItem('login') ?? false;
     useEffect(() => {
         api.get(`Prestadores`).then(({ data }) => {
             setPrestadores(data)
@@ -47,17 +49,14 @@ function Home() {
                     </div>
                 </div>
             </Loading>
-
         )
     }
 
     return (
         <>
-            <HeaderLogout />
+            { login ? <HeaderLogout/> : <Header/> } 
             <Main>
-
-                <BannerHome>
-                </BannerHome>
+                <BannerHome/>
                 <Cards />
                 <Banner />
                 <br id="sobre_nos"/>

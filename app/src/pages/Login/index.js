@@ -3,11 +3,13 @@ import imgLogo from "../../assets/Leão.png";
 import api from '../../services/api';
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { useHistory } from 'react-router-dom';
 
 
 function Login() {
     const [email, setemail] = useState("");
     const [senha, setSenha] = useState("");
+    let history = useHistory(); 
 
     const emailHandler = (event) => {
         setemail(event.target.value);
@@ -18,28 +20,19 @@ function Login() {
     }
 
     const handleSubmit = async () => {
-        try {
-          let data = {
-            email,
-            senha,
-          };
-    
-          let response = await api.post(
-            "http://kingofservices.com.br/Logins",
-            data
-          );
-    
-          if (response.status === 200 && response.data) {
-            let jwt = response.data;
-    
-            localStorage.setItem("token", jwt);
-            console.log(jwt);
-          }
-        } catch (e) {
-          console.log(e);
-        }
+        api.post("http://kingofservices.com.br/Logins",{email, senha}).then(data =>{
+          console.log(data)
+          let jwt = data.data.token;
+          let login = data.data.login;
+          localStorage.setItem("token", JSON.stringify(jwt));
+          localStorage.setItem("login", JSON.stringify(login));
+          history.push("/")
+        })
+        .catch(() =>{
+          
+        });   
       };
-      
+
     return (
         <Overlay>
             <ContainerLogin>

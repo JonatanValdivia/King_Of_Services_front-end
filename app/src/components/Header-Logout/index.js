@@ -1,12 +1,13 @@
 import { Container, ContentIcon, Menu, Profile, Submenu, TextRegister } from "./style";
 import { IoIosArrowDown } from 'react-icons/io'
-
+import { useHistory } from 'react-router-dom';
 import imgLogo from "../../assets/Logo.png";
 import { useState } from "react";
 
 function HeaderLogout() {
 
     let [ open, setOpen ] = useState(false);
+    let history = useHistory(); 
     
     const openMenu = () => {
         const menu = document.getElementById('menu');
@@ -30,6 +31,12 @@ function HeaderLogout() {
             const submenu = document.getElementById("submenu").style.visibility = "hidden"
             invisible = 1
         }
+    }
+
+    const logout = () =>{
+        localStorage.removeItem('token');
+        localStorage.removeItem('login');
+        history.push('/login');
     }
 
     return (
@@ -74,9 +81,13 @@ function HeaderLogout() {
                             </TextRegister>
                             <Submenu id="submenu">
                                 <ul>
-                                    <li>Meu Perfil</li>
+                                    <li>
+                                        <a href="/perfil">
+                                            Meu Perfil
+                                        </a>
+                                    </li>
                                     <hr/>
-                                    <li>Logout</li>
+                                    <li onClick={logout}>Logout</li>
                                 </ul>
                             </Submenu>
                         </div>

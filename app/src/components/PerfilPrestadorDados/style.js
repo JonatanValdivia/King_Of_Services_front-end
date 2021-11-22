@@ -20,6 +20,23 @@ export const StyleComponent1 = styled.div`
         margin-top: 3rem;
       }
     }
+
+    button{
+        width: 200px;
+        height: 40px;
+
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+        margin-top: 50px;
+    }
   
 
   @media(min-width: 320px) and (max-width: 890px){

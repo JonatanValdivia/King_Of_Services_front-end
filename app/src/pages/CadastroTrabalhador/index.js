@@ -7,10 +7,10 @@ import api from '../../services/api';
 import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
 import { useState, useEffect } from 'react';
-import HeaderLogout from "../../components/Header-Logout";
 
 function CadastroTrabalhador(){
     const [profissao, setProfissao] = useState([]);
+    const login = localStorage.getItem('login') ?? false;
 
     useEffect (() => {
             api.get('Profissoes').then(({data}) =>{
@@ -154,7 +154,7 @@ function CadastroTrabalhador(){
 
     return(
         <>
-            <Header/>
+            { login ? <div/> : <Header/> } 
             <BannerCadastro/>
             <ArticleCadastro>
                 <ImgProfileStyle>

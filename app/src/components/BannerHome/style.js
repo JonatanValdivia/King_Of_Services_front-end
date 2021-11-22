@@ -16,7 +16,9 @@ export const BannerStyle = styled.article`
 
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
+        height: 600px;
         padding: 0px;
+        gap: 5rem
     }
 `
 
@@ -24,16 +26,13 @@ export const Title = styled.div`
     width: 600px;
     height: 110px;
     padding: 20px;
-
     margin-left: auto;
     margin-right: auto;
-
 
     >h1{
         font-family: sans-serif;
         font-size: 2em;
         color: #FFFFFF;
-
         display: flex;
         justify-content: center;
     }
@@ -42,15 +41,13 @@ export const Title = styled.div`
         font-family: sans-serif;
         font-size: 1.1em;
         color: #FFFFFF;
-
         margin-top: 10px;
-
         display: flex;
         justify-content: center;
     }
 
     @media(min-width: 320px) and (max-width: 890px){
-        
+    
     }
 
 ` 

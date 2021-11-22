@@ -1,20 +1,39 @@
 import Header from "../../../components/Header";
+import HeaderLogout from "../../../components/Header-Logout";
 import Footer from "../../../components/Rodape";
 import { Content, Foto, Overlay, StyleComponent1, StyleComponent2 } from "./style";
 import IconLocal from "../../../assets/localizacao.png"
 import FacebookIcon from "../../../assets/facebook.png"
-import WppIcon from "../../../assets/whatsapp.png"
+import WppIcon from "../../../assets/whatsapp.png";
+import { useState, useEffect } from "react";
+import jwtDecode from 'jwt-decode';
+import api from '../../../services/api';
 
 
 function PerfilCliente() {
+  const [cliente, setCliente] = useState([]);
+    const token = jwtDecode(localStorage.getItem('token')) ?? [];
+    const login = localStorage.getItem('login') ?? false;
+
+    useEffect(() => {
+        
+        api.get(`Clientes/${token.data.id}`).then(data => {
+            setCliente(data.data)
+            console.log(cliente);
+        })
+        .catch( () => {
+
+        })
+
+    }, [])
   return (
     <>
-      <Header />
+      { login ? <HeaderLogout/> : <Header/> } 
       <Content>
         <Overlay>
           <StyleComponent1>
             <Foto>
-              {/* <img src={`http://kingofservices.com.br/${prestador.foto}`} alt="" /> */}
+              <img src={`http://kingofservices.com.br/${cliente.foto}`} alt={cliente.foto} />
             </Foto>
 
             <div>
@@ -22,20 +41,20 @@ function PerfilCliente() {
             </div>
           </StyleComponent1>
           <StyleComponent2>
-            <h1>Thaynara, 28</h1>
+            <h1>{cliente.nome}</h1>
             <div id="datas">
-              <p>Registrado deste: 12/12/2021</p>
-              <p>Último acesso em: 12/12/2021</p>
+              <p>Registrado deste: {cliente.registro}</p>
+              {/* <p>Último acesso em: 12/12/2021</p> */}
               <p></p>
             </div>
             <div id="dados">
               <p>
                 <img src={IconLocal}/>
-                Rua Luiz Belli, 157 - Itapevi, SP
+                {cliente.rua}, {cliente.numero} - {cliente.cidade}, {cliente.uf}
               </p>
               <p id="whatsapp">
                 <img src={WppIcon} id="wpp" />
-                (11)99990000
+                {cliente.telefone}
               </p>
               <p>
                 <img src={FacebookIcon} id="facebook"/>
@@ -47,7 +66,7 @@ function PerfilCliente() {
                 Descricao:
               </h3>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint obcaecati corporis unde. Saepe, repudiandae similique. Dolore beatae, exercitationem, autem debitis doloribus unde odit quibusdam commodi repellat consequuntur dolor sed rerum?
+              {cliente.descricao}
               </p>
             </div>
           </StyleComponent2>

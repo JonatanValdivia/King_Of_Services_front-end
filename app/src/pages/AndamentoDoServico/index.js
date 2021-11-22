@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header";
-import Footer from "../../components/Rodape"
+import Footer from "../../components/Rodape";
 import CardPedidos from "../../views/ProgressView/ViewCardAndamento";
 import CardConcluido from "../../views/ProgressView/ViewCardConcluido";
 import CardProgress from "../../views/ProgressView/ViewCardProgress";
@@ -27,7 +27,7 @@ function ProgressPage(props) {
                     <Overlay>
                     <ul>
                         <li className="pedidos">Pedidos</li>
-                        <li className="andamento">Em andamento</li>
+                        <li className="pendente">Pendente</li>
                         <li className="concluido">Concluido</li>
                     </ul>
                     <hr/>
