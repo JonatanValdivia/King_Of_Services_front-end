@@ -1,14 +1,24 @@
 import styled from "styled-components";
 
 export const BannerStyle = styled.div`
-    width: inherit;
-    height: auto;
-    padding: 170px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secundary);
 
     @media(min-width: 320px) and (max-width: 890px){
         margin-top: 100px;
         width: auto;
         padding: 0px;
+    }
+
+    h2{
+        color: #FFFFFF;
+
+        span{
+            color: var(--primary);
+        }
     }
 `
 

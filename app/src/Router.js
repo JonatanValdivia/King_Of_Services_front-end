@@ -13,6 +13,7 @@ import CadastroCliente from "./pages/CadastroCliente";
 import ProgressPage from "./pages/AndamentoDoServico";
 import EditarPerfilCliente from "./pages/EditarPerfil/Cliente";
 import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
+import MaisPedidos from "./pages/MaisPedidos";
 
 
 function Router(){
@@ -67,6 +68,9 @@ function Router(){
                     <Route exact path="/editarperfiltrabalhador">
                         <EditarPerfilPrestador/>
                         {console.log("trabalhador")}
+                    </Route>
+                    <Route exact path="/maispedidos">
+                        <MaisPedidos/>
                     </Route>
                 </Switch>
             </BrowserRouter>

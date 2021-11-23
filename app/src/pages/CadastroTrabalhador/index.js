@@ -217,32 +217,6 @@ function CadastroTrabalhador(){
                         </div>                   
                     </form>                    
                 </Inputs>
-                <ContainerHabilidades>
-                    <div>
-                        <p>Habilidades</p>
-                        <input placeholder="Habilidade"/>
-                        <input placeholder="Experiência" id="experience"/>
-                        <button type="submit">Salvar</button>
-                        <Crud>
-                            <ul>
-                                <li>Habilidade</li>
-                                <li>Experiência</li>
-                                <li>Ação</li>
-                            </ul>
-                            <CrudInformation>
-                                <Habilidades>
-                                    <button>PHP</button>
-                                </Habilidades>
-                                <Separador id="habilidades"/>
-                                <Habilidades>
-                                    <p>1 Ano</p>
-                                </Habilidades>
-                                <Separador id="habilidades"/>
-                                <ContainerAction/>
-                            </CrudInformation>
-                        </Crud>
-                    </div>
-                </ContainerHabilidades>            
                 <Footer/>
             </ArticleCadastro>
         </>
