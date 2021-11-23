@@ -20,7 +20,8 @@ function ViewCadastro1() {
     const [rua, setRua] = useState("");
     const [numero, setNumero] = useState("");
     const [complemento, setComplemento] = useState("");
-
+    const [validation, setValidation] = useState(false);
+    const foto = null;
 
     const dataNascimentoHandler = (event) => {
         setDataNascimento(event.target.value);
@@ -49,8 +50,6 @@ function ViewCadastro1() {
     const valorGenero = (event) => {
         setIdSexo(event.target.value)
     }
-
-    const foto = 1010100;
 
     const complementoHandler = (event) => {
         setComplemento(event.target.value);
@@ -100,7 +99,7 @@ function ViewCadastro1() {
         resultadoPositivo.style.display = 'flex';
         const timer = setTimeout(() => {
             resultadoPositivo.style.display = 'none';
-        }, 1500);
+        }, 5000);
     }
 
     const resultadoNegativo = () =>{
@@ -108,23 +107,35 @@ function ViewCadastro1() {
         resultadoNegativo.style.display = 'flex';
         const timer = setTimeout(() => {
             resultadoNegativo.style.display = 'none';
-        }, 1500);
+        }, 5000);
+    }
+
+    const clear = () =>{
+        setNome(''); setIdSexo(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setTelefone(''); setDataNascimento(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento('');
+    }
+
+    const validationFunction = () =>{
+        if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
+            setValidation(false);
+            return validation;
+        }else{
+            setValidation(true)
+            return validation;
+        }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if(senha === senhaConfirm){
-            console.log('As senhas são iguais!');
-            resultadoPositivo();
+        if(validation){
+            api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(() => {
+                resultadoPositivo();
+                clear();
+            }).catch(() =>{
+                resultadoNegativo();
+            })
         }else{
-            console.log('As senhas são diferentes!');
             resultadoNegativo();
         }
-        // api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep });
-        // resultadoNegativo();
-        // resultadoPositivo();
-        
     }
 
     const back = () => {
@@ -142,7 +153,6 @@ function ViewCadastro1() {
                     <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required/>
                     <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
                     <input placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
-
                     <label>Selecione o seu gênero:</label>
                     <div onChange={valorGenero}>
                         <input type="radio" value="1" name="gender" /> Masculino

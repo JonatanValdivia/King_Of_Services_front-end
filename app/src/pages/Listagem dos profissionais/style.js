@@ -8,6 +8,7 @@ export const BannerStyle = styled.div`
     background-color: var(--secundary);
 
     @media(min-width: 320px) and (max-width: 890px){
+        margin-top: 100px;
         width: auto;
         padding: 0px;
     }

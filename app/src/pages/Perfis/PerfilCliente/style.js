@@ -7,6 +7,7 @@ export const Content = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-top: 8vh;
+    margin-bottom: 10rem;
 
     border: solid 1px #CCC;
 

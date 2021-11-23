@@ -12,6 +12,13 @@ export const Container = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: 100%;
+    border-right: none;
+
+  }
+
 `
 
 export const StyleComponent = styled.div`
@@ -22,22 +29,29 @@ export const StyleComponent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border-right: solid 1px #CCC; */
   float: left;
   margin-top: 76px;
-
   border: solid 1px #CCC;
 
+  >input[type='file'] {
+        display: none
+    }
 
-  button{
-    width: 150px;
-    height: 40px;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--primary);
-    margin-top: 50px;
-  }
+    > label{
+        width: auto;
+        height: inherit;
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
 
   @media(min-width: 320px) and (max-width: 890px){
     width: 100%;
@@ -57,6 +71,35 @@ export const Foto = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 100%;
+  }
+
+`
+
+export const Button = styled.div`
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  button{
+    width: 200px;
+    height: 40px;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+  }
+
+  @media(min-width: 320px) and (max-width: 890px){
+    width: auto;
   }
 
 `

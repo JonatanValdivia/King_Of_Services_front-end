@@ -66,6 +66,8 @@ export const ContainerButton = styled.div`
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
         border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
 `
@@ -84,6 +86,12 @@ export const Inputs = styled.div`
         
         margin-bottom: 30px;
         padding-left: 20px;
+    }
+
+    >form>select{
+        width: 400px;
+        height: 50px;
+        margin-bottom: 30px;
     }
 
     >form input:first-child {
@@ -120,6 +128,7 @@ export const Inputs = styled.div`
         height: 100px;
         background-color: rgba(7, 145, 0, 0.2);
         border: solid 3px rgba(12, 255, 0, 0.3);
+        margin-bottom: 50px;
 
         >p{
             color: #044201;
@@ -138,6 +147,7 @@ export const Inputs = styled.div`
         height: 100px;
         background-color: rgba(130, 0, 0, 0.2);
         border: solid 3px rgba(255, 0, 0, 0.3);
+        margin-bottom: 50px;
 
         >p{
             color: #451313;
@@ -159,6 +169,10 @@ export const Inputs = styled.div`
 
         > form > input{
             width: 100%;
+        }
+
+        >form>select{
+            width: 80%;
         }
 
         >form>div{

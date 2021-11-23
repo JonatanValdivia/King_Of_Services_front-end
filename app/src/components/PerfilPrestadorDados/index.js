@@ -9,15 +9,17 @@ import api from '../../services/api';
 function PerfilPrestadorDados(props) {
   let { idPrestador } = useParams();
   const [prestador, setPrestador] = useState([]);
-  // useEffect(() => {
+  const login = localStorage.getItem('login') ?? false;
 
-  //   const formatacao = idPrestador.replace(':', '');
-  //   api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
-  //     then(({ data }) => {
-  //       setPrestador(data)
-  //       console.log(data);
-  //     });
-  // }, [idPrestador])
+  useEffect(() => {
+
+    const formatacao = idPrestador.replace(':', '');
+    api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
+      then(({ data }) => {
+        setPrestador(data)
+        console.log(data);
+      });
+  }, [idPrestador])
   return (
     <>
       <StyleComponent1>
@@ -26,8 +28,8 @@ function PerfilPrestadorDados(props) {
         </Foto>
         <div>
           <p>{prestador.telefone}</p>
-
           <p>{prestador.rua}, {prestador.numero} - {prestador.cidade}, {prestador.uf}</p>
+          { login == '"cliente"' ? <button>Solicitar serviço</button> : <div></div> }
           <p>{prestador.nome}</p>
         </div>
       </StyleComponent1>

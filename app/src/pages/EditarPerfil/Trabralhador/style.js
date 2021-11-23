@@ -12,6 +12,26 @@ export const Container = styled.div`
   height: auto;
   display: flex;
   justify-content: center;
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: 100%;
+    }
+  
+`
+
+export const Foto = styled.div`
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+  border: solid 3px orange;
+  margin-bottom: 10px;
+
+  >img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+
 `
 
 export const StyleComponent = styled.div`
@@ -25,61 +45,96 @@ export const StyleComponent = styled.div`
   /* border-right: solid 1px #CCC; */
   float: left;
   margin-top: 76px;
-
   border: solid 1px #CCC;
 
+    >input[type='file'] {
+        display: none
+    }
 
-  button{
-    width: 150px;
-    height: 40px;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--primary);
-
-    font-size: 1em;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+    > label{
+        width: auto;
+        height: inherit;
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
 
   @media(min-width: 320px) and (max-width: 890px){
     width: 100%;
-    border-right: none;
+    border: none;
 
   }
 
 `;
 
-export const Foto = styled.div`
-  height: 250px;
-  width: 250px;
-  border-radius: 100%;
-  border: solid 3px orange;
+export const ContainerButton = styled.div`
+    width: auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 35px;
 
-  >img{
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-  }
+    >button{
+        width: inherit;
+        height: inherit;
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+
+        border-radius: 20px;
+    }
+
+    >input[type='file'] {
+        display: none
+    }
+
+    > label{
+        width: auto;
+        height: inherit;
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+    }
 
 `
 
 export const Inputs = styled.div`
-    width: 400px;
+    width: 500px;
     height: auto;
-    padding-top: 50px;
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px;
 
     > form > input{
         width: 400px;
         height: 50px;
         border: solid 1px var(--primary);
-        
         margin-bottom: 30px;
         padding-left: 20px;
+    }
+
+    >form>select{
+        width: 400px;
+        height: 50px;
+        margin-bottom: 30px;
     }
 
     >form input:first-child {
@@ -101,10 +156,47 @@ export const Inputs = styled.div`
         width: 400px;
         height: 150px;
         border: solid 1px var(--primary);
-        
         padding: 10px;
         margin-bottom: 30px;
         font-family: sans-serif;
+    }
+
+    >form >#resultadoPositivo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(7, 145, 0, 0.2);
+        border: solid 3px rgba(12, 255, 0, 0.3);
+        margin-bottom: 50px;
+
+        >p{
+            color: #044201;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+
+    >form >#resultadoNegativo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(130, 0, 0, 0.2);
+        border: solid 3px rgba(255, 0, 0, 0.3);
+        margin-bottom: 50px;
+
+        >p{
+            color: #451313;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
     }
 
     @media(min-width: 320px) and (max-width: 890px){
@@ -121,6 +213,10 @@ export const Inputs = styled.div`
             width: 100%;
         }
 
+        >form>select{
+            width: 80%;
+        }
+
         >form>div{
             width: 100%;
             justify-content: space-around;
@@ -132,6 +228,35 @@ export const Inputs = styled.div`
     }
 `
 
+export const Button = styled.div`
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    button{
+        width: 200px;
+        height: 40px;
+        background-color: var(--primary);
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 20px;
+    }
+
+    @media(min-width: 320px) and (max-width: 890px){
+        width: auto;
+    }
+
+`
+
 export const ContainerHabilidades = styled.div`
     width: 700px;
     height: 350px;
@@ -139,17 +264,16 @@ export const ContainerHabilidades = styled.div`
     margin-right: auto;
     padding: 30px;
 
-    div>p{
+    >div>p{
         font-weight: bold;
         font-family: sans-serif;
         margin-bottom: 10px;
     }
 
-    div>input{
+    >div>input{
         width: 250px;
         height: 50px;
         border: solid 1px var(--primary);
-        
         margin-bottom: 30px;
         padding-left: 20px;
     }
@@ -159,19 +283,16 @@ export const ContainerHabilidades = styled.div`
         margin-left: 30px;
     }
 
-    div>button{
+    >div>button{
         width: 120px;
         height: 40px;
-
         background-color: var(--primary);
         color: white;
         cursor: pointer;
         border: none;
-
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
         margin-left: 50px;
     }
@@ -184,7 +305,7 @@ export const ContainerHabilidades = styled.div`
         justify-content: center;
         padding: 0px;
 
-        div{
+        >div{
             width: 100%;
             display: flex;
             align-items: center;
@@ -192,11 +313,10 @@ export const ContainerHabilidades = styled.div`
             justify-content: center;
         }
 
-        div>input{
+        >div>input{
             width: 80%;
             height: 50px;
             border: solid 1px var(--primary);
-            
             margin-bottom: 30px;
             padding-left: 20px;
         }
@@ -206,7 +326,7 @@ export const ContainerHabilidades = styled.div`
             margin-left: 0px;
         }
 
-        div>button{
+        >div>button{
             width: 80%;
             margin-left: 0px;
         }
@@ -216,30 +336,24 @@ export const ContainerHabilidades = styled.div`
 export const Crud = styled.div`
     width: 640px;
     height: 150px;
-
     box-shadow: 0px 0px 5px 0px #adadad;
     
-    ul{
+    >ul{
         width: 100%;
         height: 35px;
-
         margin-bottom: 10px;
-
         display: flex;
         align-items: center;
         justify-content: center;
 
-        li{
+        >li{
             width: 150px;
             height: inherit;
-
             float: left;
             list-style: none;
             color: black;
-
             margin-left: auto;
             margin-right: auto;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,7 +364,7 @@ export const Crud = styled.div`
         width: 100%;
         margin-top: 1rem;
         
-        li{
+        >li{
             width: 100%;
             height: inherit;
             float: none;
@@ -294,27 +408,21 @@ export const Habilidades = styled.div`
     width: 150px;
     height: 70px;
     float: left;
-
     margin-left: 30px;
-
-    
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    button{
+
+    >button{
         width: 70px;
         height: 40px;
-
         background-color: var(--primary);
         color: white;
         cursor: pointer;
         border: none;
-
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
     }
 
@@ -340,13 +448,8 @@ export const Separador = styled.div`
 `
 
 export const ContainerAction = styled.div`
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     float: left;
-    background-color: lavenderblush;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-right: 50px;
+    margin-left: 50px;
 `

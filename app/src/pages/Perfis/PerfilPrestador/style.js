@@ -74,36 +74,19 @@ export const StyleComponent1 = styled.div`
     }
   }
 
-  button{
-        width: 200px;
-        height: 40px;
-
-        background-color: var(--primary);
-        color: white;
-        cursor: pointer;
-        border: none;
-
-        font-size: 1em;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-
-        border-radius: 20px;
-        margin-top: 50px;
-    }
-
 `;
 
-export const Foto = styled.div`
+export const Foto = styled.img`
   height: 250px;
   width: 250px;
   border-radius: 100%;
   border: solid 3px orange;
 
-  >img{
+  /* >img{
     width: 100%;
     height: 100%;
     border-radius: 100%;
-  }
+  } */
 
 `;
 

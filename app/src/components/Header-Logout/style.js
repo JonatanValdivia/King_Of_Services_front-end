@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     width: 100%;
-    height: auto;
+    height: 70px;
     position: fixed;
-    padding: 0px 0 10px 0;
     top: 0;
     z-index: 99999;
     background-color: var(--secundary);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 
     i{
         display: none;
@@ -22,6 +22,10 @@ export const Container = styled.header`
     }
 
     @media only screen and (max-width: 800px){
+        height: auto;
+        align-items: flex-end;
+        padding: 0px 0 10px 0;
+
         .open{
             display: flex;
             height: 100vh;   
@@ -65,7 +69,6 @@ export const Menu = styled.nav`
                 float: left;
                 width: max-content;
                 height: inherit;
-                /* float: left; */
                 list-style: none;
                 color: #FFFFFF;
                 margin-bottom: 1rem;
@@ -81,6 +84,7 @@ export const Menu = styled.nav`
                 }
             }
         }
+        
         @media only screen and (max-width: 800px){
             width: 100%;
             margin-left: 0;
