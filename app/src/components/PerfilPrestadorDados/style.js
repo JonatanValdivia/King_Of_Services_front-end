@@ -11,32 +11,152 @@ export const StyleComponent1 = styled.div`
   border-right: solid 1px black;
   border-bottom: solid 1px black;
 
-    div{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      >p{
-        margin-top: 3rem;
-      }
+  @keyframes back-go{
+    0% {transform: translateX(1000px);}
+    1000% {transform: translateX(0);}
+  }
+
+  .modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    z-index: -10;
+    opacity: 0;
+    user-select: none;
+    transition: opacity 0.5s;
+}
+
+.modal.active{
+  opacity: 1;
+  z-index: 5000;
+}
+
+.modal__content {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80vw;
+  margin: 15vh auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 2px black;
+
+  @media(min-width: 320px) and (max-width: 450px){
+    width: 100vw;
+  }
+
+}
+
+.modal__header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #DDDDDD;
+  border-radius: 5px 5px 0 0;
+  
+}
+
+.modal__header>span {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: lightslategray;
+}
+
+.modal__header>h1{
+  margin: 0 auto;
+  color: black;
+  font-weight: normal;
+  text-shadow: 0px 0px 1px grey;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+
+  @media(min-width: 320px) and (max-width: 890px){
+    font-size: 1rem;
+    padding: 10px;
+  
+  }
+}
+
+.modal__header>span:hover{
+  background-color: #ff4949;
+  cursor: pointer;
+  color: white;
+  border-radius: 0 5px 0 0;
+}
+
+.modal__main {
+  width: 80%;
+  padding: 0 0px;
+
+  >form{
+    width: 100%;
+  }
+
+  >form>textarea{
+    width: 100%;
+    height: 90px;
+  }
+
+}
+
+.modal__footer {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #DDDDDD;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 20px;
+  background-color: inherit;
+
+  >button{
+    width: 100px;
+  }
+}
+
+@media (max-width:1024px) {
+  .modal__main form input {
+      width: 100%;
+  }
+  .modal__footer {
+      text-align: center;
+  }
+}
+
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    >p{
+      margin-top: 3rem;
     }
+  }
 
-    button{
-        width: 200px;
-        height: 40px;
+  button{
+    width: 200px;
+    height: 40px;
 
-        background-color: var(--primary);
-        color: white;
-        cursor: pointer;
-        border: none;
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+    border: none;
 
-        font-size: 1em;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 
-        border-radius: 20px;
-        margin-top: 50px;
-    }
+    border-radius: 20px;
+    margin-top: 50px;
+  }
   
 
   @media(min-width: 320px) and (max-width: 890px){

@@ -1,21 +1,30 @@
 import styled from "styled-components";
 
 export const BannerStyle = styled.div`
-    height: 450px;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--secundary);
-    flex-direction: column;
     padding-top: 50px;
-    
+    padding-bottom: 1rem;
 
-    @media(min-width: 320px) and (max-width: 890px){
+    @media(min-width: 320px) and (max-width: 1000px){
         width: auto;
-        padding: 0px;
+        padding: 2rem;
+        padding-top: 0px;
+        flex-direction: column;
+        height: max-content;
+
+        h2{
+            margin-top: 100px;
+            color: #FFFFFF;
+        }
+        
     }
 
     h2{
+        margin-top: 100px;
         color: #FFFFFF;
 
         span{
@@ -33,7 +42,7 @@ export const Overlay = styled.div`
     display: flex;
     justify-content: center;
 
-    @media(min-width: 320px) and (max-width: 890px){
+    @media(min-width: 320px) and (max-width: 1000px){
         margin-top: 130px;
         width: 90vw;
     }
@@ -51,6 +60,14 @@ export const Container = styled.div`
     height: 70%;
     margin-top: 20px;
     display: flex;
+
+    @media(min-width: 320px) and (max-width: 1000px){
+        margin-top: 30px;
+        width: 90vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const ContainerFoto = styled.div`
@@ -62,13 +79,17 @@ export const ContainerFoto = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    @media(min-width: 320px) and (max-width: 1000px){
+        margin: auto;
+    }
 `
 
 export const ContainerInformation = styled.div`
     width: 50%;
     height: 100%;
     margin-left: 30px;
-    padding-top: 30px;
+    padding-top: 0px;
 
     h1{
         color: #FFFFFF;
@@ -77,15 +98,34 @@ export const ContainerInformation = styled.div`
     p{
         width: 70%;
         height: 28%;
-
         margin-top: 20px;
         color: white;
-
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 4; /* Definimos quantas linhas queremos */
         display: -webkit-box;
+    }
+
+    @media(min-width: 320px) and (max-width: 1000px){
+        margin: auto;
+        width: 70%;
+
+        h1{
+            text-align: center;
+        }
+
+        p{
+            width: 100%;
+            height: 28%;
+            margin-top: 10px;
+            color: white;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4; /* Definimos quantas linhas queremos */
+            display: -webkit-box;
+        }
     }
 `
 
@@ -98,7 +138,7 @@ export const ContentButton = styled.div`
 
     button{
         width: 150px;
-        height: 100%;
+        height: 30px;
 
         background-color: var(--primary);
         color: white;
@@ -110,6 +150,11 @@ export const ContentButton = styled.div`
         font-family: Arial, Helvetica, sans-serif;
 
         border-radius: 20px;
+    }
+
+    @media(min-width: 320px) and (max-width: 1000px){
+        width: 150px;
+        height: 30px;
     }
 `
 
@@ -131,5 +176,17 @@ export const ContentSobreServiço = styled.div`
 
     p{
         text-align: justify;
+    }
+
+    span{
+        margin-left: 5px;
+    }
+
+    @media(min-width: 320px) and (max-width: 1000px){
+        width: 70%;
+
+        h2{
+            margin-bottom: 1rem;
+        }
     }
 `

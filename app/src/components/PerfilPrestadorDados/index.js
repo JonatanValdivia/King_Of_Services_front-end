@@ -19,7 +19,12 @@ function PerfilPrestadorDados(props) {
         setPrestador(data)
         console.log(data);
       });
-  }, [idPrestador])
+  }, [idPrestador]);
+
+  const openModal = () => document.querySelector('#modal').classList.add('active');
+
+  const closeModal = () => document.querySelector('#modal').classList.remove('active');
+
   return (
     <>
       <StyleComponent1>
@@ -29,7 +34,26 @@ function PerfilPrestadorDados(props) {
         <div>
           <p>{prestador.telefone}</p>
           <p>{prestador.rua}, {prestador.numero} - {prestador.cidade}, {prestador.uf}</p>
-          { login == '"cliente"' ? <button>Solicitar serviço</button> : <div></div> }
+          { login == '"cliente"' ? <button id="buttonSolicitar" onClick={openModal}>Solicitar serviço</button> : <div></div> }
+          <div class="modal" id="modal">
+            <div class="modal__content">
+                <header class="modal__header">
+                    <h1>Que tipo de serviço você precisa?</h1>
+                    <span id="close" onClick={closeModal}>&#10006;</span>
+                </header>
+                <div class="modal__main">
+                    <form class="form">
+                        <textarea placeholder="Descreva o que você precisa (breve descrição)..."></textarea>
+                        <input class="input-field" type="text" id="email" placeholder="E-mail"/>
+                        
+                    </form>
+                </div>
+                <footer class="modal__footer">
+                    <button class="btn green" id="salvar">Salvar</button>
+                    <button class="btn blue" id="cancelar" onClick={closeModal}>Cancelar</button>
+                </footer>
+            </div>
+        </div>
           <p>{prestador.nome}</p>
         </div>
       </StyleComponent1>
