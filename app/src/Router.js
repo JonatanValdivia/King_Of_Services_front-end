@@ -28,49 +28,61 @@ function Router(){
             );
         }
     }
-        return(
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <Home/>
-                    </Route>
-                    <Route path="/Listagem/:profissao" component={Listagem} />
-                    <Route exact path="/CadastroTrabalhador">
-                        <CadastroTrabalhador/>
-                    </Route>
-                    <Route exact path="/cadastrocliente">
-                        <CadastroCliente/>
-                    </Route>
-                    <Route exact path="/login">
-                        <Login/>
-                    </Route>
-                    <Route exact path="/meusservicos">
-                        <ProgressPage/>
-                    </Route>
-                    <Route exact path="/cadastroFacebookGoogle">
-                        <CadastroFacebookGoogle/>
-                    </Route>
-                    <Route exact path="/cadastro">
-                        <Cadastro/>
-                    </Route>
-                    <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
-                    <Route exact path="/perfil">
-                        {perfil()}
-                    </Route>
-                    <Route exact path="/perfilCliente">
-                        <PerfilCliente/>
-                    </Route>
-                    <Route exact path="/editarperfilcliente">
-                        <EditarPerfilCliente/>
-                        {console.log("cliente")}
-                    </Route>
-                    <Route exact path="/editarperfiltrabalhador">
-                        <EditarPerfilPrestador/>
-                        {console.log("trabalhador")}
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        );
+
+    const ediatarPerfil = () =>{
+        if(login == '"prestador"'){
+            return(
+                <EditarPerfilPrestador/>
+            );
+        }else{
+            return(
+                <EditarPerfilCliente/>
+            );
+        }
+    }
+
+    return(
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <Home/>
+                </Route>
+                <Route path="/Listagem/:profissao" component={Listagem} />
+                <Route exact path="/CadastroTrabalhador">
+                    <CadastroTrabalhador/>
+                </Route>
+                <Route exact path="/cadastrocliente">
+                    <CadastroCliente/>
+                </Route>
+                <Route exact path="/login">
+                    <Login/>
+                </Route>
+                <Route exact path="/meusservicos">
+                    <ProgressPage/>
+                </Route>
+                <Route exact path="/cadastroFacebookGoogle">
+                    <CadastroFacebookGoogle/>
+                </Route>
+                <Route exact path="/cadastro">
+                    <Cadastro/>
+                </Route>
+                <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
+                <Route exact path="/perfil">
+                    {perfil()}
+                </Route>
+                <Route exact path="/perfilCliente">
+                    <PerfilCliente/>
+                </Route>
+                <Route exact path="/editar">
+                    {ediatarPerfil()}
+                </Route>
+                {/* <Route exact path="/editarperfiltrabalhador">
+                    <EditarPerfilPrestador/>
+                    
+                </Route> */}
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default Router;

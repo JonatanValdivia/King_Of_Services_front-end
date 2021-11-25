@@ -147,6 +147,44 @@ export const Inputs = styled.div`
         font-family: sans-serif;
     }
 
+    >form >#resultadoPositivo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(7, 145, 0, 0.2);
+        border: solid 3px rgba(12, 255, 0, 0.3);
+        margin-bottom: 50px;
+
+        >p{
+            color: #044201;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+
+    >form >#resultadoNegativo{
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(130, 0, 0, 0.2);
+        border: solid 3px rgba(255, 0, 0, 0.3);
+        margin-bottom: 50px;
+
+        >p{
+            color: #451313;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+
     @media(min-width: 320px) and (max-width: 890px){
         padding: 0px;
         width: 90%;

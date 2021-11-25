@@ -36,7 +36,6 @@ function PerfilPrestador() {
                             <StyleComponent1>
                                
                                 <Foto src={`http://kingofservices.com.br/${prestador.foto}`}>
-                                    
                                 </Foto>
                                 <div>
                                     <p>
@@ -53,8 +52,6 @@ function PerfilPrestador() {
                                         
                                     </p>
                                 </div>
-
-                                <button>Solicitar serviço</button>
                             </StyleComponent1>
                             <StyleComponent2>
                                 <Dados>

@@ -157,7 +157,7 @@ export const ContentIcon = styled.div`
 
 export const Submenu = styled.div`
     width: 170px;
-    height: 100px;
+    height: auto;
     background-color: var(--secundary);
     position: absolute;
     visibility: hidden;
@@ -186,6 +186,7 @@ export const Submenu = styled.div`
             >li{
                 align-items: flex-start;
                 margin-bottom: 10px;
+                border-bottom: 1px solid #CCC;
             }
             
             hr{

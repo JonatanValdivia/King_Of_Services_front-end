@@ -19,7 +19,7 @@ export const Container = styled.div`
   
 `
 
-export const Foto = styled.div`
+export const Foto = styled.img`
   height: 250px;
   width: 250px;
   border-radius: 100%;

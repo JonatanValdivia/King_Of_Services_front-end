@@ -83,10 +83,14 @@ function HeaderLogout() {
                                 <ul>
                                     <li>
                                         <a href="/perfil">
-                                            Meu Perfil
+                                            Meu perfil
                                         </a>
                                     </li>
-                                    <hr/>
+                                    <li>
+                                        <a href="/editar">
+                                            Editar meu perfil
+                                        </a>
+                                    </li>
                                     <li onClick={logout}>Logout</li>
                                 </ul>
                             </Submenu>
