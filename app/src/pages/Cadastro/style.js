@@ -92,6 +92,10 @@ export const ContainerRegister = styled.div`
         margin-bottom: 20px;
     }
 
+    #login {
+        color: var(--primary);
+    }
+
     @media(min-width: 320px) and (max-width: 890px){
         width: 100%;
 

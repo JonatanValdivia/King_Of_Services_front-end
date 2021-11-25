@@ -89,7 +89,6 @@ export const Loading = styled.div`
 `
 
 export const Main = styled.main`
-    background-color: ivory;
     width: auto;
     height: auto;
     margin-top: 70px;

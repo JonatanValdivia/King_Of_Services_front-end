@@ -83,6 +83,7 @@ export const GridDireita = styled.div`
     width: inherit;
     height: inherit;
     grid-area: direita;
+    
 
     >h1{
         font-size: 100rem;
@@ -169,6 +170,8 @@ export const FormContainer = styled.div`
     flex-direction: column;
     gap: 15px;
     padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
 
     h1 {
         text-align: center;

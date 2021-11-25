@@ -1,5 +1,6 @@
 import { ButtonProgress, CardProgressStyle, ContentCard } from "./style";
 import { AiFillCheckCircle } from "react-icons/ai"
+// 0dd7a0540a97f3cd683934293d4449fa36743174
 import { Profile } from "./style";
 
 function CardConcluido(){
