@@ -10,30 +10,32 @@ function ProgressPage(props) {
 
     const [cardShow, setCardShow] = useState(false)
 
-    const CardShow = () => {
-        setCardShow(true)
-        if(cardShow){
-            console.log("sou verdadeiro");
-            setCardShow(false)
-        }else if(cardShow == false) {
-            console.log("sou falso")
-        }
-    }
+    // const CardShow = () => {
+    //     setCardShow(true)
+    //     if(cardShow){
+    //         console.log("sou verdadeiro");
+    //         setCardShow(false)
+    //     }else if(cardShow == false) {
+    //         console.log("meio falso")
+    //     }else{
+    //         console.log("falso");
+    //     }
+    // }
 
     return (
         <>
             <Header />
                 <Content>
                     <Overlay>
-                    <ul>
-                        <li className="pedidos">Pedidos</li>
-                        <li className="pendente">Pendente</li>
-                        <li className="concluido">Concluido</li>
-                    </ul>
+                    <tr>
+                        <td className="pedidos">Pedidos</td>
+                        <td className="pendente" >Pendente</td>
+                        <td className="concluido" >Concluido</td>
+                    </tr>
                     <hr/>
                         <CardPedidos/>
-                        <CardProgress/>
-                        <CardConcluido/>
+                        <CardProgress />
+                        <CardConcluido />
                     </Overlay>
                 </Content>
             <Footer />

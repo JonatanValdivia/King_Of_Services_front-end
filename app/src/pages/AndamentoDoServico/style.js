@@ -18,7 +18,7 @@ export const Overlay = styled.div`
 
     border: 1px solid #e3e1e1;
 
-    ul{
+    tr{
         width: 100%;
         height: 5vh;
 
@@ -26,7 +26,7 @@ export const Overlay = styled.div`
         justify-content: center;
         align-items: center;
 
-        li{
+        td{
             width: 33%;
             height: 100%;
             float: left;
@@ -59,9 +59,9 @@ export const Overlay = styled.div`
     @media only screen and (max-width: 800px){
         width: 100%;
 
-        ul{
+        tr{
 
-            li{
+            td{
                 float: none;
 
             }
