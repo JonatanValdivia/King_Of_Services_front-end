@@ -102,7 +102,9 @@ export const StyleComponent1 = styled.div`
 
   >form>textarea{
     width: 100%;
-    height: 90px;
+    height: 300px;
+    font-size: 1.3rem;
+    padding: 5px;
   }
 
 }
@@ -118,7 +120,9 @@ export const StyleComponent1 = styled.div`
   background-color: inherit;
 
   >button{
-    width: 100px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

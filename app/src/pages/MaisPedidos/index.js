@@ -3,10 +3,16 @@ import Footer from "../../components/Rodape";
 import { BannerStyle, Container, ContainerFoto, ContainerInformation, ContentButton, ContentSobreServiço, Overlay } from "./style";
 import Diarista from "../../assets/Rosana.png"
 import CardWorker from "../../components/Card List";
+import { Helmet } from 'react-helmet';
 
 function MaisPedidos(props) {
     return (
         <>
+            <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
             <Header />
             <BannerStyle>
                 <h2>Profissional em <span>Destaque</span></h2>

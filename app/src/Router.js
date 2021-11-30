@@ -14,7 +14,7 @@ import ProgressPage from "./pages/AndamentoDoServico";
 import EditarPerfilCliente from "./pages/EditarPerfil/Cliente";
 import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 import MaisPedidos from "./pages/MaisPedidos";
-
+import Solicitacoes from "./pages/Solicitacoes";
 
 function Router(){
     const login = localStorage.getItem('login') ?? false;
@@ -60,6 +60,9 @@ function Router(){
                 </Route>
                 <Route exact path="/meusservicos">
                     <ProgressPage/>
+                </Route>
+                <Route exact path="/solicitacoes">
+                    <Solicitacoes/>
                 </Route>
                 <Route exact path="/cadastroFacebookGoogle">
                     <CadastroFacebookGoogle/>

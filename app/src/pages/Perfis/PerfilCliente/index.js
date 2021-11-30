@@ -8,6 +8,7 @@ import WppIcon from "../../../assets/whatsapp.png";
 import { useState, useEffect } from "react";
 import jwtDecode from 'jwt-decode';
 import api from '../../../services/api';
+import { Helmet } from 'react-helmet';
 
 
 function PerfilCliente() {
@@ -28,6 +29,11 @@ function PerfilCliente() {
     }, [])
   return (
     <>
+      <Helmet>
+          <title>
+              King of Services
+          </title>
+      </Helmet>
       { login ? <HeaderLogout/> : <Header/> } 
       <Content>
         <Overlay>
