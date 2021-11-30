@@ -2,8 +2,6 @@ import Header from "../../../components/Header-Logout";
 import { Button } from "../../CadastroTrabalhador/style";
 import { Container, ContainerAction, ContainerHabilidades, Content, Crud, CrudInformation, Foto, Habilidades, Inputs, Separador, StyleComponent } from "./style";
 import { useState, useEffect } from "react";
-import { BsTrashFill } from "react-icons/bs";
-// import jwtDecode from "jwt-decode";
 import jwtDecode from "jwt-decode";
 import api from "../../../services/api";
 import apiCep from "../../../services/apiCep";
@@ -15,7 +13,7 @@ function EditarPerfilCliente() {
   let history = useHistory();
   const [profissao, setProfissao] = useState([]);
   const [prestador, setPrestador] = useState([]);
-  // const token = jwtDecode(localStorage.getItem("token")) ?? [];
+  const token = jwtDecode(localStorage.getItem("token")) ?? [];
   const [foto, setFoto] = useState("");
   const [idProfissao, setIdProfissao] = useState("");
   const [uf, setUf] = useState("");
@@ -34,10 +32,6 @@ function EditarPerfilCliente() {
   const [dataNascimento, setdataNascimento] = useState("");
 
   useEffect(() => {
-    api
-      // .get(`Prestadores/${token.data.id}`)
-      .then(data => {
-        console.log(data);
     api.get(`Prestadores/${token.data.id}`).then(data => {
         setPrestador(data.data);
         setNome(data.data.nome);
