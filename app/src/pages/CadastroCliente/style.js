@@ -248,7 +248,7 @@ export const FormContainer = styled.div`
             margin-bottom: 20px;
         }
 
-        section{
+        >section{
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -257,57 +257,32 @@ export const FormContainer = styled.div`
             padding-left: 1rem;
             padding-right: 1rem;
 
-            p{
+            >p{
                 margin-top: 20px;
                 font-size: 2rem;
                 font-style: italic;
             }
         }
 
-        section input{
+        section>input{
             width: 100%;
         }
 
-        section label{
+        section>label{
             width: 100%;
         }
 
-        section div{
+        section>div{
             width: auto;
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
         }
 
-        section button{
+        section>button{
             width: 70%;
             margin-left: 0px;
             margin-top: 20px;
         }
     }
 `;
-
-export const Cadastrado = styled.article`
-    width: 100%;
-    height: 20px;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    p{
-        color: black;
-    }
-
-    p a{
-        color: black;
-    }
-
-    p a:hover{
-        font-weight: normal;
-    }
-
-    span a{
-        color: var(--primary);
-    }
-`

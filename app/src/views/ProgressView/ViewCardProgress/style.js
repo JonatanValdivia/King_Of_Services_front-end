@@ -5,7 +5,6 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
-    
 `
 
 export const CardProgressStyle = styled.div`

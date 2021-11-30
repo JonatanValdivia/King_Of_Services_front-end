@@ -7,21 +7,21 @@ import IconLocal from "../../../assets/localizacao.png";
 import FacebookIcon from "../../../assets/facebook.png";
 import WppIcon from "../../../assets/whatsapp.png";
 import { useState, useEffect } from "react";
-// import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import api from '../../../services/api';
 import { Helmet } from 'react-helmet';
 
 function PerfilPrestador() {
     const [prestador, setPrestador] = useState([]);
-    // const token = jwtDecode(localStorage.getItem('token')) ?? [];
+    const token = jwtDecode(localStorage.getItem('token')) ?? [];
 
     useEffect(() => {
         
-        // api.get(`Prestadores/${token.data.id}`).then(data => {
-        //     setPrestador(data.data)
-        // }).catch( () => {
+        api.get(`Prestadores/${token.data.id}`).then(data => {
+            setPrestador(data.data)
+        }).catch( () => {
 
-        // })
+        })
 
     }, [])
     
