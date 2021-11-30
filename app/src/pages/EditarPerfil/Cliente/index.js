@@ -2,7 +2,7 @@ import Header from "../../../components/Header-Logout";
 import { Button } from "./style";
 import { Container, Content, Foto, Inputs, StyleComponent } from "./style";
 import { useState, useEffect } from "react";
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import apiCep from "../../../services/apiCep";
 import api from "../../../services/api";
 import InputMask from "react-input-mask";
@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 
 function EditarPerfilCliente() {
   const [cliente, setCliente] = useState([]);
-  const token = jwtDecode(localStorage.getItem("token")) ?? [];
+  // const token = jwtDecode(localStorage.getItem("token")) ?? [];
   const [foto, setFoto] = useState("");
   const [uf, setUf] = useState("");
   const [cidade, setCidade] = useState("");
@@ -28,7 +28,7 @@ function EditarPerfilCliente() {
 
   useEffect(() => {
     api
-      .get(`Clientes/${token.data.id}`)
+      // .get(`Clientes/${token.data.id}`)
       .then((data) => {
         setCliente(data.data);
         setNome(data.data.nome);
