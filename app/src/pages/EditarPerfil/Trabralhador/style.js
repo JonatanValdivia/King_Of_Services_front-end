@@ -92,11 +92,10 @@ export const ContainerButton = styled.div`
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
     }
 
-    >input[type='file'] {
+    input[type='file'] {
         display: none
     }
 

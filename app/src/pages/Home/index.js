@@ -7,27 +7,29 @@ import { Main, Loading, Content, Overlay, Introduction, CircleAbstract, Abstract
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
 import Footer from "../../components/Rodape";
-import FirstDesign from "../../assets/celulardesenho.png"
-import SecondDesign from "../../assets/like.png"
-import ThirdDesign from "../../assets/apertomãos.png"
-import ImgDiarista from "../../assets/diaristas.png"
-import ImgCantor from "../../assets/cantor.png"
-import ImgEletricista from "../../assets/eletricista2.png"
-import ImgEncanador from "../../assets/encanador2.png"
-import ImgMecanico from "../../assets/mecanico.png"
-import ImgProfessor from "../../assets/professor.png"
+import FirstDesign from "../../assets/celulardesenho.png";
+import SecondDesign from "../../assets/like.png";
+import ThirdDesign from "../../assets/apertomãos.png";
+import ImgDiarista from "../../assets/diaristas.png";
+import ImgCantor from "../../assets/cantor.png";
+import ImgEletricista from "../../assets/eletricista2.png";
+import ImgEncanador from "../../assets/encanador2.png";
+import ImgMecanico from "../../assets/mecanico.png";
+import ImgProfessor from "../../assets/professor.png";
+import { Helmet } from 'react-helmet';
 
 function Home() {
-    const [prestadores, setPrestadores] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [prestadores, setPrestadores] = useState([]);
+    const [loading, setLoading] = useState(false);
     const login = localStorage.getItem('login') ?? false;
+
     useEffect(() => {
         api.get(`Prestadores`).then(({ data }) => {
             setPrestadores(data)
             setLoading(false)
         });
         console.log(prestadores);
-    }, [])
+    }, []);
 
     if (loading) {
         return (
@@ -54,6 +56,11 @@ function Home() {
 
     return (
         <>
+            <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
             { login ? <HeaderLogout/> : <Header/> } 
             <Main>
                 <BannerHome/>

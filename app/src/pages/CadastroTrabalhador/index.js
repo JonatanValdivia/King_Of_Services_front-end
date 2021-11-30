@@ -7,6 +7,7 @@ import api from '../../services/api';
 import InputMask from "react-input-mask";
 import apiCep from '../../services/apiCep';
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 function CadastroTrabalhador(){
     const [profissao, setProfissao] = useState([]);
@@ -154,6 +155,9 @@ function CadastroTrabalhador(){
 
     return(
         <>
+            <Helmet>
+                <title>King of Services</title>
+            </Helmet>
             { login ? <div/> : <Header/> } 
             <BannerCadastro/>
             <ArticleCadastro>
@@ -161,7 +165,7 @@ function CadastroTrabalhador(){
                     <img src={ImgProfile}/>
                 </ImgProfileStyle>
                 <ContainerButton>
-                    <label for='foto'>Selecionar um arquivo &#187;</label>
+                    <label for='foto'>Selecione uma foto &#187;</label>
                     <input type="file" id="foto" accept="image/*" onChange={e => fotoHandler(e)}/>
                 </ContainerButton>
                 <Inputs>
@@ -201,7 +205,7 @@ function CadastroTrabalhador(){
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler} ></textarea>
                         <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} />
-                        <InputMask mask="9999-99-99" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
+                        <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                         <Button>
                             <button type="submit" onClick={(event) => handleSubmit(event)}>Cadastrar-se</button>
                         </Button>     

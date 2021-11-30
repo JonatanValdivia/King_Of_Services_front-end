@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import apiCep from "../../../services/apiCep";
 import api from "../../../services/api";
 import InputMask from "react-input-mask";
-
+import { Helmet } from 'react-helmet';
 
 function EditarPerfilCliente() {
   const [cliente, setCliente] = useState([]);
@@ -42,7 +42,8 @@ function EditarPerfilCliente() {
         setEmail(data.data.email);
         setDescricao(data.data.descricao);
         setTelefone(data.data.telefone);
-        setIdSexo(data.data.idSexo)
+        setIdSexo(data.data.idSexo);
+        setdataNascimento(data.data.dataNascimento)
       }).catch(() =>{
 
       })
@@ -96,13 +97,21 @@ function EditarPerfilCliente() {
     setUf(event.target.value);
   };
 
-  const fotoHandler = (e) =>{
+  const alterarFoto = (foto) =>{
+    api.put(`AtualizarFotoCliente/${cliente.idCliente}`, {foto}).then((data) => {
+      window.location.reload(0);
+    }).catch(() =>{
+
+    });
+  }
+
+  const fotoHandler = (e) => {
     let fileReader = new FileReader();
     fileReader.readAsDataURL(e.target.files[0]);
     fileReader.onload = (event) => {
-        setFoto(event.target.result)   
-    }
-  }
+      alterarFoto(event.target.result); 
+    }; 
+  };
 
   const valorGenero = (event) => {
     setIdSexo(event.target.value);
@@ -138,9 +147,8 @@ function EditarPerfilCliente() {
     if ((nome || email ||descricao || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero != "")) {
 
       api.put(`http://kingofservices.com.br/Clientes/${cliente.idCliente}`, {idSexo, nome, email, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep})
-      .then(() => {
-          resultadoPositivo();
-          console.log({idSexo, nome, email, descricao, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep});
+      .then((data) => {
+        resultadoPositivo();
       }).catch(() => resultadoNegativo());
     } else {
       resultadoNegativo();
@@ -149,6 +157,9 @@ function EditarPerfilCliente() {
   
   return (
     <>
+      <Helmet>
+        <title>King of Services</title>
+      </Helmet>
       <Header />
       <Content>
         <Container>
@@ -223,7 +234,7 @@ function EditarPerfilCliente() {
                   onChange={telefoneHandler}
                 />
                 <InputMask
-                  mask="9999-99-99"
+                  mask="99/99/9999"
                   placeholder="Data de nascimento"
                   value={dataNascimento}
                   onChange={dataNascimentoHandler}
@@ -233,24 +244,20 @@ function EditarPerfilCliente() {
                     type="submit"
                     onClick={(event) => handleSubmit(event)}
                   >
-                    Cadastrar-se
+                    Editar
                   </button>
                 </Button>
                 <div id="resultadoPositivo">
-                  <p>Cadastro executado com sucesso!</p>
+                  <p>Edição executada com sucesso!</p>
                 </div>
                 <div id="resultadoNegativo">
                   <p>
-                    Não foi possível realizar o cadastro. Verifique se todos os
+                    Não foi possível realizar a edição. Verifique se todos os
                     dados estão corretos!
                   </p>
                 </div>
               </form>
             </Inputs>
-            <Button>
-              <button>Salvar</button>
-            </Button>
-
           </StyleComponent>
         </Container>
       </Content>

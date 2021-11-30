@@ -7,11 +7,13 @@ import { BannerStyle, Overlay } from "./style";
 import {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 import api from '../../services/api';
+import { Helmet } from 'react-helmet';
 
 function Listagem(props){
     let { profissao } = useParams();
     const [prestadores, setPrestadores] = useState([])
     const login = localStorage.getItem('login') ?? false;
+    
     useEffect(() => {
         
         const formatacao = profissao.replace(':', '');
@@ -23,6 +25,11 @@ function Listagem(props){
 	}, [profissao])
     return(
         <>
+            <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
             { login ? <HeaderLogout/> : <Header/> } 
             <BannerStyle>
                 <Modal/>

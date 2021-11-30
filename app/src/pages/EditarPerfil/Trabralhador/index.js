@@ -1,27 +1,18 @@
 import Header from "../../../components/Header-Logout";
 import { Button } from "../../CadastroTrabalhador/style";
-import {
-  Container,
-  ContainerAction,
-  ContainerHabilidades,
-  Content,
-  Crud,
-  CrudInformation,
-  Foto,
-  Habilidades,
-  Inputs,
-  Separador,
-  StyleComponent,
-} from "./style";
+import { Container, ContainerAction, ContainerHabilidades, Content, Crud, CrudInformation, Foto, Habilidades, Inputs, Separador, StyleComponent } from "./style";
 import { useState, useEffect } from "react";
 import { BsTrashFill } from "react-icons/bs";
 // import jwtDecode from "jwt-decode";
+import jwtDecode from "jwt-decode";
 import api from "../../../services/api";
 import apiCep from "../../../services/apiCep";
 import InputMask from "react-input-mask";
-import semFoto from "../../../assets/naoSelecionouFoto.png";
+import { useHistory } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function EditarPerfilCliente() {
+  let history = useHistory();
   const [profissao, setProfissao] = useState([]);
   const [prestador, setPrestador] = useState([]);
   // const token = jwtDecode(localStorage.getItem("token")) ?? [];
@@ -47,6 +38,7 @@ function EditarPerfilCliente() {
       // .get(`Prestadores/${token.data.id}`)
       .then(data => {
         console.log(data);
+    api.get(`Prestadores/${token.data.id}`).then(data => {
         setPrestador(data.data);
         setNome(data.data.nome);
         setCep(data.data.cep);
@@ -59,21 +51,17 @@ function EditarPerfilCliente() {
         setEmail(data.data.email);
         setDescricao(data.data.descricao);
         setTelefone(data.data.telefone);
-        setIdSexo(data.data.idSexo); /*setdataNascimento(data.data.dataNascimento);*/
-      })
-      .catch(() => {});
+        setIdSexo(data.data.idSexo); 
+        setIdProfissao(data.data.idPrestador);
+        setdataNascimento(data.data.dataNascimento);
+      }).catch(() => {});
 
-    api
-      .get("Profissoes")
-      .then(({ data }) => {
-        setProfissao(data);
-      })
-      .catch(() => {
-        setProfissao([]);
-      });
+    api.get("Profissoes").then(({ data }) => {
+      setProfissao(data);
+    }).catch(() => {
+      setProfissao([]);
+    });
   }, []);
-
-  console.log(prestador);
 
   const dataNascimentoHandler = (event) => {
     setdataNascimento(event.target.value);
@@ -123,28 +111,20 @@ function EditarPerfilCliente() {
     setUf(event.target.value);
   };
 
+  const alterarFoto = (foto) =>{
+    api.put(`AtualizarFotoPrestador/${prestador.idPrestador}`, {foto}).then(() => {
+      window.location.reload(0);
+    }).catch(() =>{
+
+    });
+  }
+
   const fotoHandler = (e) => {
     let fileReader = new FileReader();
-    console.log(e.target.files[0]);
     fileReader.readAsDataURL(e.target.files[0]);
     fileReader.onload = (event) => {
-      setFoto(event.target.result);
-      // api.put(`AtualizarFoto/${prestador.idPrestador}`, {foto}).then(() => {
-      //     console.log('deu certo');
-      // }).catch(() =>{
-      //     console.log('deu errado');
-      // });
-    };
-
-    // if(foto == null) setFoto(semFoto);
-
-    // if(foto != null){
-    //     api.put(`AtualizarFoto/${prestador.idPrestador}`, {foto}).then(() => {
-    //         console.log('deu certo');
-    //     }).catch(() =>{
-    //         console.log('deu errado');
-    //     });
-    // }
+      alterarFoto(event.target.result); 
+    }; 
   };
 
   const valorGenero = (event) => {
@@ -173,75 +153,15 @@ function EditarPerfilCliente() {
 
     const handleSubmit = (event) => {
     
-    event.preventDefault();
-    if (
-      nome ||
-      email ||
-      descricao ||
-      senhaConfirm ||
-      telefone ||
-      dataNascimento ||
-      cep ||
-      uf ||
-      cidade ||
-      bairro ||
-      rua ||
-      numero != ""
-    ) {
-      idProfissao == ""
-        ? setIdProfissao(prestador.idProfissao)
-        : console.log(idProfissao);
-      // idSexo == null ? setIdSexo(prestador.idSexo) : console.log(idSexo);
-      api
-        .put(
-          `http://kingofservices.com.br/Prestadores/${prestador.idPrestador}`,
-          {
-            idProfissao,
-            idSexo,
-            nome,
-            email,
-            descricao,
-            telefone,
-            dataNascimento,
-            foto,
-            uf,
-            cidade,
-            bairro,
-            rua,
-            numero,
-            complemento,
-            cep,
-          }
-        )
-        .then(data => {
-          console.log(data);
+    // event.preventDefault();
+    if  ( nome || email || descricao || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua ||  numero != "") {
+      api.put(  `http://kingofservices.com.br/Prestadores/${prestador.idPrestador}`,  { idProfissao, idSexo, nome, email, descricao, telefone, dataNascimento, uf, cidade, bairro, rua, numero, complemento, cep }
+        ).then(data => {
           resultadoPositivo();
-        //   console.log({
-        //     idProfissao,
-        //     idSexo,
-        //     nome,
-        //     email,
-        //     descricao,
-        //     telefone,
-        //     dataNascimento,
-        //     foto,
-        //     uf,
-        //     cidade,
-        //     bairro,
-        //     rua,
-        //     numero,
-        //     complemento,
-        //     cep,
-        //   });
-        })
-        .catch(() => resultadoNegativo());
-    } else {
+        }).catch(() => resultadoNegativo());
+    }else {
       resultadoNegativo();
     }
-  };
-
-  const setHiddenFoto = () => {
-   console.log(this); 
   };
 
   const buscarCep = (cep) => {
@@ -255,51 +175,33 @@ function EditarPerfilCliente() {
 
   return (
     <>
+      <Helmet>
+        <title>King of Services</title>
+      </Helmet>
       <Header />
       <Content>
         <Container>
           <StyleComponent>
-            <Foto
-              src={`http://kingofservices.com.br/${prestador.foto}`}
-              id="fotoPrestador"
-              alt={'alt'}
-              onload ={setHiddenFoto()}
+            <Foto src={`http://kingofservices.com.br/${prestador.foto}`} id="fotoPrestador" alt={'alt'}
             ></Foto>
-
-            <label for="foto">Selecionar um arquivo &#187;</label>
-            <input
-              type="file"
-              id="foto"
-              accept="image/*"
-              onChange={(e) => fotoHandler(e)}
-            />
-
+            <label for="foto">Selecione uma foto &#187;</label>
+            <input type="file" id="foto" accept="image/*" onChange={(e) => fotoHandler(e)}/>
             <Inputs>
               <form onSubmit={handleSubmit}>
-                <input
-                  placeholder="Nome completo"
-                  value={nome}
-                  onChange={nomeHandler}
-                />
+                <input placeholder="Nome completo" value={nome} onChange={nomeHandler}/>
                 <label>Selecione o seu gênero:</label>
                 <div onChange={valorGenero}>
                   <input type="radio" value="1" name="gender" /> Masculino
                   <input type="radio" value="2" name="gender" /> Feminino
                   <input type="radio" value="3" name="gender" /> Outro
                 </div>
-                <select
-                  placeholder="Selecione sua profissao"
-                  onChange={(e) => handleDropDown(e.target.value)}
-                >
+                <select placeholder="Selecione sua profissao" onChange={(e) => handleDropDown(e.target.value)}>
                   <option key="0" value="0">
                     Selecione sua profissão
                   </option>
                   {profissao.map((element) => {
                     return (
-                      <option
-                        key={element.idProfissao}
-                        value={element.idProfissao}
-                      >
+                      <option key={element.idProfissao} value={element.idProfissao}>
                         {element.nomeProfissao}
                       </option>
                     );
@@ -307,75 +209,30 @@ function EditarPerfilCliente() {
                 </select>
 
                 <p>Endereço</p>
-                <input
-                  placeholder="cep"
-                  value={cep}
-                  onChange={cepHandler}
-                  onBlur={() => {
-                    buscarCep(cep);
-                  }}
-                />
+                <input placeholder="cep" value={cep} onChange={cepHandler} onBlur={() => {buscarCep(cep);}}/>
                 <input placeholder="Uf" value={uf} onChange={ufHandler} />
-                <input
-                  placeholder="Cidade"
-                  value={cidade}
-                  onChange={cidadeHandler}
-                />
-                <input
-                  placeholder="Bairro"
-                  value={bairro}
-                  onChange={bairroHandler}
-                />
+                <input placeholder="Cidade" value={cidade} onChange={cidadeHandler}/>
+                <input placeholder="Bairro" value={bairro} onChange={bairroHandler}/>
                 <input placeholder="Rua" value={rua} onChange={ruaHandler} />
-                <input
-                  placeholder="Número"
-                  value={numero}
-                  onChange={numeroHandler}
-                />
-                <input
-                  placeholder="Complemento (opcional)"
-                  value={complemento}
-                  onChange={complementoHandler}
-                />
-                <input
-                  type="email"
-                  placeholder="E-mail"
-                  value={email}
-                  onChange={emailHandler}
-                />
+                <input placeholder="Número" value={numero} onChange={numeroHandler}/>
+                <input placeholder="Complemento (opcional)" value={complemento} onChange={complementoHandler}/>
+                <input type="email" placeholder="E-mail" value={email} onChange={emailHandler}/>
                 <p>Descrição</p>
-                <textarea
-                  placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)"
-                  value={descricao}
-                  onChange={descricaoHandler}
-                ></textarea>
-                <InputMask
-                  mask="(99) 99999-9999"
-                  placeholder="Número de telefone"
-                  value={telefone}
-                  onChange={telefoneHandler}
-                />
-                <InputMask
-                  mask="9999-99-99"
-                  placeholder="Data de nascimento"
-                  value={dataNascimento}
-                  onChange={dataNascimentoHandler}
-                />
+                <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler}></textarea>
+                <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler}/>
+                <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler}/>
                 <Button>
                   <button
-                    type="submit"
-                    onClick={(event) => handleSubmit(event)}
-                  >
-                    Cadastrar-se
+                    type="submit" onClick={(event) => handleSubmit(event)}>
+                    Editar
                   </button>
                 </Button>
                 <div id="resultadoPositivo">
-                  <p>Cadastro executado com sucesso!</p>
+                  <p>Edição executada com sucesso!</p>
                 </div>
                 <div id="resultadoNegativo">
                   <p>
-                    Não foi possível realizar o cadastro. Verifique se todos os
-                    dados estão corretos!
+                    Não foi possível realizar o a edição. Verifique se todos os dados estão corretos!
                   </p>
                 </div>
               </form>

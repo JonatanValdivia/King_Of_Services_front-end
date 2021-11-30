@@ -131,6 +131,12 @@ function ViewCadastro1() {
                 resultadoPositivo();
                 clear();
             }).catch(() => {
+        if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
+            api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(data => {
+                console.log(data)
+                // resultadoPositivo();
+                // clear();
+            }).catch(() =>{
                 resultadoNegativo();
             })
         } else {
@@ -153,6 +159,10 @@ function ViewCadastro1() {
                     <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required />
                     <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler} />
                     <input placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
+                    <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler} required/>
+                    <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required/>
+                    <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
+                    <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                     <label>Selecione o seu gênero:</label>
                     <div onChange={valorGenero}>
                         <input type="radio" value="1" name="gender" /> Masculino

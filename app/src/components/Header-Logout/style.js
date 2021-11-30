@@ -165,17 +165,16 @@ export const Submenu = styled.div`
     ul>li{
         width: 100%;
         height: 50px;
-
         list-style: none;
         color: #FFFFFF;
         cursor: pointer;
-
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     @media only screen and (max-width: 800px){
+        height: auto;
         position: static;
         visibility: visible;
         width: 100%;
@@ -185,8 +184,6 @@ export const Submenu = styled.div`
 
             >li{
                 align-items: flex-start;
-                margin-bottom: 10px;
-                border-bottom: 1px solid #CCC;
             }
             
             hr{
