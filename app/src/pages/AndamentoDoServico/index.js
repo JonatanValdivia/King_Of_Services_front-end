@@ -31,29 +31,16 @@ function ProgressPage() {
         });
 	}, [])
 
-    const [cardShow, setCardShow] = useState(false);
-
-    const CardShow = (event) => {
-        // if(cardShow){
-        //     console.log(cardAceitar);
-        // }else if(cardShow) {
-        //     setCardShow(true)
-        // }else{
-        //     setCardShow(true)
-        // }
-
-        // {
-        //     const card = CardShow?(<><h1>Hello Word</h1></>) : (<div hidden></div>);
-        //     console.log(card)
-        // }
-    }
-
-
     const [status, setStatus] = useState(0);
 
     return (
         <>
-            <Header />
+           <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
+            { login ? <HeaderLogout/> : <Header/> }
             <Content>
                 <Overlay>
                     <tr>
@@ -85,17 +72,6 @@ function ProgressPage() {
                     )}
                 </Overlay>
             </Content>
-            <Helmet>
-                <title>
-                    King of Services
-                </title>
-            </Helmet>
-            { login ? <HeaderLogout/> : <Header/> }
-                <Content>
-                    <Overlay>
-                    
-                    </Overlay>
-                </Content>
             <Footer />
         </>
     );

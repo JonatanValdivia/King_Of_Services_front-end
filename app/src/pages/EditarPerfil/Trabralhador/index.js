@@ -2,8 +2,6 @@ import Header from "../../../components/Header-Logout";
 import { Button } from "../../CadastroTrabalhador/style";
 import { Container, ContainerAction, ContainerHabilidades, Content, Crud, CrudInformation, Foto, Habilidades, Inputs, Separador, StyleComponent } from "./style";
 import { useState, useEffect } from "react";
-import { BsTrashFill } from "react-icons/bs";
-// import jwtDecode from "jwt-decode";
 import jwtDecode from "jwt-decode";
 import api from "../../../services/api";
 import apiCep from "../../../services/apiCep";

@@ -16,73 +16,73 @@ import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 import MaisPedidos from "./pages/MaisPedidos";
 import Solicitacoes from "./pages/Solicitacoes";
 
-function Router() {
+function Router(){
     const login = localStorage.getItem('login') ?? false;
-    const perfil = () => {
-        if (login == '"prestador"') {
-            return (
-                <PerfilUserPrestadorLogado />
+    const perfil = () =>{
+        if(login == '"prestador"'){
+            return(
+                <PerfilUserPrestadorLogado/>
             );
-        } else {
-            return (
-                <PerfilUserClienteLogado />
-            );
-        }
-    }
-
-    const ediatarPerfil = () => {
-        if (login == '"prestador"') {
-            return (
-                <EditarPerfilPrestador />
-            );
-        } else {
-            return (
-                <EditarPerfilCliente />
+        }else{
+            return(
+                <PerfilUserClienteLogado/>
             );
         }
     }
 
-    return (
+    const ediatarPerfil = () =>{
+        if(login == '"prestador"'){
+            return(
+                <EditarPerfilPrestador/>
+            );
+        }else{
+            return(
+                <EditarPerfilCliente/>
+            );
+        }
+    }
+
+    return(
         <BrowserRouter>
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <Home/>
                 </Route>
                 <Route path="/Listagem/:profissao" component={Listagem} />
                 <Route exact path="/CadastroTrabalhador">
-                    <CadastroTrabalhador />
+                    <CadastroTrabalhador/>
                 </Route>
                 <Route exact path="/cadastrocliente">
-                    <CadastroCliente />
+                    <CadastroCliente/>
                 </Route>
                 <Route exact path="/login">
-                    <Login />
+                    <Login/>
                 </Route>
                 <Route exact path="/meusservicos">
-                    <ProgressPage />
+                    <ProgressPage/>
                 </Route>
                 <Route exact path="/solicitacoes">
                     <Solicitacoes/>
                 </Route>
                 <Route exact path="/cadastroFacebookGoogle">
-                    <CadastroFacebookGoogle />
+                    <CadastroFacebookGoogle/>
                 </Route>
                 <Route exact path="/cadastro">
-                    <Cadastro />
+                    <Cadastro/>
                 </Route>
-                <Route path="/PerfilPrestador" />
+                <Route path="/PerfilPrestador/:idPrestador" component={PerfilPrestador} />
                 <Route exact path="/perfil">
                     {perfil()}
                 </Route>
                 <Route exact path="/perfilCliente">
-                    <PerfilCliente />
+                    <PerfilCliente/>
                 </Route>
                 <Route exact path="/editar">
                     {ediatarPerfil()}
                 </Route>
                 <Route exact path="/maispedidos">
-                    <MaisPedidos />
-                </Route>
+                        <MaisPedidos/>
+                    </Route>
                 {/* <Route exact path="/editarperfiltrabalhador">
                     <EditarPerfilPrestador/>
                     

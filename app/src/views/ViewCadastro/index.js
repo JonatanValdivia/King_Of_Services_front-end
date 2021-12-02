@@ -1,4 +1,4 @@
-import { Cadastrado, FormContainer } from "../../pages/CadastroCliente/style";
+import { FormContainer } from "../../pages/CadastroCliente/style";
 import api from "../../services/api";
 import apiCep from "../../services/apiCep";
 import InputMask from "react-input-mask";
@@ -94,7 +94,7 @@ function ViewCadastro1() {
 
     }
 
-    const resultadoPositivo = () => {
+    const resultadoPositivo = () =>{
         const resultadoPositivo = document.getElementById('resultadoPositivo');
         resultadoPositivo.style.display = 'flex';
         setTimeout(() => {
@@ -102,7 +102,7 @@ function ViewCadastro1() {
         }, 5000);
     }
 
-    const resultadoNegativo = () => {
+    const resultadoNegativo = () =>{
         const resultadoNegativo = document.getElementById('resultadoNegativo');
         resultadoNegativo.style.display = 'flex';
         const timer = setTimeout(() => {
@@ -110,15 +110,15 @@ function ViewCadastro1() {
         }, 5000);
     }
 
-    const clear = () => {
+    const clear = () =>{
         setNome(''); setIdSexo(''); setEmail(''); setSenha(''); setSenhaConfirm(''); setTelefone(''); setDataNascimento(''); setCep(''); setUf(''); setCidade(''); setBairro(''); setRua(''); setNumero(''); setComplemento('');
     }
 
-    const validationFunction = () => {
-        if (nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento === null && senha != senhaConfirm) {
+    const validationFunction = () =>{
+        if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
             setValidation(false);
             return validation;
-        } else {
+        }else{
             setValidation(true)
             return validation;
         }
@@ -134,7 +134,7 @@ function ViewCadastro1() {
             }).catch(() =>{
                 resultadoNegativo();
             })
-        } else {
+        }else{
             resultadoNegativo();
         }
     }
@@ -150,10 +150,6 @@ function ViewCadastro1() {
                 <section className="dadosPessoais">
                     <input placeholder="Nome" value={nome} onChange={nomeHandler} />
                     <input type="email" placeholder="Email" value={email} onChange={emailHandler} />
-                    <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler} required />
-                    <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required />
-                    <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler} />
-                    <input placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                     <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler} required/>
                     <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required/>
                     <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
@@ -165,21 +161,6 @@ function ViewCadastro1() {
                         <input type="radio" value="3" name="gender" /> Outro
                     </div>
                     <button type='button' onClick={() => ocultModal()}>Próximo</button>
-
-                    <Cadastrado>
-                        <p>Já é cadastrado?
-                            <span>
-                                <a href="/login">
-                                    Entrar
-                                </a>
-                            </span>
-                        </p>
-                        <p>
-                            <a href="/">
-                                Voltar para o inicio
-                            </a>
-                        </p>
-                    </Cadastrado>
                 </section>
                 <section className="endereco">
                     <input type="number" placeholder="Cep" value={cep} onChange={cepHandler} onBlur={() => buscarCep(cep)} />
@@ -193,14 +174,14 @@ function ViewCadastro1() {
                     <p onClick={back}>voltar</p>
                     <aside id="resultadoPositivo">
                         <p>
-                            Cadastro executado com sucesso!
-                        </p>
+                            Cadastro executado com sucesso!   
+                        </p>    
                     </aside>
                     <aside id="resultadoNegativo">
                         <p>
                             Não foi possível realizar o cadastro. Verifique se todos os dados estão corretos
-                        </p>
-                    </aside>
+                        </p>    
+                    </aside>  
                 </section>
             </form>
         </FormContainer>

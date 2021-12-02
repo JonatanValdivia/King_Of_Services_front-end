@@ -6,25 +6,25 @@ import IconLocal from "../../../assets/localizacao.png"
 import FacebookIcon from "../../../assets/facebook.png"
 import WppIcon from "../../../assets/whatsapp.png";
 import { useState, useEffect } from "react";
-// import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import api from '../../../services/api';
 import { Helmet } from 'react-helmet';
 
 
 function PerfilCliente() {
   const [cliente, setCliente] = useState([]);
-    // const token = jwtDecode(localStorage.getItem('token')) ?? [];
+    const token = jwtDecode(localStorage.getItem('token')) ?? [];
     const login = localStorage.getItem('login') ?? false;
 
     useEffect(() => {
         
-        // api.get(`Clientes/${token.data.id}`).then(data => {
-        //     setCliente(data.data)
-        //     console.log(cliente);
-        // })
-    //     .catch( () => {
+        api.get(`Clientes/${token.data.id}`).then(data => {
+            setCliente(data.data)
+            console.log(cliente);
+        })
+        .catch( () => {
 
-    //     })
+        })
 
     }, [])
   return (
