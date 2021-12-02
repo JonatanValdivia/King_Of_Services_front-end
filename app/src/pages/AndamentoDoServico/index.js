@@ -24,7 +24,6 @@ function ProgressPage() {
         });
         api.get(`http://kingofservices.com.br/SolicitacoesPrestadoresAndamento/${idPrestador}`).then(({data}) =>{
             setAndamento(data);
-            console.log(data);
         });
         api.get(`http://kingofservices.com.br/SolicitacoesPrestadoresConcluido/${idPrestador}`).then(({data}) =>{
             setConcluido(data);

@@ -6,7 +6,7 @@ function CardConcluido(props){
     return(
         <ContentCard>
             <CardProgressStyle>
-                <img src={`http://kingofservices.com.br/SolicitacoesPrestadores/${props.props.foto}`} alt={props.props.foto}/>
+                <img src={`http://kingofservices.com.br/${props.props.foto}`} alt={props.props.foto}/>
                 <p>{props.props.nome}, {props.props.idade}</p>
                 <ButtonProgress>
                     <AiFillCheckCircle size="40px" color="green"/>

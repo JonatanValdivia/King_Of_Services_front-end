@@ -5,7 +5,6 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
-<<<<<<< HEAD
 
     img{
         width: 100px;
@@ -18,9 +17,7 @@ export const ContentCard = styled.div`
             margin: auto;
         }
     }
-    
-=======
->>>>>>> bbb61cff8eee0164b09761b45e71007844019e1a
+
 `
 
 export const CardProgressStyle = styled.div`
@@ -79,19 +76,23 @@ export const CardProgressStyle = styled.div`
 export const ButtonProgress = styled.div`
     width: max-content;
     height: auto;
-
+    gap: 10px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
     margin-left: auto;
 
     p{
         color: var(--primary);
+        font-weight: bold;
     }
 
     button{
         width: 100px;
         height: 40px;
 
-        background-color: var(--primary);
+        background-color: green;
         color: white;
         cursor: pointer;
         border: none;
