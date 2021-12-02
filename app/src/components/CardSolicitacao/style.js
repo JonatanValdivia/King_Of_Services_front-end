@@ -30,6 +30,19 @@ export const CardProgressStyle = styled.div`
         padding-left: 0;
     }
 
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    @media only screen and (max-width: 500px){ 
+        img{
+            margin: auto;
+        }
+        
+    }
+
     @media only screen and (max-width: 600px){ 
         display: flex;
         flex-direction: column;
@@ -63,7 +76,6 @@ export const CardProgressStyle = styled.div`
 export const ButtonProgress = styled.div`
     width: 100px;
     height: auto;
-
     display: flex;
     margin-left: auto;
 
@@ -83,14 +95,3 @@ export const ButtonProgress = styled.div`
         border-radius: 20px;
     }
 `
-
-export const Profile = styled.img`
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 100%;
-
-    @media only screen and (max-width: 500px){ 
-        margin: auto;
-    }
-`;

@@ -1,16 +1,15 @@
 import { ButtonProgress, CardProgressStyle, ContentCard, Profile } from "./style";
 
-function CardProgress(){
+function CardProgress(props){
     return(
         <ContentCard>
             <CardProgressStyle>
-                <Profile/>
-                <p>Fulano de Tal, 35</p>
+                <img src={`http://kingofservices.com.br/SolicitacoesPrestadoresAndamento/${props.props.foto}`} alt={props.props.foto}/>
+                <p>{props.props.nome}, {props.props.idade}</p>
                 <ButtonProgress>
                     <p>Em andamento</p>
                 </ButtonProgress>
-                <p id="description">Uma breve descrição sobre o serviço : "Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>
         </ContentCard>
     );

@@ -11,11 +11,11 @@ import InputMask from "react-input-mask";
 import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-function EditarPerfilCliente() {
+function EditarPerfilTrabalhador() {
   let history = useHistory();
   const [profissao, setProfissao] = useState([]);
   const [prestador, setPrestador] = useState([]);
-  // const token = jwtDecode(localStorage.getItem("token")) ?? [];
+  const token = jwtDecode(localStorage.getItem("token")) ?? [];
   const [foto, setFoto] = useState("");
   const [idProfissao, setIdProfissao] = useState("");
   const [uf, setUf] = useState("");
@@ -34,10 +34,6 @@ function EditarPerfilCliente() {
   const [dataNascimento, setdataNascimento] = useState("");
 
   useEffect(() => {
-    api
-      // .get(`Prestadores/${token.data.id}`)
-      .then(data => {
-        console.log(data);
     api.get(`Prestadores/${token.data.id}`).then(data => {
         setPrestador(data.data);
         setNome(data.data.nome);
@@ -275,4 +271,4 @@ function EditarPerfilCliente() {
   );
 }
 
-export default EditarPerfilCliente;
+export default EditarPerfilTrabalhador;

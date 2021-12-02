@@ -1,4 +1,5 @@
 import { ButtonProgress, CardProgressStyle, ContentCard, Profile } from './style';
+import { AiFillCheckCircle } from "react-icons/ai";
 function CardSolicitacao(props){
   return(
     <ContentCard>
@@ -7,7 +8,7 @@ function CardSolicitacao(props){
                 <p>{props.props.nome}, {props.props.idade}</p>
                 <p>{props.props.profissao}</p>
                 <ButtonProgress>
-                    A {props.props.statusServico}
+                    <AiFillCheckCircle size="40px" color="green"/>
                 </ButtonProgress>
                 <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>

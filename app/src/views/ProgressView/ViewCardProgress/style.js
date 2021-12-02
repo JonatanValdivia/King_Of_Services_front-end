@@ -5,6 +5,18 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
+
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    @media only screen and (max-width: 500px){ 
+        img{
+            margin: auto;
+        }
+    }
     
 `
 
@@ -86,16 +98,5 @@ export const ButtonProgress = styled.div`
         font-family: Arial, Helvetica, sans-serif;
 
         border-radius: 20px;
-    }
-`;
-
-export const Profile = styled.img`
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 100%;
-
-    @media only screen and (max-width: 500px){ 
-        margin: auto;
     }
 `;

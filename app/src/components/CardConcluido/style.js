@@ -5,20 +5,7 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
-
-    img{
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;    
-    }
-
-    @media only screen and (max-width: 500px){ 
-        img{
-            margin: auto;
-        }
-    }
-    
-`;
+`
 
 export const CardProgressStyle = styled.div`
     width: 100%;
@@ -29,7 +16,6 @@ export const CardProgressStyle = styled.div`
 
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
-
     background-color: gray;
 
     >p{
@@ -43,6 +29,19 @@ export const CardProgressStyle = styled.div`
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    @media only screen and (max-width: 500px){ 
+        img{
+            margin: auto;
+        }
+        
     }
 
     @media only screen and (max-width: 600px){ 
@@ -73,19 +72,13 @@ export const CardProgressStyle = styled.div`
             letter-spacing: 2px;
         }
     }
-`;
+`
 
 export const ButtonProgress = styled.div`
     width: 100px;
     height: auto;
-
     display: flex;
-    justify-content: center;
     margin-left: auto;
-
-    p{
-        color: green;
-    }
 
     button{
         width: 100px;
@@ -102,5 +95,4 @@ export const ButtonProgress = styled.div`
 
         border-radius: 20px;
     }
-`;
-
+`

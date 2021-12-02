@@ -4,7 +4,7 @@ function CardPedidos(datas){
     return(
         <ContentCard>
             <CardProgressStyle>
-                {console.log(datas.props.foto)}
+                
                 <Profile src={`http://kingofservices.com.br/${datas.props.foto}`} alt={datas.props.foto}/>
                 <p>{datas.props.nome}, {datas.props.idade}</p>
                 <ButtonProgress>

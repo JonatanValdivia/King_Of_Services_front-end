@@ -2,17 +2,16 @@ import { ButtonProgress, CardProgressStyle, ContentCard } from "./style";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { Profile } from "./style";
 
-function CardConcluido(){
+function CardConcluido(props){
     return(
         <ContentCard>
             <CardProgressStyle>
-                <Profile/>
-                <p>Fulano de Tal, 35</p>
+                <img src={`http://kingofservices.com.br/SolicitacoesPrestadores/${props.props.foto}`} alt={props.props.foto}/>
+                <p>{props.props.nome}, {props.props.idade}</p>
                 <ButtonProgress>
                     <AiFillCheckCircle size="40px" color="green"/>
                 </ButtonProgress>
-                <p id="description">Uma breve descrição sobre o serviço : "Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>
         </ContentCard>
     );

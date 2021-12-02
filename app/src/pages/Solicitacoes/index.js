@@ -1,4 +1,6 @@
-import CardSolicitacao from '../../components/CardSolicitacao';
+import CardAceitar from '../../components/CardSolicitacao';
+import CardAndamento from '../../components/CardAndamento';
+import CardConcluido from '../../components/CardConcluido';
 import Header from '../../components/Header';
 import HeaderLogout from '../../components/Header-Logout';
 import Footer from '../../components/Rodape';
@@ -9,18 +11,30 @@ import { Helmet } from 'react-helmet';
 import jwtDecode from 'jwt-decode';
 
 function Solicitacoes(){
-  const [solicitacoes, setSolicitacoes] = useState([]);
+  const [aceitar, setAceitar] = useState([]);
+  const [andamento, setAndamento] = useState([]);
+  const [concluido, setConcluido] = useState([]);
   const token = jwtDecode(localStorage.getItem('token'));
   const idCliente = token.data.id;
   const login = localStorage.getItem('login') ?? false;
+  const [status, setStatus] = useState(0);
 
   useEffect(() => {  
-    api.get(`http://kingofservices.com.br/SolicitacoesClientes/${idCliente}`).
-    then(({data}) =>{
-        setSolicitacoes(data);    
+    api.get(`http://kingofservices.com.br/SolicitacoesClientesAceitar/${idCliente}`).then(({data}) =>{
+      setAceitar(data);  
     });
+
+    api.get(`http://kingofservices.com.br/SolicitacoesClientesAndamento/${idCliente}`).then(({data}) =>{
+      setAndamento(data);  
+    });
+
+    api.get(`http://kingofservices.com.br/SolicitacoesClientesConcluidas/${idCliente}`).then(({data}) =>{
+      setConcluido(data);  
+    });
+
   }, []);
-console.log(solicitacoes);
+  
+
   return(
     <>
       <Helmet>
@@ -28,21 +42,36 @@ console.log(solicitacoes);
             King of Services
         </title>
       </Helmet>
-      <Header />
+      { login ? <HeaderLogout/> : <Header/> } 
         <Content>
           <Overlay>
-            <ul>
-              <li className="pedidos">Pedidos</li>
-              <li className="pendente">Pendente</li>
-              <li className="concluido">Concluido</li>
-            </ul>
+            <tr>
+              <td className="pedidos" onClick={() => setStatus(0)}>Pedidos</td>
+              <td className="pendente" onClick={() => setStatus(1)}>Pendente</td>
+              <td className="concluido" onClick={() => setStatus(2)}>Concluido</td>
+            </tr>
             <hr/>
-            {solicitacoes.map(element => {
-              return(
-                <CardSolicitacao props={element}/>
-              );
-            })}
-            
+            {status === 0 && (
+              aceitar.map(element =>{
+                return(
+                  <CardAceitar props={element}/>
+                );
+              }) 
+            )}
+            {status === 1 && (
+              andamento.map(element =>{
+                return(
+                  <CardAndamento props={element}/>
+                );
+              }) 
+            )}
+            {status === 2 && (
+              concluido.map(element =>{
+                return(
+                  <CardConcluido props={element}/>
+                );
+              }) 
+            )}
           </Overlay>
         </Content>
         <Footer/>

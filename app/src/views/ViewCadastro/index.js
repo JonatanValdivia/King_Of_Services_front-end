@@ -126,11 +126,6 @@ function ViewCadastro1() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento === null && senha != senhaConfirm) {
-            api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(() => {
-                resultadoPositivo();
-                clear();
-            }).catch(() => {
         if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
             api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(data => {
                 console.log(data)
