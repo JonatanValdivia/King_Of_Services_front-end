@@ -12,6 +12,8 @@ function HeaderLogout() {
     const login = localStorage.getItem('login') ?? false;
     const token = jwtDecode(localStorage.getItem('token')) ?? [];
     const primeiroNome = token.data.firstName;
+    const foto = token.data.foto;
+    console.log(foto)
     
     const openMenu = () => {
         const menu = document.getElementById('menu');
@@ -62,7 +64,7 @@ function HeaderLogout() {
                     <li>
                         <div>
                             <TextRegister>
-                                <Profile />
+                                <img src={`http://kingofservices.com.br/${foto}`} alt=""/>
                                 <p>
                                     {primeiroNome}
                                 </p>

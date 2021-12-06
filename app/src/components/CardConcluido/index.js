@@ -9,6 +9,8 @@ function CardSolicitacao(props){
                 <p>{props.props.profissao}</p>
                 <ButtonProgress>
                     <AiFillCheckCircle size="40px" color="green"/>
+                    {/* <div id="pagar">Pagar</div> */}
+                    <button>Pagar</button>
                 </ButtonProgress>
                 <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>

@@ -204,7 +204,7 @@ function CadastroTrabalhador(){
                         <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} />
                         <p>Descrição</p>
                         <textarea placeholder="Escreva um pouco sobre você e com o que você trabalha... (descrição)" value={descricao} onChange={descricaoHandler} ></textarea>
-                        <InputMask mask="(99) 99999-9999" placeholder="Número de telefone" value={telefone} onChange={telefoneHandler} />
+                        <InputMask mask="(99) 99999-9999" placeholder="Número de celular" value={telefone} onChange={telefoneHandler} />
                         <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                         <Button>
                             <button type="submit" onClick={(event) => handleSubmit(event)}>Cadastrar-se</button>

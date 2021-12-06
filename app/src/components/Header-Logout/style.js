@@ -127,6 +127,12 @@ export const TextRegister = styled.div`
     padding-left: 10px;
     transition: 0.3s;
 
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+
     @media only screen and (max-width: 800px){
         border: 0px;
         margin-right: 0px;
@@ -138,13 +144,6 @@ export const TextRegister = styled.div`
     p{
         margin-left: 10px;
     }
-`
-
-export const Profile = styled.div`
-    width: 40px;
-    height: 40px;
-    background-color: blueviolet;
-    border-radius: 100%;
 `
 
 export const ContentIcon = styled.div`

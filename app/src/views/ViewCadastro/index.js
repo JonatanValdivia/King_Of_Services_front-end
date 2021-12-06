@@ -152,7 +152,7 @@ function ViewCadastro1() {
                     <input type="email" placeholder="Email" value={email} onChange={emailHandler} />
                     <input type="password" placeholder="Senha" value={senha} onChange={senhaHandler} required/>
                     <input type="password" placeholder="Confirmar senha" value={senhaConfirm} onChange={senhaConfirmHandler} required/>
-                    <InputMask mask="(99) 99999-9999" placeholder="telefone" value={telefone} onChange={telefoneHandler}/>
+                    <InputMask mask="(99) 99999-9999" placeholder="Número do celular" value={telefone} onChange={telefoneHandler}/>
                     <InputMask mask="99/99/9999" placeholder="Data de nascimento" value={dataNascimento} onChange={dataNascimentoHandler} />
                     <label>Selecione o seu gênero:</label>
                     <div onChange={valorGenero}>

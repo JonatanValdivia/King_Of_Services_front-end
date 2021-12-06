@@ -5,7 +5,6 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
-<<<<<<< HEAD
 
     img{
         width: 100px;
@@ -18,9 +17,6 @@ export const ContentCard = styled.div`
             margin: auto;
         }
     }
-    
-=======
->>>>>>> bbb61cff8eee0164b09761b45e71007844019e1a
 `;
 
 export const CardProgressStyle = styled.div`
