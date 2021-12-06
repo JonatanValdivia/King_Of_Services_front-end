@@ -3,6 +3,7 @@ import api from "../../services/api";
 import apiCep from "../../services/apiCep";
 import InputMask from "react-input-mask";
 import { Component, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function ViewCadastro1() {
 
@@ -22,6 +23,7 @@ function ViewCadastro1() {
     const [complemento, setComplemento] = useState("");
     const [validation, setValidation] = useState(false);
     const foto = null;
+    let history = useHistory(); 
 
     const dataNascimentoHandler = (event) => {
         setDataNascimento(event.target.value);
@@ -129,8 +131,9 @@ function ViewCadastro1() {
         if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
             api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(data => {
                 console.log(data)
-                // resultadoPositivo();
-                // clear();
+                resultadoPositivo();
+                clear();
+                history.push("/")
             }).catch(() =>{
                 resultadoNegativo();
             })
