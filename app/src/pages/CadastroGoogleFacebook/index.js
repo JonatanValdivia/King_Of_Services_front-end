@@ -5,6 +5,7 @@ import api from "../../services/api";
 import apiCep from "../../services/apiCep";
 // import InputMask from "react-input-mask";
 import {useEffect, useState} from 'react';
+import { Helmet } from 'react-helmet';
 
 function CadastroFacebookGoogle(){
     const [nome, setNome] = useState("");
@@ -90,22 +91,25 @@ function CadastroFacebookGoogle(){
 
 
     return(
-        <Container>
-        <FormContainer>
-            <img src={imgLogo}/>
-            <h1>King of Services</h1>
+        <>
+            <Helmet>
+                <title>King of Services</title>
+            </Helmet>
+            <Container>
+                <FormContainer>
+                    <img src={imgLogo}/>
+                    <h1>King of Services</h1>
 
-            <button id="facebook">Facebook</button>
-            <button id="Google">Google</button>
-            <hr/>
+                    <button id="facebook">Facebook</button>
+                    <button id="Google">Google</button>
+                    <hr/>
 
-            <p>Você já é cadastrado? Entrar</p>
+                    <p>Você já é cadastrado? Entrar</p>
 
-        </FormContainer>
-    </Container>
-
+                </FormContainer>
+            </Container>
+        </>
     );
-
 }
 
 export default CadastroFacebookGoogle;

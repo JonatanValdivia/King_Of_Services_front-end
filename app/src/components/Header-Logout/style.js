@@ -127,6 +127,12 @@ export const TextRegister = styled.div`
     padding-left: 10px;
     transition: 0.3s;
 
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+
     @media only screen and (max-width: 800px){
         border: 0px;
         margin-right: 0px;
@@ -138,13 +144,6 @@ export const TextRegister = styled.div`
     p{
         margin-left: 10px;
     }
-`
-
-export const Profile = styled.div`
-    width: 40px;
-    height: 40px;
-    background-color: blueviolet;
-    border-radius: 100%;
 `
 
 export const ContentIcon = styled.div`
@@ -165,17 +164,16 @@ export const Submenu = styled.div`
     ul>li{
         width: 100%;
         height: 50px;
-
         list-style: none;
         color: #FFFFFF;
         cursor: pointer;
-
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     @media only screen and (max-width: 800px){
+        height: auto;
         position: static;
         visibility: visible;
         width: 100%;
@@ -185,8 +183,6 @@ export const Submenu = styled.div`
 
             >li{
                 align-items: flex-start;
-                margin-bottom: 10px;
-                border-bottom: 1px solid #CCC;
             }
             
             hr{

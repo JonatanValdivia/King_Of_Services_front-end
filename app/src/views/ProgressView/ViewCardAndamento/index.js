@@ -1,16 +1,25 @@
 import { ButtonProgress, CardProgressStyle, ContentCard, Profile } from "./style";
+import api from "../../../services/api";
 
-function CardPedidos(){
+function CardPedidos(datas){
+    
+    const update = (event) =>{
+        const id = event.target.value
+        api.put(`http://kingofservices.com.br/SolicitacoesPrestadoresAceitar/${id}`, {}).then(()=>{
+            window.location.reload(0);
+        }).catch((data) =>{
+            console.log(data);
+        })
+    }
     return(
         <ContentCard>
             <CardProgressStyle>
-                <Profile/>
-                <p>Fulano de Tal, 35</p>
+                <Profile src={`http://kingofservices.com.br/${datas.props.foto}`} alt={datas.props.foto}/>
+                <p>{datas.props.nome}, {datas.props.idade}</p>
                 <ButtonProgress>
-                    <button>Aceitar</button>
+                    <button value={datas.props.idServicoPrestador} onClick={(e) => update(e)}>{datas.props.statusServico}</button>
                 </ButtonProgress>
-                <p id="description">Uma breve descrição sobre o serviço : "Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p id="description">{datas.props.descricao}</p>
             </CardProgressStyle>
         </ContentCard>
     );

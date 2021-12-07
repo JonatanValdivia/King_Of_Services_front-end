@@ -2,16 +2,22 @@ import { Container, ContentIcon, Menu, Profile, Submenu, TextRegister } from "./
 import { IoIosArrowDown } from 'react-icons/io'
 import { useHistory } from 'react-router-dom';
 import imgLogo from "../../assets/Logo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import jwtDecode from "jwt-decode";
 
 function HeaderLogout() {
 
     let [ open, setOpen ] = useState(false);
     let history = useHistory(); 
+    const login = localStorage.getItem('login') ?? false;
+    const token = jwtDecode(localStorage.getItem('token')) ?? [];
+    const primeiroNome = token.data.firstName;
+    const foto = token.data.foto;
+    console.log(foto)
     
     const openMenu = () => {
         const menu = document.getElementById('menu');
-        const register = document.getElementById('register');
+        document.getElementById('register');
         if(open == false){
             menu.classList.add('open')
             setOpen(true);
@@ -25,10 +31,10 @@ function HeaderLogout() {
 
     const ocultSubmenu = () => {
         if(invisible == 1){
-            const submenu = document.getElementById("submenu").style.visibility="visible";
+            document.getElementById("submenu").style.visibility="visible";
             invisible = 0
         }else{
-            const submenu = document.getElementById("submenu").style.visibility = "hidden"
+            document.getElementById("submenu").style.visibility = "hidden"
             invisible = 1
         }
     }
@@ -45,23 +51,10 @@ function HeaderLogout() {
             <a href="/">
                 <img src={imgLogo} />
             </a>
-
             <Menu id="menu">
                 <ul>
                     <li>
-                        <a href="/meusservicos">
-                            Meus Serviços
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            Serviços
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/cadastrotrabalhador">
-                            Trabalhe conosco
-                        </a>
+                    { login == '"cliente"' ? <a href="/solicitacoes">Solicitações</a> : <a href="/meusservicos">Meus Serviços</a> }
                     </li>
                     <li>
                         <a>
@@ -71,9 +64,9 @@ function HeaderLogout() {
                     <li>
                         <div>
                             <TextRegister>
-                                <Profile />
+                                <img src={`http://kingofservices.com.br/${foto}`} alt=""/>
                                 <p>
-                                    Fulaninho
+                                    {primeiroNome}
                                 </p>
                                 <ContentIcon onClick={ocultSubmenu}>
                                     <IoIosArrowDown />
@@ -91,7 +84,7 @@ function HeaderLogout() {
                                             Editar meu perfil
                                         </a>
                                     </li>
-                                    <li onClick={logout}>Logout</li>
+                                    <li onClick={logout}><a>Logout</a></li>
                                 </ul>
                             </Submenu>
                         </div>

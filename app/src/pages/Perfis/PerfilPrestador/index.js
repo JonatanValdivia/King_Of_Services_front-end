@@ -7,25 +7,31 @@ import IconLocal from "../../../assets/localizacao.png";
 import FacebookIcon from "../../../assets/facebook.png";
 import WppIcon from "../../../assets/whatsapp.png";
 import { useState, useEffect } from "react";
-// import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import api from '../../../services/api';
+import { Helmet } from 'react-helmet';
 
 function PerfilPrestador() {
     const [prestador, setPrestador] = useState([]);
-    // const token = jwtDecode(localStorage.getItem('token')) ?? [];
+    const token = jwtDecode(localStorage.getItem('token')) ?? [];
 
     useEffect(() => {
         
-        // api.get(`Prestadores/${token.data.id}`).then(data => {
-        //     setPrestador(data.data)
-        // }).catch( () => {
+        api.get(`Prestadores/${token.data.id}`).then(data => {
+            setPrestador(data.data)
+        }).catch( () => {
 
-        // })
+        })
 
     }, [])
     
     return (
         <>
+            <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
             <HeaderLogout />
             <Content>
                 <Overlay>
@@ -56,7 +62,7 @@ function PerfilPrestador() {
                             <StyleComponent2>
                                 <Dados>
                                     <h1>{prestador.nome}</h1>
-                                    <h2>{prestador.idProfissao}</h2>
+                                    <h2>{prestador.profissao}</h2>
                                     <p>{prestador.descricao}</p>
                                     <Estrelas>
                                         <img src={Estrela} />

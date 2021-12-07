@@ -1,14 +1,17 @@
 import { Container, ContainerButton, ContainerRegister, Logo, Overlay, Tittle } from "./style";
 import imgLogo from "../../assets/Leão.png"
-import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 function Cadastro(){
     return(
         <>
-            
+            <Helmet>
+                <title>
+                    King of Services
+                </title>
+            </Helmet>
             <Overlay>
-                
                 <Container>
                     <Logo>
                         <img src={imgLogo}/>

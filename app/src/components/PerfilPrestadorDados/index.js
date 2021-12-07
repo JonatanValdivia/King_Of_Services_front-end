@@ -5,25 +5,44 @@ import Profile from "../../assets/Diarista.png";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import api from '../../services/api';
+import jwtDecode from "jwt-decode";
 
 function PerfilPrestadorDados(props) {
   let { idPrestador } = useParams();
   const [prestador, setPrestador] = useState([]);
   const login = localStorage.getItem('login') ?? false;
+  const token = jwtDecode(localStorage.getItem('token') ?? false);
+  const [descricao, setDescricao] = useState();
+
+  const handlerDescricao = (event) =>{
+    setDescricao(event.target.value);
+  }
 
   useEffect(() => {
-
     const formatacao = idPrestador.replace(':', '');
     api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
       then(({ data }) => {
-        setPrestador(data)
-        console.log(data);
+        setPrestador(data);
       });
   }, [idPrestador]);
 
   const openModal = () => document.querySelector('#modal').classList.add('active');
 
   const closeModal = () => document.querySelector('#modal').classList.remove('active');
+
+  const salvarSolicitacao = () =>{
+    const idPrestador = document.querySelector('#salvar').value;
+    const idCliente = token.data.id;
+    const statusServico = 'aceitar';
+    api.post('http://kingofservices.com.br/Solicitacoes', {idPrestador, idCliente, descricao, statusServico}).then(() =>{
+      closeModal();
+      setDescricao('');
+    }).catch(() => {
+    
+    })
+
+  }
+  
 
   return (
     <>
@@ -43,14 +62,16 @@ function PerfilPrestadorDados(props) {
                 </header>
                 <div class="modal__main">
                     <form class="form">
-                        <textarea placeholder="Descreva o que você precisa (breve descrição)..."></textarea>
-                        <input class="input-field" type="text" id="email" placeholder="E-mail"/>
-                        
+                        <textarea placeholder="Descreva o que você precisa (breve descrição)..." value={descricao} onChange={(e) => handlerDescricao(e)}></textarea>
                     </form>
                 </div>
                 <footer class="modal__footer">
-                    <button class="btn green" id="salvar">Salvar</button>
-                    <button class="btn blue" id="cancelar" onClick={closeModal}>Cancelar</button>
+                    <button class="btn green" id="salvar" value={prestador.idPrestador} onClick={salvarSolicitacao}>
+                      Enviar solicitação
+                    </button>
+                    <button class="btn blue" id="cancelar" onClick={closeModal}>
+                      Cancelar
+                    </button>
                 </footer>
             </div>
         </div>
@@ -60,7 +81,7 @@ function PerfilPrestadorDados(props) {
       <StyleComponent2>
         <Dados>
           <h1>{prestador.nome}</h1>
-          <h2>{prestador.idProfissao}</h2>
+          <h2>{prestador.profissao}</h2>
           <p>{prestador.descricao}</p>
           <Estrelas>
             <img src={Estrela} />

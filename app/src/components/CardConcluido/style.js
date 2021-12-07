@@ -5,19 +5,6 @@ export const ContentCard = styled.div`
     height: auto;
 
     padding: 15px;
-
-    img{
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
-    }
-
-    @media only screen and (max-width: 500px){ 
-        img{
-            margin: auto;
-        }
-    }
-
 `
 
 export const CardProgressStyle = styled.div`
@@ -29,11 +16,14 @@ export const CardProgressStyle = styled.div`
 
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
+    background-color: gray;
 
     >p{
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;
+        position: relative;
+        top: -30px;
     }
 
     #description{
@@ -41,6 +31,19 @@ export const CardProgressStyle = styled.div`
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+    }
+
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    @media only screen and (max-width: 500px){ 
+        img{
+            margin: auto;
+        }
+        
     }
 
     @media only screen and (max-width: 600px){ 
@@ -74,25 +77,20 @@ export const CardProgressStyle = styled.div`
 `
 
 export const ButtonProgress = styled.div`
-    width: max-content;
+    width: 100px;
     height: auto;
-    gap: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
     margin-left: auto;
-
-    p{
-        color: var(--primary);
-        font-weight: bold;
-    }
+    position: relative;
+    top: -30px;
+    gap: 5px;
 
     button{
         width: 100px;
         height: 40px;
 
-        background-color: green;
+        background-color: var(--primary);
         color: white;
         cursor: pointer;
         border: none;
@@ -103,4 +101,4 @@ export const ButtonProgress = styled.div`
 
         border-radius: 20px;
     }
-`;
+`

@@ -27,7 +27,7 @@ function Header() {
                 <ul>
                     <li>
                         <a>
-                            Serviços
+                            {/* Serviços */}
                         </a>
                     </li>
                     <li>
