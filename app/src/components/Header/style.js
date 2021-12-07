@@ -78,6 +78,8 @@ export const Menu = styled.nav`
                 justify-content: center;
                 cursor: pointer;
                 margin-top: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
 
                 a:hover {
                     color: var(--primary);
