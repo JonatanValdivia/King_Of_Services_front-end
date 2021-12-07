@@ -130,7 +130,6 @@ function ViewCadastro1() {
         event.preventDefault();
         if(nome || email || senha || senhaConfirm || telefone || dataNascimento || cep || uf || cidade || bairro || rua || numero || complemento  === null && senha != senhaConfirm){
             api.post("http://kingofservices.com.br/Clientes", { idSexo, nome, email, senha, telefone, dataNascimento, foto, uf, cidade, bairro, rua, numero, complemento, cep }).then(data => {
-                console.log(data)
                 resultadoPositivo();
                 clear();
                 history.push("/")

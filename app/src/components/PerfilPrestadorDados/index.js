@@ -34,13 +34,12 @@ function PerfilPrestadorDados(props) {
     const idPrestador = document.querySelector('#salvar').value;
     const idCliente = token.data.id;
     const statusServico = 'aceitar';
-    api.post('http://kingofservices.com.br/Solicitacoes', {idPrestador, idCliente, descricao, statusServico}).then(() =>{
+    api.post('http://kingofservices.com.br/SolicitacoesPrestadoresAceitar', {idPrestador, idCliente, descricao, statusServico}).then(() =>{
       closeModal();
       setDescricao('');
     }).catch(() => {
     
     })
-
   }
   
 
