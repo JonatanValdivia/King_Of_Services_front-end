@@ -21,13 +21,18 @@ export const CardProgressStyle = styled.div`
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;
+        position: relative;
+        top: -10px;
     }
 
     #description{
+        height: 80px;
         font-size: 1em;
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+        overflow: auto;
+        margin-top: 10px;
     }
 
     img{
@@ -78,6 +83,10 @@ export const ButtonProgress = styled.div`
     height: auto;
     display: flex;
     margin-left: auto;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    top: -30px;
 
     button{
         width: 100px;

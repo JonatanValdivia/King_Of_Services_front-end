@@ -38,10 +38,13 @@ export const CardProgressStyle = styled.div`
     }
 
     #description{
+        height: 80px;
         font-size: 1em;
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+        overflow: auto;
+        margin-top: 10px;
     }
 
     @media only screen and (max-width: 600px){ 

@@ -31,7 +31,7 @@ function Header() {
                         </a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/cadastrotrabalhador">
                             Trabalhe conosco
                         </a>
                     </li>

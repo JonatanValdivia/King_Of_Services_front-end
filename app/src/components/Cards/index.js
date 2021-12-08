@@ -9,7 +9,7 @@ function Cards() {
             <br id="maisPedidos"/>
             <ContainerCards>
                     <TittleServices>
-                        <h1>Principais serviços<span>mais pedidos</span></h1>
+                        <h1>Serviços<span>mais pedidos</span></h1>
                     </TittleServices>
                 <SectionCards>
                     <CardServices>

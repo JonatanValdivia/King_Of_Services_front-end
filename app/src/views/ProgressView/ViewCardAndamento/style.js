@@ -3,17 +3,14 @@ import styled from "styled-components"
 export const ContentCard = styled.div`
     width: 100%;
     height: auto;
-
     padding: 15px;
 `
 
 export const CardProgressStyle = styled.div`
     width: 100%;
     height: 30%;
-
     margin-top: 10px;
     padding: 20px;
-
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
 
@@ -24,10 +21,13 @@ export const CardProgressStyle = styled.div`
     }
 
     #description{
+        height: 80px;
         font-size: 1em;
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+        overflow: auto;
+        margin-top: 10px;
     }
 
     @media only screen and (max-width: 600px){ 
@@ -61,25 +61,23 @@ export const CardProgressStyle = styled.div`
 `
 
 export const ButtonProgress = styled.div`
-    width: 100px;
+    width: 100%;
     height: auto;
-
+    justify-content: end;
     display: flex;
     margin-left: auto;
 
     button{
-        width: 100px;
+        width: max-content;
         height: 40px;
-
         background-color: var(--primary);
+        padding: 0px 10px;
         color: white;
         cursor: pointer;
         border: none;
-
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
     }
 `

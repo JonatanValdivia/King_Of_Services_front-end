@@ -160,7 +160,7 @@ export const Contatos = styled.div`
         align-items: center;
     }
 
-    >div>i{
+    >div>a>i{
         font-size: 3rem;
 
         :hover{

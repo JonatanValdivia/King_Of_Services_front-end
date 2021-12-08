@@ -8,42 +8,43 @@ function CardSolicitacao(props){
   
   return(
     <ContentCard>
-            <CardProgressStyle>
-                <img src={`http://kingofservices.com.br/${props.props.foto}`} alt=""/>
-                <p>{props.props.nome}, {props.props.idade}</p>
-                <p>{props.props.profissao}</p>
-                <ButtonProgress>
-                    <AiFillCheckCircle size="40px" color="green"/>
-                    <button onClick={openModal}>Pagar</button>
-                </ButtonProgress>
-                <p id="description">{props.props.descricao}</p>
-            </CardProgressStyle>
-            <div class="modal" id="modal">
-            <div class="modal__content">
-                <header class="modal__header">
-                    <h1>Efetuar pagamento</h1>
-                    <span id="close" onClick={closeModal}>&#10006;</span>
-                </header>
-                <div class="modal__main">
-                    <form class="form">
-                        <p>
-                          Mande uma foto do serviço realizado! (opcional)
-                          <input type="file"/>
-                        </p>
-                        
-                    </form>
-                </div>
-                <footer class="modal__footer">
-                    <button class="btn green" id="salvar">
-                      Pagar
-                    </button>
-                    <button class="btn blue" id="cancelar" onClick={closeModal}>
-                      Cancelar pagamento
-                    </button>
-                </footer>
-            </div>
+      <CardProgressStyle>
+        <img src={`http://kingofservices.com.br/${props.props.foto}`} alt=""/>
+        <p>{props.props.nome}, {props.props.idade}</p>
+        <p>{props.props.profissao}</p>
+        <ButtonProgress>
+          <AiFillCheckCircle size="40px" color="green"/>
+        </ButtonProgress>
+        <p id="description">{props.props.descricao}</p>
+        <div>
+          <button onClick={openModal}>Pagar</button>
         </div>
-        </ContentCard>
+      </CardProgressStyle>
+        <div class="modal" id="modal">
+          <div class="modal__content">
+            <header class="modal__header">
+              <h1>Efetuar pagamento</h1>
+              <span id="close" onClick={closeModal}>&#10006;</span>
+            </header>
+            <div class="modal__main">
+              <form class="form">
+                <p>
+                  Envie uma foto do serviço realizado! (opcional)
+                  <input type="file"/>
+                </p>
+              </form>
+            </div>
+            <footer class="modal__footer">
+              <button class="btn green" id="salvar">
+                Pagar
+              </button>
+              <button class="btn blue" id="cancelar" onClick={closeModal}>
+                Cancelar pagamento
+              </button>
+            </footer>
+          </div>
+        </div>
+      </ContentCard>
   );
 }
 

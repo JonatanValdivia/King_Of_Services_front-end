@@ -16,10 +16,10 @@ function CardPedidos(datas){
             <CardProgressStyle>
                 <Profile src={`http://kingofservices.com.br/${datas.props.foto}`} alt={datas.props.foto}/>
                 <p>{datas.props.nome}, {datas.props.idade}</p>
-                <ButtonProgress>
-                    <button value={datas.props.idServicoPrestador} onClick={(e) => update(e)}>{datas.props.statusServico}</button>
-                </ButtonProgress>
                 <p id="description">{datas.props.descricao}</p>
+                <ButtonProgress>
+                    <button value={datas.props.idServicoPrestador} onClick={(e) => update(e)}>Aceitar serviço</button>
+                </ButtonProgress>
             </CardProgressStyle>
         </ContentCard>
     );

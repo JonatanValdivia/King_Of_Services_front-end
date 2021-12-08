@@ -7,10 +7,8 @@ function Footer(){
         <FooterStyle>
             <div>
                 <LogoStyle>
-                    
                     <h1> King Of Services</h1> 
                     {/* <p>Almost before</p> */}
-                    
                 </LogoStyle>
                 <Inicio>
                     <p>Inicio</p>
@@ -25,9 +23,15 @@ function Footer(){
                 </SobreNos>
                 <Contatos>
                     <div>
-                        <i className="fa fa-brands fa-facebook-f"></i>
-                        <i className="fa fa-brands fa-instagram"></i>
-                        <i className="fa fa-brands fa-linkedin"></i>
+                        <a href="https://www.facebook.com/">
+                            <i className="fa fa-brands fa-facebook-f"></i>
+                        </a>  
+                        <a href="https://www.instagram.com/">
+                            <i className="fa fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <i className="fa fa-brands fa-linkedin"></i>
+                        </a>
                     </div>
                     <div>Contatos</div>
                 </Contatos>
