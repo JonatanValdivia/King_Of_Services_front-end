@@ -37,10 +37,13 @@ export const CardProgressStyle = styled.div`
     }
 
     #description{
+        height: 80px;
         font-size: 1em;
         font-family: sans-serif;
         padding: 10px;
         padding-left: 0;
+        overflow: auto;
+        margin-top: 10px;
     }
 
     @media only screen and (max-width: 600px){ 
@@ -57,10 +60,14 @@ export const CardProgressStyle = styled.div`
         }
 
         #description{
+            background-color: red;
+            height: 10px;
             font-size: 1em;
             font-family: sans-serif;
             padding: 10px;
             padding-left: 0;
+            overflow: auto;
+            margin-top: 10px;
         }
     }
 
@@ -74,13 +81,12 @@ export const CardProgressStyle = styled.div`
 `
 
 export const ButtonProgress = styled.div`
-    width: max-content;
+    width: 100%;
     height: auto;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    align-items: flex-end;
     margin-left: auto;
 
     p{
@@ -89,18 +95,16 @@ export const ButtonProgress = styled.div`
     }
 
     button{
-        width: 100px;
+        width: max-content;
         height: 40px;
-
+        padding: 0px 10px;
         background-color: green;
         color: white;
         cursor: pointer;
         border: none;
-
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
     }
 `;

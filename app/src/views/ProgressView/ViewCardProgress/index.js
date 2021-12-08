@@ -15,11 +15,11 @@ function CardProgress(props){
             <CardProgressStyle>
                 <img src={`http://kingofservices.com.br/${props.props.foto}`} alt={props.props.foto}/>
                 <p>{props.props.nome}, {props.props.idade}</p>
+                <p id="description">{props.props.descricao}</p>
                 <ButtonProgress>
                     <p>Em andamento</p>
-                    <button value={props.props.idServicoPrestador} onClick={(e) => update(e)}>Concluir</button>
+                    <button value={props.props.idServicoPrestador} onClick={(e) => update(e)}>Concluir serviço</button>
                 </ButtonProgress>
-                <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>
         </ContentCard>
     );

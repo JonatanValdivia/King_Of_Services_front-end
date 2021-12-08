@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const ContentCard = styled.div`
     width: 100%;
     height: auto;
-
     padding: 15px;
     
     .modal{
@@ -34,6 +33,23 @@ export const ContentCard = styled.div`
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 0 2px black;
+<<<<<<< HEAD
+=======
+        
+        button{
+            width: max-content;
+            padding: 0px 20px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+        }
+>>>>>>> fix/solicitacoes
 
         @media(min-width: 320px) and (max-width: 450px){
             width: 100vw;
@@ -107,6 +123,7 @@ export const ContentCard = styled.div`
         border-radius: 0 0 5px 5px;
         padding: 5px 20px;
         background-color: inherit;
+<<<<<<< HEAD
 
         button{
             width: max-content;
@@ -135,15 +152,26 @@ export const ContentCard = styled.div`
       text-align: center;
   }
 }
+=======
+    }
+
+    @media (max-width:1024px) {
+        .modal__main form input {
+            width: 100%;
+        }
+        .modal__footer {
+            text-align: center;
+        }
+    }
+>>>>>>> fix/solicitacoes
 `
 
 export const CardProgressStyle = styled.div`
     width: 100%;
     height: 30%;
-
     margin-top: 10px;
     padding: 20px;
-
+    padding-bottom: 0px;
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
     background-color: gray;
@@ -153,14 +181,15 @@ export const CardProgressStyle = styled.div`
         font-size: 1.5em;
         letter-spacing: 2px;
         position: relative;
-        top: -30px;
+        top: -10px;
     }
 
     #description{
+        height: 80px;
         font-size: 1em;
         font-family: sans-serif;
-        padding: 10px;
         padding-left: 0;
+        overflow: auto;
     }
 
     img{
@@ -183,7 +212,6 @@ export const CardProgressStyle = styled.div`
 
         >p{
             margin-top: 10px;
-            margin-bottom: 10px;
             margin-left: 0px;
             font-size: 1.5em;
             letter-spacing: 2px;
@@ -204,6 +232,31 @@ export const CardProgressStyle = styled.div`
             letter-spacing: 2px;
         }
     }
+
+    div:last-child{
+        display: flex;
+        justify-content: end;
+        position: relative;
+        top: -20px;
+
+        button{
+            width: max-content;
+            padding: 0px 20px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+    }
+    
+    
 `
 
 export const ButtonProgress = styled.div`
@@ -219,16 +272,13 @@ export const ButtonProgress = styled.div`
     button{
         width: 100px;
         height: 40px;
-
         background-color: var(--primary);
         color: white;
         cursor: pointer;
         border: none;
-
         font-size: 1em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-
         border-radius: 20px;
     }
 `
