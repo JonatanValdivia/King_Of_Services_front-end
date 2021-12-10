@@ -28,13 +28,15 @@ export const ContentCard = styled.div`
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 80vw;
-        margin: 15vh auto;
+        width: 65vw;
+        margin: 12vh auto;
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 0 2px black;
-<<<<<<< HEAD
-=======
+        
+        @media(min-width: 320px) and (max-width: 600px){
+            width: 95vw;
+        }
         
         button{
             width: max-content;
@@ -49,7 +51,6 @@ export const ContentCard = styled.div`
             font-family: Arial, Helvetica, sans-serif;
             border-radius: 20px;
         }
->>>>>>> fix/solicitacoes
 
         @media(min-width: 320px) and (max-width: 450px){
             width: 100vw;
@@ -99,17 +100,90 @@ export const ContentCard = styled.div`
     }
 
     .modal__main {
-        width: 80%;
+        width: 100%;
+        height: 400px;
         padding: 0 0px;
+        display: flex;
+        justify-content: center;
+        overflow: auto;
 
         >form{
+            width: max-content;
+            padding-left: 30px;
+        }
+
+        >form>label{
             width: 100%;
+            font-size: 1.1rem;
+            padding: 5px;
+        }
+
+        >form>input{
+            width: 400px;
+            height: 40px;
+            border: solid 1px var(--primary);
+            margin-bottom: 30px;
+        }
+
+        #grid1{
+            display: flex;
+            width: 94%;
+            justify-content: space-between;
+        }
+        
+        #grid2{
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+
+            >input{
+                height: 40px;
+                border: solid 1px var(--primary);
+            }
+            
+            #input1{
+               width: 200px;
+            }
+            
+            #input2{
+                width: 100px;
+            }
+            
+            #input3{
+                width: 100px;
+            } 
+        }
+
+        #grid3{
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #grid4{
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            
+            >input{
+                height: 40px;
+                border: solid 1px var(--primary);
+            }
+            
+            :first-child{
+                width: 200px;
+            }
+            
+            #lastChild{
+                width: 100px;
+            }
         }
 
         >form>p{
             width: 100%;
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             padding: 5px;
+            color: gray;
         }
 
     }
@@ -123,7 +197,6 @@ export const ContentCard = styled.div`
         border-radius: 0 0 5px 5px;
         padding: 5px 20px;
         background-color: inherit;
-<<<<<<< HEAD
 
         button{
             width: max-content;
@@ -144,16 +217,6 @@ export const ContentCard = styled.div`
         }
     }
 
-@media (max-width:1024px) {
-  .modal__main form input {
-      width: 100%;
-  }
-  .modal__footer {
-      text-align: center;
-  }
-}
-=======
-    }
 
     @media (max-width:1024px) {
         .modal__main form input {
@@ -163,7 +226,7 @@ export const ContentCard = styled.div`
             text-align: center;
         }
     }
->>>>>>> fix/solicitacoes
+
 `
 
 export const CardProgressStyle = styled.div`
@@ -182,6 +245,10 @@ export const CardProgressStyle = styled.div`
         letter-spacing: 2px;
         position: relative;
         top: -10px;
+    }
+    
+    >span{
+        margin-left: 190px;
     }
 
     #description{
@@ -266,7 +333,7 @@ export const ButtonProgress = styled.div`
     flex-direction: column;
     margin-left: auto;
     position: relative;
-    top: -30px;
+    top: -10px;
     gap: 5px;
 
     button{

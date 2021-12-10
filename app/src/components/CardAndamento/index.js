@@ -5,7 +5,9 @@ function CardAndamento(props){
       <CardProgressStyle>
           <img src={`http://kingofservices.com.br/${props.props.foto}`} alt=""/>
           <p>{props.props.nome}, {props.props.idade}</p>
-          <p>{props.props.profissao}</p>
+          <p>{props.props.nomeProfissao}</p>
+          <span>Iniciado em {props.props.atualizado} às {props.props.atualizadoHora}</span>
+          <br/>
           <ButtonProgress>
             Pendente
           </ButtonProgress>
