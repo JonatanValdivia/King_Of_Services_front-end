@@ -16,6 +16,7 @@ export const CardProgressStyle = styled.div`
 
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
+    background-color: #f7f7f7;
 
     >p{
         margin-left: 190px;

@@ -1,6 +1,7 @@
 import CardAceitar from '../../components/CardSolicitacao';
 import CardAndamento from '../../components/CardAndamento';
 import CardConcluido from '../../components/CardConcluido';
+import CardPago from '../../components/CardPago';
 import Header from '../../components/Header';
 import HeaderLogout from '../../components/Header-Logout';
 import Footer from '../../components/Rodape';
@@ -14,6 +15,7 @@ function Solicitacoes(){
   const [aceitar, setAceitar] = useState([]);
   const [andamento, setAndamento] = useState([]);
   const [concluido, setConcluido] = useState([]);
+  const [pago, setPago] = useState([]);
   const token = jwtDecode(localStorage.getItem('token'));
   const idCliente = token.data.id;
   const login = localStorage.getItem('login') ?? false;
@@ -30,6 +32,12 @@ function Solicitacoes(){
 
     api.get(`http://kingofservices.com.br/SolicitacoesClientesConcluidas/${idCliente}`).then(({data}) =>{
       setConcluido(data);  
+    });
+    
+    api.get(`http://kingofservices.com.br/SolicitacoesClientesPago/${idCliente}`).then(({data}) =>{
+      setPago(data);
+      console.log(data)  
+      
     });
 
   }, []);
@@ -49,6 +57,8 @@ function Solicitacoes(){
               <td className="pedidos" onClick={() => setStatus(0)}>Pedidos</td>
               <td className="pendente" onClick={() => setStatus(1)}>Pendente</td>
               <td className="concluido" onClick={() => setStatus(2)}>Concluido</td>
+              <td className="pago" onClick={() => setStatus(3)}>Pago</td>
+              
             </tr>
             <hr/>
             {status === 0 && (
@@ -69,6 +79,13 @@ function Solicitacoes(){
               concluido.map(element =>{
                 return(
                   <CardConcluido props={element}/>
+                );
+              }) 
+            )}
+            {status === 3 && (
+              pago.map(element =>{
+                return(
+                  <CardPago props={element}/>
                 );
               }) 
             )}

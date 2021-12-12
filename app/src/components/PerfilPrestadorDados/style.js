@@ -196,6 +196,10 @@ export const StyleComponent2 = styled.div`
   width: 70%;
   height: auto;
 
+  >h1{
+    margin-left: 15px;
+  }
+
   @media(min-width: 320px) and (max-width: 890px){
     width: 100%;
     margin-top: 0rem;
@@ -229,21 +233,6 @@ export const Dados = styled.div`
       padding: 1rem;
     }
 
-  }
-`;
-
-export const Estrelas =  styled.div`
-  width: max-content;
-  padding: 1rem;
-  
-  >img{
-    width: 30px;
-    height: 30px;
-  }
-
-  >p{
-    margin-top: 0.5rem;
-    margin-left: 6.5rem;
   }
 `;
 
@@ -297,21 +286,11 @@ export const Habilidades = styled.div`
 
 export const Album = styled.div`
   padding: 2rem;
-
-  h1{
-
-  }
+  height: 600px;
+  overflow: auto;
 
   div{
-    width: 50%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    
-    >img{
-      width: 12vw;
-      height: 18vh;
-      margin: 1rem;
-    }
+    width: 100%;
   }
 
   @media(min-width: 320px) and (max-width: 890px){

@@ -29,12 +29,16 @@ export const CardProgressStyle = styled.div`
     border-radius: 15px;
     box-shadow: 0px 0px 5px 0px #999999;
 
-    background-color: gray;
+    background-color: #cfcfcf;
 
     >p{
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;
+    }
+    
+    >span{
+        margin-left: 190px;
     }
 
     #description{

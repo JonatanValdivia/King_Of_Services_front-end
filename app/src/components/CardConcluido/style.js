@@ -28,7 +28,7 @@ export const ContentCard = styled.div`
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 65vw;
+        width: 70vw;
         margin: 12vh auto;
         background-color: white;
         border-radius: 5px;
@@ -109,7 +109,15 @@ export const ContentCard = styled.div`
 
         >form{
             width: max-content;
-            padding-left: 30px;
+            
+            hr{
+                width: 100%;
+                margin-top: 25px;;
+                margin-bottom: 20px;
+                background-color: gray;
+                height: 3px;
+            }
+            
         }
 
         >form>label{
@@ -119,7 +127,7 @@ export const ContentCard = styled.div`
         }
 
         >form>input{
-            width: 400px;
+            width: 100%;
             height: 40px;
             border: solid 1px var(--primary);
             margin-bottom: 30px;
@@ -163,19 +171,19 @@ export const ContentCard = styled.div`
         #grid4{
             display: flex;
             justify-content: space-between;
-            gap: 1rem;
+            gap: 5px;
             
             >input{
                 height: 40px;
                 border: solid 1px var(--primary);
             }
             
-            :first-child{
-                width: 200px;
+            #firstChild{
+                width: 80%;
             }
             
             #lastChild{
-                width: 100px;
+                width: 110px;
             }
         }
 
@@ -184,6 +192,46 @@ export const ContentCard = styled.div`
             font-size: 0.8rem;
             padding: 5px;
             color: gray;
+        }
+        
+        #avaliacao:not(textarea){
+            display: flex;
+            flex-direction: column;
+
+            >div{
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                
+                label{
+                    background-color: var(--primary);
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: #ffffff;
+                    
+                }
+                
+                select{
+                    background-color: var(--primary);
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: #ffffff;
+                    font-size: 1rem;
+                }
+                
+                input{
+                    display: none;
+                }
+
+            }
+
+            textarea{
+                height: 115px;
+                font-size: 1rem;
+                padding: 10px;
+            }
         }
 
     }
@@ -236,8 +284,8 @@ export const CardProgressStyle = styled.div`
     padding: 20px;
     padding-bottom: 0px;
     border-radius: 15px;
-    box-shadow: 0px 0px 5px 0px #999999;
-    background-color: gray;
+    box-shadow: 0px 0px 5px 0px #333333;
+    background-color: #cfcfcf;
 
     >p{
         margin-left: 190px;

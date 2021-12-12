@@ -9,9 +9,9 @@ function CardConcluido(props){
                 <img src={`http://kingofservices.com.br/${props.props.foto}`} alt={props.props.foto}/>
                 <p>{props.props.nome}, {props.props.idade}</p>
                 <br/>
-                <span>Concluído em {props.props.atualizado} às {props.props.atualizadoHora}</span>
+                <span>Pago em {props.props.atualizado} às {props.props.atualizadoHora}</span>
                 <ButtonProgress>
-                    <AiFillCheckCircle size="40px" color="green"/>
+                    <h1>Pago</h1>
                 </ButtonProgress>
                 <p id="description">{props.props.descricao}</p>
             </CardProgressStyle>

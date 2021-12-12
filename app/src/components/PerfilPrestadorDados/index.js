@@ -1,15 +1,16 @@
 import { StyleComponent1, Foto, StyleComponent2, Dados, Estrelas, Habilidades, Album } from "./style";
-import Estrela from "../../assets/estrela.png";
 import Imagem from "../../assets/image.jpg";
 import Profile from "../../assets/Diarista.png";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import api from '../../services/api';
 import jwtDecode from "jwt-decode";
+import Avaliacoes from "../../components/Avaliacoes"
 
 function PerfilPrestadorDados(props) {
   let { idPrestador } = useParams();
   const [prestador, setPrestador] = useState([]);
+  const [avaliacao, setAvaliacao] = useState([]);
   const login = localStorage.getItem('login') ?? false;
   const token = jwtDecode(localStorage.getItem('token') ?? false);
   const [descricao, setDescricao] = useState();
@@ -20,10 +21,16 @@ function PerfilPrestadorDados(props) {
 
   useEffect(() => {
     const formatacao = idPrestador.replace(':', '');
-    api.get(`http://kingofservices.com.br/Prestadores/${formatacao}`).
+    api.get(`Prestadores/${formatacao}`).
       then(({ data }) => {
         setPrestador(data);
       });
+    
+    api.get(`AvaliacoesPrestador/${formatacao}`).then(data =>{
+      setAvaliacao(data.data);
+      console.log(data.data)
+    });
+    
   }, [idPrestador]);
 
   const openModal = () => document.querySelector('#modal').classList.add('active');
@@ -82,14 +89,6 @@ function PerfilPrestadorDados(props) {
           <h1>{prestador.nome}</h1>
           <h2>{prestador.profissao}</h2>
           <p>{prestador.descricao}</p>
-          <Estrelas>
-            <img src={Estrela} />
-            <img src={Estrela} />
-            <img src={Estrela} />
-            <img src={Estrela} />
-            <img src={Estrela} />
-            <p>5/5</p>
-          </Estrelas>
         </Dados>
         <Habilidades>
           <h3>Habilidades</h3>
@@ -100,16 +99,13 @@ function PerfilPrestadorDados(props) {
             <p>React</p>
           </div>
         </Habilidades>
+        <h1>Avaliações</h1>
         <Album>
-          <h1>Titulo</h1>
-          <div>
-            <img src={Imagem} />
-            <img src={Imagem} />
-            <img src={Imagem} />
-            <img src={Imagem} />
-            <img src={Imagem} />
-            <img src={Imagem} />
-          </div>
+          {avaliacao.map(element =>{
+            return(
+              <Avaliacoes props={element}/>
+            );
+          })}
         </Album>
       </StyleComponent2>
     </>

@@ -15,6 +15,8 @@ function CardProgress(props){
             <CardProgressStyle>
                 <img src={`http://kingofservices.com.br/${props.props.foto}`} alt={props.props.foto}/>
                 <p>{props.props.nome}, {props.props.idade}</p>
+                <br/>
+                <span>Iniciado em {props.props.atualizado} às {props.props.atualizadoHora}</span>
                 <p id="description">{props.props.descricao}</p>
                 <ButtonProgress>
                     <p>Em andamento</p>

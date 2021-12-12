@@ -2,6 +2,7 @@ import { ButtonProgress, CardProgressStyle, ContentCard, Profile } from "./style
 import api from "../../../services/api";
 
 function CardPedidos(datas){
+    console.log(datas);
     
     const update = (event) =>{
         const id = event.target.value
@@ -16,6 +17,8 @@ function CardPedidos(datas){
             <CardProgressStyle>
                 <Profile src={`http://kingofservices.com.br/${datas.props.foto}`} alt={datas.props.foto}/>
                 <p>{datas.props.nome}, {datas.props.idade}</p>
+                <br/>
+                <span>Solicitado em {datas.props.criado} às {datas.props.criadoHora}</span>
                 <p id="description">{datas.props.descricao}</p>
                 <ButtonProgress>
                     <button value={datas.props.idServicoPrestador} onClick={(e) => update(e)}>Aceitar serviço</button>
