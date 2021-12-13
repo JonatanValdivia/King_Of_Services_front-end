@@ -54,6 +54,11 @@ function HeaderLogout() {
             <Menu id="menu">
                 <ul>
                     <li>
+                        <a href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li>
                     { login == '"cliente"' ? <a href="/solicitacoes">Solicitações</a> : <a href="/meusservicos">Meus Serviços</a> }
                     </li>
                     <li>

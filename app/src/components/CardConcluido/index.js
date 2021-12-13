@@ -38,7 +38,8 @@ function CardSolicitacao(props){
     });
     
     api.put(`http://kingofservices.com.br/SolicitacoesClientesPago/${idServicoPrestador}`, {}).then(()=>{
-      
+      closeModal();
+      window.location.reload(0);
     })
   }
   

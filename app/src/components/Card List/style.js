@@ -20,6 +20,7 @@ export const CardList = styled.div`
     p{
         margin-top: 20px;
         margin-left: 190px;
+        margin-bottom: 20px;
         font-size: 1.5em;
         letter-spacing: 2px;
     }
