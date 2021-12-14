@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const ContentCard = styled.div`
     width: 100%;
     height: auto;
-
     padding: 15px;
 `
 

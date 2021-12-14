@@ -58,37 +58,38 @@ function Solicitacoes(){
               <td className="pendente" onClick={() => setStatus(1)}>Pendente</td>
               <td className="concluido" onClick={() => setStatus(2)}>Concluido</td>
               <td className="pago" onClick={() => setStatus(3)}>Pago</td>
-              
             </tr>
             <hr/>
-            {status === 0 && (
-              aceitar.map(element =>{
-                return(
-                  <CardAceitar props={element}/>
-                );
-              }) 
-            )}
-            {status === 1 && (
-              andamento.map(element =>{
-                return(
-                  <CardAndamento props={element}/>
-                );
-              }) 
-            )}
-            {status === 2 && (
-              concluido.map(element =>{
-                return(
-                  <CardConcluido props={element}/>
-                );
-              }) 
-            )}
-            {status === 3 && (
-              pago.map(element =>{
-                return(
-                  <CardPago props={element}/>
-                );
-              }) 
-            )}
+            <div id="content">
+              {status === 0 && (
+                aceitar.map(element =>{
+                  return(
+                    <CardAceitar props={element}/>
+                  );
+                }) 
+              )}
+              {status === 1 && (
+                andamento.map(element =>{
+                  return(
+                    <CardAndamento props={element}/>
+                  );
+                }) 
+              )}
+              {status === 2 && (
+                concluido.map(element =>{
+                  return(
+                    <CardConcluido props={element}/>
+                  );
+                }) 
+              )}
+              {status === 3 && (
+                pago.map(element =>{
+                  return(
+                    <CardPago props={element}/>
+                  );
+                }) 
+              )}
+            </div>
           </Overlay>
         </Content>
         <Footer/>
