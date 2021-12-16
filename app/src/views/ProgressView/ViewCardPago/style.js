@@ -35,6 +35,11 @@ export const CardProgressStyle = styled.div`
         margin-left: 190px;
         font-size: 1.5em;
         letter-spacing: 2px;
+
+        a:hover{
+            font-weight: normal;
+            cursor: pointer;
+        }
     }
     
     >span{

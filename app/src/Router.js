@@ -15,6 +15,7 @@ import EditarPerfilCliente from "./pages/EditarPerfil/Cliente";
 import EditarPerfilPrestador from "./pages/EditarPerfil/Trabralhador";
 import MaisPedidos from "./pages/MaisPedidos";
 import Solicitacoes from "./pages/Solicitacoes";
+import VerPerfilCliente from './pages/VerPerfilCliente';
 
 function Router(){
     const login = localStorage.getItem('login') ?? false;
@@ -77,6 +78,7 @@ function Router(){
                 <Route exact path="/perfilCliente">
                     <PerfilCliente/>
                 </Route>
+                <Route path="/VerperfilCliente/:idCliente" component={VerPerfilCliente} />
                 <Route exact path="/editar">
                     {ediatarPerfil()}
                 </Route>
